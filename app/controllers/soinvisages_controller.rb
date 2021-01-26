@@ -1,0 +1,2 @@
+class SoinvisagesController < ApplicationController
+end

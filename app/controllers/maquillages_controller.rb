@@ -1,0 +1,2 @@
+class MaquillagesController < ApplicationController
+end

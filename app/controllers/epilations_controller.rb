@@ -1,0 +1,2 @@
+class EpilationsController < ApplicationController
+end
