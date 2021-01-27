@@ -1,0 +1,106 @@
+
+body {
+    // background-color: rgb(211, 130, 211) !important;
+    background: linear-gradient(to right, transparent, #ffe6e6, white);
+    min-width: 100vh;
+}
+
+.header {
+    display:flex;
+    height: 230px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    // border: 3px solid red;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    background-color:#393b3a;
+    // position: fixed;
+    width:100%;
+}
+
+.logorelook{
+    width: 242px;
+    height: 142px;
+    background-image: url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1611669903/jot6yppa9fwrzpfjcvkq.png");
+    background-position: center;
+    
+    background-repeat: no-repeat;
+    // background-size: cover;
+    padding-bottom: 10px;
+}
+
+
+.navmenu {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    // grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    font-family: Montserrat;
+    
+    
+    
+    
+
+    li {
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+    padding-right: 8px;
+    // border-left: 1px solid #ac814a;
+    color: #b1b0b0;
+     border-right: 1px solid #b1b0b0;
+     font-size: 14px;
+
+}
+
+
+
+a {
+    color: #b1b0b0;
+    text-decoration: none;
+    // padding: 10px;
+}
+
+
+}
+
+.carousel-item {
+    width: 100%;
+    height: 500px;  
+    background-size: cover;
+}
+
+
+.bloc{
+    width:100%;
+    height:100%;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 20px;
+    h2 {
+        font-size: Montserrat;
+        color: rgb(185, 185, 185);
+
+    }
+
+    p {
+        color: rgb(185, 185, 185);
+        padding: 30px;
+        font-style: italic;
+
+    }
+    
+}
+
+.mainpage{
+    margin-bottom: 35px;
+    background-color: rgb(211, 130, 211);
+    background-image: url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80");
+    width: 100%;
+    height: 550px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
