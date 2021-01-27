@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_26_163451) do
+ActiveRecord::Schema.define(version: 2021_01_27_111924) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2021_01_26_163451) do
 
   create_table "epilations", force: :cascade do |t|
     t.string "name"
-    t.text "desciption"
+    t.text "description"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2021_01_26_163451) do
 
   create_table "maquillages", force: :cascade do |t|
     t.string "name"
-    t.text "desciption"
+    t.text "description"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 2021_01_26_163451) do
 
   create_table "massages", force: :cascade do |t|
     t.string "name"
-    t.text "desciption"
+    t.text "description"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 2021_01_26_163451) do
 
   create_table "soinvisages", force: :cascade do |t|
     t.string "name"
-    t.text "desciption"
+    t.text "description"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
