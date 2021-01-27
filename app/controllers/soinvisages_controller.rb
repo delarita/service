@@ -18,6 +18,7 @@ class SoinvisagesController < ApplicationController
 
   def create
     @soinvisage = Soinvisage.new(soinvisage_params)
+    @soinvisage.user = current_user
     if @soinvisage.save
       redirect_to soinvisages_path
     else
@@ -32,7 +33,7 @@ class SoinvisagesController < ApplicationController
   def update
     #@soinvisage = Soinvisage.find(params[:id])
     @soinvisage.update(soinvisage_params)
-    redirect_to soinvisage_path(@soinvisage)
+    redirect_to soinvisages_path
   end
 
   def destroy

@@ -17,7 +17,9 @@ class EpilationsController < ApplicationController
   end
 
   def create
+
     @epilation = Epilation.new(epilation_params)
+    @epilation.user = current_user
     if @epilation.save
       redirect_to epilations_path
     else
@@ -32,7 +34,7 @@ class EpilationsController < ApplicationController
   def update
     #@epilation = Epilation.find(params[:id])
     @epilation.update(epilation_params)
-    redirect_to epilation_path(@epilation)
+    redirect_to epilations_path
   end
 
   def destroy
@@ -44,7 +46,7 @@ class EpilationsController < ApplicationController
   private
 
   def epilation_params
-    params.require(:epilation).permit(:name, :description, :photo, :rich_content)
+    params.require(:epilation).permit(:name, :description, :user_id, :photo, :rich_content)
   end
 
   def set_epilation

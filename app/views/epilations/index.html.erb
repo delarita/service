@@ -1,2 +1,14 @@
 <h1>Les Epilations</h1>
+
+<ul>
+  <% @epilations.each do |epilation| %>
+    <li>
+      <%= link_to epilation.name, epilation_path(epilation) %>
+      <%= link_to "x",
+            epilation_path(epilation),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></li>
+  <% end %>
+</ul>
+
 <%= link_to "retour", root_path %>

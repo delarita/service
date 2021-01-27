@@ -18,6 +18,7 @@ class MaquillagesController < ApplicationController
 
   def create
     @maquillage = Maquillage.new(maquillage_params)
+    @maquillage.user = current_user
     if @maquillage.save
       redirect_to maquillages_path
     else
@@ -32,7 +33,7 @@ class MaquillagesController < ApplicationController
   def update
     #@maquillage = Maquillage.find(params[:id])
     @maquillage.update(maquillage_params)
-    redirect_to maquillage_path(@maquillage)
+    redirect_to maquillages_path
   end
 
   def destroy

@@ -18,6 +18,7 @@ class MassagesController < ApplicationController
 
   def create
     @massage = Massage.new(massage_params)
+    @massage.user = current_user
     if @massage.save
       redirect_to massages_path
     else
@@ -32,7 +33,7 @@ class MassagesController < ApplicationController
   def update
     #@massage = Massage.find(params[:id])
     @massage.update(massage_params)
-    redirect_to massage_path(@massage)
+    redirect_to massages_path
   end
 
   def destroy
