@@ -3,26 +3,31 @@
 <div class = "container">
   <% @maquillages.each do |maquillage| %>
     <div class="cards">
-        <%= maquillage.name %>
-        </br>
-        <%= maquillage.description %>
-        </br>
+      <p>
+        <%= maquillage.name %><%= "|" if maquillage.description != "" %>
+        <%= maquillage.description %><%= "|" if maquillage.price != "" %>
+        <%= humanized_money_with_symbol(maquillage.price) %>
+      </p>
+      <p>
         <% if maquillage.photo.attached? %>
           <%= cl_image_tag maquillage.photo.key, height: 300, width: 400, crop: :fill %>
-        </br>
         <% end %>
+      </p>
+      <p>
         <%= link_to "En savoir plus", maquillage_path(maquillage) %>
-        </br>
+      </p>
+      <p>
         <% if policy(Maquillage).destroy? %>
           <%= link_to "del",
             maquillage_path(maquillage),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
         <% end %>
+      </p>
     </div>
   <% end %>
 </div>
 <% if policy(Maquillage).new? %>
-<%= link_to "Nouvelle Prestation", new_maquillage_path %>
+<p><%= link_to "Nouvelle Prestation", new_maquillage_path %></p>
 <% end %>
-<%= link_to "retour", root_path %>
+<p><%= link_to "retour", root_path %></p>

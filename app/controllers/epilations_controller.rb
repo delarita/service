@@ -54,7 +54,7 @@ class EpilationsController < ApplicationController
   private
 
   def epilation_params
-    params.require(:epilation).permit(:name, :description, :user_id, :photo, :rich_content)
+    params.require(:epilation).permit(:name, :description, :user_id, :photo, :rich_content, :price_cents)
   end
 
   def set_epilation
