@@ -1,0 +1,18 @@
+<div class = "container">
+  <div class="cards">
+    <%= @maquillage.name %>
+    </br>
+    <%= @maquillage.rich_content %>
+    </br>
+    <% if @maquillage.photo.attached? %>
+      <%= cl_image_tag @maquillage.photo.key, height: 300, width: 400, crop: :fill %>
+      </br>
+    <% end %>
+    <%= @maquillage.description %>
+    </br>
+    <% if policy(Maquillage).edit? %>
+      <%= link_to "Editer", edit_maquillage_path(@maquillage) %>
+    <% end %>
+  </div>
+</div>
+<%= link_to "retour", maquillages_path %>

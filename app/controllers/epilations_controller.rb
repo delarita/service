@@ -1,25 +1,30 @@
 class EpilationsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show]
   before_action :set_epilation, only: [:show, :edit, :update, :destroy]
 
   def home
   end
 
   def index
-    @epilations = Epilation.all
+    #@epilations = Epilation.all
+    @epilations = policy_scope(Epilation)
+
   end
 
   def new
     @epilation = Epilation.new
+    authorize @epilation
   end
 
   def show
     #@epilation = Epilation.find(params[:id])
+
   end
 
   def create
-
     @epilation = Epilation.new(epilation_params)
     @epilation.user = current_user
+    authorize @epilation
     if @epilation.save
       redirect_to epilations_path
     else
@@ -29,18 +34,21 @@ class EpilationsController < ApplicationController
 
   def edit
     #@epilation = Epilation.find(params[:id])
+    #authorize @epilation
   end
 
   def update
     #@epilation = Epilation.find(params[:id])
+    #authorize @epilation
     @epilation.update(epilation_params)
-    redirect_to epilations_path
+    redirect_to epilation_path(@epilation)
   end
 
   def destroy
     #@epilation = Epilation.find(params[:id])
+    #authorize @epilation
     @epilation.destroy
-    #redirect_to reviews_path
+    redirect_to epilations_path
   end
 
   private
@@ -51,6 +59,7 @@ class EpilationsController < ApplicationController
 
   def set_epilation
     @epilation = Epilation.find(params[:id])
+    authorize @epilation
   end
 
 end

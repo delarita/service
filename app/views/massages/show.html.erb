@@ -1,0 +1,18 @@
+<div class = "container">
+  <div class="cards">
+    <%= @massage.name %>
+    </br>
+    <%= @massage.rich_content %>
+    </br>
+    <% if @massage.photo.attached? %>
+      <%= cl_image_tag @massage.photo.key, height: 300, width: 400, crop: :fill %>
+      </br>
+    <% end %>
+    <%= @massage.description %>
+    </br>
+    <% if policy(Massage).edit? %>
+      <%= link_to "Editer", edit_massage_path(@massage) %>
+    <% end %>
+  </div>
+</div>
+<%= link_to "retour", massages_path %>

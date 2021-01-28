@@ -1,2 +1,28 @@
 <h1>Les Massages</h1>
+
+<div class = "container">
+  <% @massages.each do |massage| %>
+    <div class="cards">
+        <%= massage.name %>
+        </br>
+        <%= massage.description %>
+        </br>
+        <% if massage.photo.attached? %>
+          <%= cl_image_tag massage.photo.key, height: 300, width: 400, crop: :fill %>
+          </br>
+        <% end %>
+        <%= link_to "En savoir plus", massage_path(massage) %>
+        </br>
+        <% if policy(Massage).destroy? %>
+          <%= link_to "del",
+            massage_path(massage),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+        <% end %>
+    </div>
+  <% end %>
+</div>
+<% if policy(Massage).new? %>
+<%= link_to "Nouvelle Prestation", new_massage_path %>
+<% end %>
 <%= link_to "retour", root_path %>
