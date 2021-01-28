@@ -1,0 +1,92 @@
+// Smallest device
+.carousel-item {
+    width: 100%;
+    height: 500px;  
+    background-size: cover;
+}
+
+
+.bloc{
+    width:100%;
+    height:100%;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 20px;
+    h2 {
+        font-size: Montserrat;
+        color: rgb(185, 185, 185);
+
+    }
+
+    p {
+        color: rgb(185, 185, 185);
+        padding: 30px;
+        font-style: italic;
+
+    }
+    
+}
+
+.mainpage{
+    margin-bottom: 35px;
+    background-color: rgb(211, 130, 211);
+    background-image: url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80");
+    width: 100%;
+    height: 550px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+@media (min-width: 100px) and (max-width: 575px) {
+    .bloc
+     {
+      grid-template-columns: 1fr;
+
+      
+      
+    }
+
+    .navmenu {
+        display:none;
+    }
+
+    
+  }
+  
+  // Small devices (landscape phones, 576px and up)
+  @media (min-width: 576px) {
+
+    .bloc
+     {
+      grid-template-columns: 1fr;
+    }
+    
+    
+  }
+  
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    .bloc
+     {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+    .bloc
+     {
+      grid-template-columns: 1fr 1fr ;
+    }
+  }
+  
+  // Extra large devices (large desktops, 1200px and up)
+  @media (min-width: 1200px) {
+    .bloc
+     {
+      grid-template-columns: 1fr 1fr ;
+    }
+  }
