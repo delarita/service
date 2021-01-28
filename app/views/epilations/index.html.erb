@@ -3,26 +3,31 @@
 <div class = "container">
   <% @epilations.each do |epilation| %>
     <div class="cards">
-        <%= epilation.name %>
-        </br>
-        <%= epilation.description %>
-        </br>
+      <p>
+        <%= epilation.name %><%= "|" if epilation.description != "" %>
+        <%= epilation.description %><%= "|" if epilation.price != "" %>
+        <%= humanized_money_with_symbol(epilation.price) %>
+      </p>
+      <p>
         <% if epilation.photo.attached? %>
           <%= cl_image_tag epilation.photo.key, height: 300, width: 400, crop: :fill %>
-          </br>
         <% end %>
+      </p>
+      <p>
         <%= link_to "En savoir plus", epilation_path(epilation) %>
-        </br>
+      </p>
+      <p>
         <% if policy(Epilation).destroy? %>
           <%= link_to "del",
             epilation_path(epilation),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
         <% end %>
+      </p>
     </div>
   <% end %>
 </div>
 <% if policy(Epilation).new? %>
-<%= link_to "Nouvelle Prestation", new_epilation_path %>
+<p><%= link_to "Nouvelle Prestation", new_epilation_path %></p>
 <% end %>
-<%= link_to "retour", root_path %>
+<p><%= link_to "retour", root_path %></p>

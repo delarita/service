@@ -3,26 +3,31 @@
 <div class = "container">
   <% @soinvisages.each do |soinvisage| %>
     <div class="cards">
-        <%= soinvisage.name %>
-        </br>
-        <%= soinvisage.description %>
-        </br>
+      <p>
+        <%= soinvisage.name %><%= "|" if soinvisage.description != "" %>
+        <%= soinvisage.description %><%= "|" if soinvisage.price != "" %>
+        <%= humanized_money_with_symbol(soinvisage.price) %>
+      </p>
+      <p>
         <% if soinvisage.photo.attached? %>
           <%= cl_image_tag soinvisage.photo.key, height: 300, width: 400, crop: :fill %>
-          </br>
         <% end %>
+      </p>
+      <p>
         <%= link_to "En savoir plus", soinvisage_path(soinvisage) %>
-        </br>
+      </p>
+      <p>
         <% if policy(Soinvisage).destroy? %>
           <%= link_to "del",
             soinvisage_path(soinvisage),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
         <% end %>
+      </p>
     </div>
   <% end %>
 </div>
 <% if policy(Soinvisage).new? %>
-<%= link_to "Nouvelle Prestation", new_soinvisage_path %>
+<p><%= link_to "Nouvelle Prestation", new_soinvisage_path %></p>
 <% end %>
-<%= link_to "retour", root_path %>
+<p><%= link_to "retour", root_path %></p>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_27_111924) do
+ActiveRecord::Schema.define(version: 2021_01_28_171650) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2021_01_27_111924) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "price_cents", default: 0, null: false
     t.index ["name"], name: "index_epilations_on_name", unique: true
     t.index ["user_id"], name: "index_epilations_on_user_id"
   end
@@ -69,6 +70,7 @@ ActiveRecord::Schema.define(version: 2021_01_27_111924) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "price_cents", default: 0, null: false
     t.index ["name"], name: "index_maquillages_on_name", unique: true
     t.index ["user_id"], name: "index_maquillages_on_user_id"
   end
@@ -79,6 +81,7 @@ ActiveRecord::Schema.define(version: 2021_01_27_111924) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "price_cents", default: 0, null: false
     t.index ["name"], name: "index_massages_on_name", unique: true
     t.index ["user_id"], name: "index_massages_on_user_id"
   end
@@ -89,6 +92,7 @@ ActiveRecord::Schema.define(version: 2021_01_27_111924) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "price_cents", default: 0, null: false
     t.index ["name"], name: "index_soinvisages_on_name", unique: true
     t.index ["user_id"], name: "index_soinvisages_on_user_id"
   end

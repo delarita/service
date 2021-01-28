@@ -52,7 +52,7 @@ class SoinvisagesController < ApplicationController
   private
 
   def soinvisage_params
-    params.require(:soinvisage).permit(:name, :description, :photo, :rich_content)
+    params.require(:soinvisage).permit(:name, :description, :photo, :rich_content, :price_cents)
   end
 
   def set_soinvisage

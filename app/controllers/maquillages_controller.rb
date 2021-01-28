@@ -53,7 +53,7 @@ class MaquillagesController < ApplicationController
   private
 
   def maquillage_params
-    params.require(:maquillage).permit(:name, :description, :user_id, :photo, :rich_content)
+    params.require(:maquillage).permit(:name, :description, :user_id, :photo, :rich_content, :price_cents)
   end
 
   def set_maquillage
