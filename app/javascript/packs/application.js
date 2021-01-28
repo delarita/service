@@ -22,7 +22,7 @@ ActiveStorage.start()
 import "bootstrap";
 import { selectNav } from '../components/stickymenu';
 import { openNav } from '../components/openmenu';
-import { closeNav } from '../components/closemenu';
+
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -31,7 +31,7 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   selectNav();
   openNav();
-  closeNav();
+  
 });
 
 require("trix")

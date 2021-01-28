@@ -1,16 +1,16 @@
-const closeNav = () => {
+// const closeNav = () => {
    
     
-    const closeButton = document.querySelector(".close-button");
-    const openDiv = document.querySelector(".menu-mobile")
+//     const closeButton = document.querySelector(".close-button");
+//     const openDiv = document.querySelector(".menu-mobile")
   
   
-    closeButton.addEventListener("click", (event) => {
+//     closeButton.addEventListener("click", (event) => {
       
-      openDiv.classList.remove("active");
-      console.log(event)
-  });
+//       openDiv.classList.remove("active");
+//       console.log(event)
+//   });
   
-  };
+//   };
   
-  export { closeNav };
+//   export { closeNav };
