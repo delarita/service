@@ -1,23 +1,28 @@
 <h1>Les Epilations</h1>
 
 <div class = "container">
-  <div class="cards">
-    <% @epilations.each do |epilation| %>
-        <%= epilation.name %></br>
-        <%= epilation.rich_content %></br>
-
-
-        <% if epilation.photo.attached? %>
-          <%= cl_image_tag epilation.photo.key, height: 300, width: 400, crop: :fill %></br>
-        <% end %>
+  <% @epilations.each do |epilation| %>
+    <div class="cards">
+        <%= epilation.name %>
+        </br>
         <%= epilation.description %>
-      </br>
-        <%= link_to "del",
+        </br>
+        <% if epilation.photo.attached? %>
+          <%= cl_image_tag epilation.photo.key, height: 300, width: 400, crop: :fill %>
+          </br>
+        <% end %>
+        <%= link_to "En savoir plus", epilation_path(epilation) %>
+        </br>
+        <% if policy(Epilation).destroy? %>
+          <%= link_to "del",
             epilation_path(epilation),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
-
-    <% end %>
-  </div>
+        <% end %>
+    </div>
+  <% end %>
 </div>
+<% if policy(Epilation).new? %>
+<%= link_to "Nouvelle Prestation", new_epilation_path %>
+<% end %>
 <%= link_to "retour", root_path %>
