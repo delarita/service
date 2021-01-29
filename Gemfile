@@ -30,7 +30,9 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 gem 'devise'
 gem 'cloudinary', '~> 1.16.0'
-gem 'image_processing', '~> 1.2'
+gem 'image_processing'
+gem 'pundit'
+gem 'money-rails'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'

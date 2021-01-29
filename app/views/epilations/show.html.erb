@@ -1,0 +1,18 @@
+<div class = "container">
+  <div class="cards">
+    <%= @epilation.name %>
+    </br>
+    <%= @epilation.rich_content %>
+    </br>
+    <% if @epilation.photo.attached? %>
+      <%= cl_image_tag @epilation.photo.key, height: 300, width: 400, crop: :fill %>
+      </br>
+    <% end %>
+    <%= @epilation.description %>
+    </br>
+    <% if policy(Epilation).edit? %>
+      <%= link_to "Editer", edit_epilation_path(@epilation) %>
+    <% end %>
+  </div>
+</div>
+<%= link_to "retour", epilations_path %>

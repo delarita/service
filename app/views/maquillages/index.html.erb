@@ -1,2 +1,33 @@
-<h1>Les Maquillages</h1>
-<%= link_to "retour", root_path %>
+<h1>Les Maquillages Permanent</h1>
+
+<div class = "container">
+  <% @maquillages.each do |maquillage| %>
+    <div class="cards">
+      <p>
+        <%= maquillage.name %><%= "|" if maquillage.description != "" %>
+        <%= maquillage.description %><%= "|" if maquillage.price != "" %>
+        <%= humanized_money_with_symbol(maquillage.price) %>
+      </p>
+      <p>
+        <% if maquillage.photo.attached? %>
+          <%= cl_image_tag maquillage.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+      </p>
+      <p>
+        <%= link_to "En savoir plus", maquillage_path(maquillage) %>
+      </p>
+      <p>
+        <% if policy(Maquillage).destroy? %>
+          <%= link_to "del",
+            maquillage_path(maquillage),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+        <% end %>
+      </p>
+    </div>
+  <% end %>
+</div>
+<% if policy(Maquillage).new? %>
+<p><%= link_to "Nouvelle Prestation", new_maquillage_path %></p>
+<% end %>
+<p><%= link_to "retour", root_path %></p>

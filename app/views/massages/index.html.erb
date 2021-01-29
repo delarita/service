@@ -1,2 +1,33 @@
 <h1>Les Massages</h1>
-<%= link_to "retour", root_path %>
+
+<div class = "container">
+  <% @massages.each do |massage| %>
+    <div class="cards">
+      <p>
+        <%= massage.name %><%= "|" if massage.description != "" %>
+        <%= massage.description %><%= "|" if massage.price != "" %>
+        <%= humanized_money_with_symbol(massage.price) %>
+      </p>
+      <p>
+        <% if massage.photo.attached? %>
+          <%= cl_image_tag massage.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+      </p>
+      <p>
+        <%= link_to "En savoir plus", massage_path(massage) %>
+      </p>
+      <p>
+        <% if policy(Massage).destroy? %>
+          <%= link_to "del",
+            massage_path(massage),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+        <% end %>
+      </p>
+    </div>
+  <% end %>
+</div>
+<% if policy(Massage).new? %>
+<p><%= link_to "Nouvelle Prestation", new_massage_path %></p>
+<% end %>
+<p><%= link_to "retour", root_path %></p>
