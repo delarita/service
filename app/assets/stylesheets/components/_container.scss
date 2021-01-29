@@ -11,7 +11,7 @@
     height:100%;
     display:grid;
     grid-template-columns: 1fr 1fr;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     h2 {
         font-size: Montserrat;
         color: rgb(185, 185, 185);
@@ -53,6 +53,9 @@
         display:none;
     }
 
+    .menu-button {
+      display:block;
+    }
     
   }
   

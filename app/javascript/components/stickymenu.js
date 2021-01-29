@@ -7,6 +7,8 @@ const selectNav = () => {
   function sticky(){
     // position du curseur au scroll
     let posCurseur = this.pageYOffset;
+    console.log(memoPositionNav);
+    console.log(posCurseur);
     // je teste la différence de distance entre le scroll et nav
     if(memoPositionNav-posCurseur<1){
       objNav.style.position = "fixed";
@@ -15,7 +17,7 @@ const selectNav = () => {
       objNav.classList.add("active");
     }
     if(posCurseur<101){
-      objNav.style.position = "relative";7
+      objNav.style.position = "";
       objNav.classList.remove("active");
     }
   }
