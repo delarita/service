@@ -9,7 +9,8 @@ const openNav = () => {
       
       openDiv.classList.toggle("active");
       menuDiv.classList.toggle("active");
-      console.log(event)
+      button.classList.toggle("colorize")
+      
   });
   
   };
