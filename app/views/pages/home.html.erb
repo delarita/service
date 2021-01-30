@@ -5,8 +5,9 @@
     </div>
     <%# <h1>RELOOKESTHETIC</h1> %>
     <nav class="navmenu">
-        <li>ACCUEIL</li>
-        <li>A PROPOS</li>
+       
+        <li><%= link_to "ACCUEIL", root_path%></li>
+        <li><%= link_to "A PROPOS", about_path%></li>
         <li><%= link_to "EPILATIONS", epilations_path %></li>
         <li><%= link_to " MASSAGES", massages_path %></li>
         <li><%= link_to "SOINS DU VISAGE", soinvisages_path %></li>
@@ -57,6 +58,7 @@
 </div>
 
 <div class="menu-button"><i class="fas fa-bars fa-3x"></i></div>
+<div class="call-button"><a href="tel:+33500000000"><i class="fas fa-phone"></a></i></div>
 <div class="menu-mobile">
     <nav class="navmenu2">
             <li>ACCUEIL</li>

@@ -202,6 +202,28 @@ a {
     
 }
 
+.call-button{
+    // display:none;
+    position: sticky;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 50%;
+    padding: 16px;
+    color: rgb(255, 255, 255);
+    z-index: 2;
+a {
+    color: white;
+}
+    
+}
+
+.fa-phone {
+    position: absolute;
+    right: 10px;
+    bottom: 20px;
+    font-size: 40px;
+}
+
 
 .menu-mobile {
     position: fixed;
