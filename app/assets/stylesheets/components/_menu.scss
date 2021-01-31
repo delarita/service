@@ -203,24 +203,28 @@ a {
 }
 
 .call-button{
-    // display:none;
-    position: sticky;
+    display:none;
+    position: fixed;
     right: 10px;
-    bottom: 10px;
-    border-radius: 50%;
+    bottom: 26px;
+    border-radius: 74%;
     padding: 16px;
-    color: rgb(255, 255, 255);
+    background-color: white;
     z-index: 2;
+    width: 60px;
+    border: 0.5px solid black;
+    height: 60px;
+    
+
 a {
-    color: white;
+    color: rgb(0, 0, 0);
 }
     
 }
 
 .fa-phone {
-    position: absolute;
-    right: 10px;
-    bottom: 20px;
+    // position: absolute;
+    
     font-size: 40px;
 }
 
