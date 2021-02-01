@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # post "epilations", to: "epilations#create"
   # get "epilations/:id/edit", to: "epilations#edit"
   # patch "epilations/:id", to: "epilations#update"
-
+  get "about", to: 'pages#about'
   resources :massages, only: [:index, :show, :new, :edit, :update, :create, :destroy]
   #get "massages", to: "massages#index"
 
