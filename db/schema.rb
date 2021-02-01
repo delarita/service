@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_28_171650) do
+ActiveRecord::Schema.define(version: 2021_01_29_141616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,6 +86,26 @@ ActiveRecord::Schema.define(version: 2021_01_28_171650) do
     t.index ["user_id"], name: "index_massages_on_user_id"
   end
 
+  create_table "order_items", force: :cascade do |t|
+    t.integer "unit_price_cents", default: 0, null: false
+    t.integer "total_price_cents", default: 0, null: false
+    t.integer "quantity"
+    t.bigint "order_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "orderitemable_type", null: false
+    t.bigint "orderitemable_id", null: false
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["orderitemable_type", "orderitemable_id"], name: "index_order_items_on_orderitemable"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "total_price_cents", default: 0, null: false
+    t.integer "subtotal_price_cents", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "soinvisages", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -122,5 +142,6 @@ ActiveRecord::Schema.define(version: 2021_01_28_171650) do
   add_foreign_key "epilations", "users"
   add_foreign_key "maquillages", "users"
   add_foreign_key "massages", "users"
+  add_foreign_key "order_items", "orders"
   add_foreign_key "soinvisages", "users"
 end
