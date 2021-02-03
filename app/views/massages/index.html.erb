@@ -1,12 +1,43 @@
-<h1>Les Massages</h1>
+<div class="container">
+  <h1>Les Massages</h1>
 
-<div class = "container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+            </button>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><%= link_to "Home", root_path %></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active cart"><%= render 'layouts/cart' %></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+</div>
+<div>
   <% @massages.each do |massage| %>
     <div class="cards">
       <p>
-        <%= massage.name %><%= "|" if massage.description != "" %>
-        <%= massage.description %><%= "|" if massage.price != "" %>
-        <%= humanized_money_with_symbol(massage.price) %>
+        <!-- ins 2 l--->
+        <%= form_for([massage, @order_item], remote: true) do |f| %>
+          <%= f.hidden_field :orderitemable_type, value: "Massage" %>
+          <%= f.hidden_field :orderitemable_id, value: massage.id %>
+
+          <%= massage.name %><%= "|" if massage.description != "" %>
+          <%= massage.description %><%= "|" if massage.price != "" %>
+          <%= humanized_money_with_symbol(massage.price) %>
+
+          <!-- ins 4 l--->
+          <div class="form-group">
+            <%= f.text_field :quantity, value: 1, min: 1, class: 'form-control' %>
+          </div>
+          <%= f.submit "Add to cart", class: 'btn btn-primary btn-sm' %>
+        <% end %>
       </p>
       <p>
         <% if massage.photo.attached? %>
@@ -27,7 +58,11 @@
     </div>
   <% end %>
 </div>
+
 <% if policy(Massage).new? %>
 <p><%= link_to "Nouvelle Prestation", new_massage_path %></p>
 <% end %>
 <p><%= link_to "retour", root_path %></p>
+
+
+

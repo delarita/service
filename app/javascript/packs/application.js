@@ -18,21 +18,25 @@ ActiveStorage.start()
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
+require("trix")
+require("@rails/actiontext")
+
 // External imports
 import "bootstrap";
-import { selectNav } from '../components/stickymenu';
-import { openNav } from '../components/openmenu';
+
+import $ from 'jquery';
+global.$ = jQuery;
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { selectNav } from '../components/stickymenu';
+import { openNav } from '../components/openmenu';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   selectNav();
   openNav();
-  
 });
 
-require("trix")
-require("@rails/actiontext")
+

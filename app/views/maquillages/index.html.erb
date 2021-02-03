@@ -1,12 +1,43 @@
-<h1>Les Maquillages Permanent</h1>
+<div class="container">
+  <h1>Les Maquillages Permanent</h1>
 
-<div class = "container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+            </button>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><%= link_to "Home", root_path %></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active cart"><%= render 'layouts/cart' %></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+</div>
+<div>
   <% @maquillages.each do |maquillage| %>
     <div class="cards">
       <p>
-        <%= maquillage.name %><%= "|" if maquillage.description != "" %>
-        <%= maquillage.description %><%= "|" if maquillage.price != "" %>
-        <%= humanized_money_with_symbol(maquillage.price) %>
+        <!-- ins 2 l--->
+        <%= form_for([maquillage, @order_item], remote: true) do |f| %>
+          <%= f.hidden_field :orderitemable_type, value: "Maquillage" %>
+          <%= f.hidden_field :orderitemable_id, value: maquillage.id %>
+
+          <%= maquillage.name %><%= "|" if maquillage.description != "" %>
+          <%= maquillage.description %><%= "|" if maquillage.price != "" %>
+          <%= humanized_money_with_symbol(maquillage.price) %>
+
+          <!-- ins 4 l--->
+          <div class="form-group">
+            <%= f.text_field :quantity, value: 1, min: 1, class: 'form-control' %>
+          </div>
+          <%= f.submit "Add to cart", class: 'btn btn-primary btn-sm' %>
+        <% end %>
       </p>
       <p>
         <% if maquillage.photo.attached? %>
@@ -27,6 +58,7 @@
     </div>
   <% end %>
 </div>
+
 <% if policy(Maquillage).new? %>
 <p><%= link_to "Nouvelle Prestation", new_maquillage_path %></p>
 <% end %>
