@@ -7,8 +7,9 @@ class EpilationsController < ApplicationController
 
   def index
     #@epilations = Epilation.all
+    puts "index"
     @epilations = policy_scope(Epilation)
-
+    @order_item = current_order.order_items.new
   end
 
   def new

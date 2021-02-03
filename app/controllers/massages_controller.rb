@@ -8,6 +8,7 @@ class MassagesController < ApplicationController
   def index
     #@massages = Massage.all
     @massages = policy_scope(Massage)
+    @order_item = current_order.order_items.new
   end
 
   def new

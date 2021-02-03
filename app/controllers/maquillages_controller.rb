@@ -8,6 +8,7 @@ class MaquillagesController < ApplicationController
   def index
     #@maquillages = Maquillage.all
     @maquillages = policy_scope(Maquillage)
+    @order_item = current_order.order_items.new
   end
 
   def new

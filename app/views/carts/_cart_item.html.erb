@@ -1,0 +1,38 @@
+<% if !@order_item.nil? && @order_item.errors.any? %>
+  <ul>
+    <% @order_item.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<% if @order_items.size>0 %>
+  <% @order_items.each do |oitem| %>
+
+    <div class="well">
+      <div class="row">
+        <div class="col-sm-8">
+          <h3><%= oitem.orderitemable_type %></h3>
+        </div>
+        <div class="col-sm-4">
+          <div class="pull-right">
+          <%= form_for(oitem, remote: true) do |f| %>
+            <%= f.hidden_field :product_id, value: oitem.orderitemable_id %>
+            <h5><%= oitem.unit_price %></h5>
+            <div class="form-group">
+              <%= f.text_field :quantity, value: oitem.quantity.to_i, min: 1, class: 'form-control' %>
+            </div>
+            <div class="btn-group">
+              <%= f.submit "Update Quantity", class: 'btn btn-primary' %>
+              <%= link_to "Delete", oitem, method: :delete, remote: true, class: 'btn btn-danger'  %>
+            </div>
+            <span>Total Price: <%= oitem.total_price %></span>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+
+<% end %>

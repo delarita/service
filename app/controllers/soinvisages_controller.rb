@@ -8,6 +8,7 @@ class SoinvisagesController < ApplicationController
   def index
     #@soinvisages = Soinvisage.all
     @soinvisages = policy_scope(Soinvisage)
+    @order_item = current_order.order_items.new
   end
 
   def new
