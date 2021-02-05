@@ -14,7 +14,8 @@ class OrderItemsController < ApplicationController
     #p "6"
     #p @order
     @order_item = @order.order_items.new(order_item_params)
-    #p @order_item
+    puts "new order item"
+    p @order_item
     #p params
     #prod = OrderItem.where("orderitemable_type = ? AND orderitemable_id = ?", params[:order_item][:orderitemable_type], params[:order_item][:orderitemable_id].to_i)
     # p prod
