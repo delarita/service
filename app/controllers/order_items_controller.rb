@@ -6,33 +6,39 @@ class OrderItemsController < ApplicationController
 
     def create
 
-    puts "here"
-    p @orderitemable
-    p "12"
-    p current_order
+    #puts "here"
+    #p @orderitemable
+    #p "12"
+    #p current_order
     @order = current_order
-    p "6"
-    p @order
+    #p "6"
+    #p @order
     @order_item = @order.order_items.new(order_item_params)
-    p @order_item
-    p params
+    #p @order_item
+    #p params
     #prod = OrderItem.where("orderitemable_type = ? AND orderitemable_id = ?", params[:order_item][:orderitemable_type], params[:order_item][:orderitemable_id].to_i)
     # p prod
-    p "13"
+    #p "13"
+
+    #_____________________
     #authorize @order
-    authorize @order_item
-    p "14"
+    #authorize @order_item
+    #---------------------
+
+    #p "14"
     #binding.pry
     @order.save
-    puts "save"
+    #puts "save"
     session[:order_id] = @order.id
   end
 
   def update
+    puts "on passe par le update controller"
     @order = current_order
     @order_item = @order.order_items.find(params[:id])
     @order_item.update(order_item_params)
     @order_items = @order.order_items
+    redirect_to carts_path
   end
 
   def destroy
@@ -40,6 +46,7 @@ class OrderItemsController < ApplicationController
     @order_item = @order.order_items.find(params[:id])
     @order_item.destroy
     @order_items = @order.order_items
+    redirect_to carts_path
   end
 
   private
