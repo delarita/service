@@ -1,3 +1,13 @@
+<%= form_for([@bc_massage, @order_item], remote: true) do |f| %>
+  <%= f.hidden_field :orderitemable_type, value: "Massage" %>
+  <%= f.hidden_field :orderitemable_id, value: @bc_massage.id %>
+  <%= f.hidden_field :quantity, value: 1 %>
+  <% @order_item = @boncadeau %>
+  <% puts "ici" %>
+  <% p @order_item %>
+  <%= f.submit "BON CADEAU", class: 'btn btn-primary btn-sm' %>
+<% end %>
+
 <div class="container">
   <h1>Les Massages</h1>
 

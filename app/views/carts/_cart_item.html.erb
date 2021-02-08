@@ -19,7 +19,7 @@
             <%= form_for([presta, order_item], remote: true) do |f| %>
 
               <%= f.hidden_field :product_id, value: order_item.id %>
-              <h5>prix : <%= order_item.unit_price_cents %></h5>
+              <h5>prix : <%= order_item.unit_price/100 %></h5>
               <div class="form-group">
                 <%= f.text_field :quantity, value: order_item.quantity.to_i, min: 1, class: 'form-control' %>
               </div>
@@ -27,7 +27,7 @@
                 <%= f.submit "Update Quantity", class: 'btn btn-primary' %>
                 <%= link_to "Delete", [presta, order_item], method: :delete, remote: true, class: 'btn btn-danger'  %>
               </div>
-              <span>Sous Total : <%= order_item.total_price_cents %></span>
+              <span>Sous Total : <%= order_item.total_price/100 %></span>
             <% end %>
           </div>
         </div>
@@ -35,7 +35,4 @@
     </div>
   <% end %>
   <h3>TOTAL : </h3>
-
-<% else %>
-
 <% end %>

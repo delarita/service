@@ -19,6 +19,7 @@ class Order < ApplicationRecord
         #p order_item.unit_price*order_item.quantity
         p order_item.unit_price
         p "inter 0 ---------- if"
+        p order_item.quantity
         p order_item.unit_price*order_item.quantity
         p "inter 1 ---------- if"
         p calc
