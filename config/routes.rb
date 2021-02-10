@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
         sessions: 'users/sessions'
       }
+
   mount StripeEvent::Engine, at: '/stripe-webhooks'
 
   root to: 'pages#home'
@@ -50,4 +51,5 @@ Rails.application.routes.draw do
     resources :payments, only: [:new]
   end
 
+  get '*unmatched_route', to: 'application#raise_not_found'
 end
