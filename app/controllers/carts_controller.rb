@@ -3,26 +3,25 @@ class CartsController < ApplicationController
   skip_after_action :verify_policy_scoped
 
   def index
-      @orderitemables = []
+    #orders = Order.where(user_id: current_user.id)
+    @orders = current_or_guest_user.orders.where(state: 'pending')
 
-      if current_user.nil?
-        @order_items = OrderItem.where(order_id: current_order)
-      else
-        # a modifier
-        @order_items = OrderItem.where(order_id: current_order)
+    @orders.each do |order|
+      p order.subtotal_price_cents
+      if order.subtotal_price_cents != 0
+        stripe_session = Stripe::Checkout::Session.create(
+          payment_method_types: ['card'],
+          line_items: [{
+            name: current_or_guest_user.email,
+            amount: order.subtotal_price_cents,
+            currency: 'eur',
+            quantity: 1
+          }],
+          success_url: carts_url,
+          cancel_url: carts_url
+        )
+        order.update(checkout_session_id: stripe_session.id)
       end
-
-      #@order_items = policy_scope(OrderItem)
-      @order_items = @order_items.sort_by &:created_at
-      @order_items.each do |order_item|
-        orderitemable = order_item.orderitemable_type.constantize.find(order_item.orderitemable_id)
-        @orderitemables << orderitemable
-      end
-
-      @carts = @order_items.zip(@orderitemables)
-
+    end
   end
-
-
-
 end

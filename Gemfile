@@ -33,6 +33,8 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'image_processing'
 gem 'pundit'
 gem 'money-rails'
+gem 'stripe'
+gem 'stripe_event'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'

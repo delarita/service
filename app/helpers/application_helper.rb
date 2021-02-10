@@ -56,6 +56,11 @@ module ApplicationHelper
         # comment.user_id = current_user.id
         # comment.save!
       # end
+      puts "---------------logging_in-----------------------"
+      current_order = guest_user.orders.first
+      current_order.user = current_user
+      current_order.save!
+      puts "------------------------------------------------"
     end
 
     def create_guest_user

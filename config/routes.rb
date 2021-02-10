@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
         sessions: 'users/sessions'
       }
+  mount StripeEvent::Engine, at: '/stripe-webhooks'
 
   root to: 'pages#home'
   get "about", to: 'pages#about'
@@ -42,8 +43,11 @@ Rails.application.routes.draw do
   # resources :epilations, :massages, :maquillages, :soinvisages do
   #resources :order_items, only: [:create, :update, :destroy]
   # end
+  resources :orders, only: [:show]
 
-  #
   resources :carts, only: [:index]
+  resources :carts, only: [:new], as: :order do
+    resources :payments, only: [:new]
+  end
 
 end

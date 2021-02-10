@@ -1,5 +1,7 @@
 class Order < ApplicationRecord
   has_many :order_items
+
+  belongs_to :user
   #monetize :total_price_cents
   #monetize :subtotal_price_cents
 
