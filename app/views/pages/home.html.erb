@@ -1,11 +1,18 @@
-
+<%= form_for([@epil, @order_item], remote: true) do |f| %>
+  <%= f.hidden_field :orderitemable_type, value: "Epilation" %>
+  <%= f.hidden_field :orderitemable_id, value: @epil.id %>
+  <%= f.hidden_field :quantity, value: 1 %>
+  <% @order_item = @boncadeau %>
+  <% p @order_item %>
+  <%= f.submit "BON CADEAU", class: 'btn btn-primary btn-sm' %>
+<% end %>
 
 <div class = "header">
     <div class = "logorelook">
     </div>
     <%# <h1>RELOOKESTHETIC</h1> %>
     <nav class="navmenu">
-       
+
         <li><%= link_to "ACCUEIL", root_path%></li>
         <li><a href="#about">A PROPOS</a></li>
         <li><%= link_to "EPILATIONS", epilations_path %></li>
@@ -77,9 +84,9 @@
 <div id="about">
 <h1 class="text-center">Patricia Serie</h1>
 <div class=container>
-    
+
     <div class="bio">
-        
+
         <p>Créatrice de RELOOK ESTHETIQUE, je bénéficie d’un long cursus professionnel dans le domaine de l’esthétique, du bien-être et du maquillage permanent. </p>
         <p>Je travaille sur la communication par l’image pour l’épanouissement de la personne au niveau de son développement personnel.
         Mes valeurs « Etre en Harmonie & en Cohérence » avec l’image que l’on reflète.</p>

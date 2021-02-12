@@ -5,37 +5,51 @@
     <% end %>
   </ul>
 <% end %>
-<% if @carts.length>0 %>
-  <% @carts.each do |cart| %>
-    <% order_item = cart[0] %>
-    <% presta = cart[1] %>
-    <div class="well">
-      <div class="row">
-        <div class="col-sm-8">
-          <h3><%= presta.name %></h3>
-        </div>
-        <div class="col-sm-4">
-          <div class="pull-right">
-            <%= form_for([presta, order_item], remote: true) do |f| %>
 
-              <%= f.hidden_field :product_id, value: order_item.id %>
-              <h5>prix : <%= order_item.unit_price_cents %></h5>
-              <div class="form-group">
-                <%= f.text_field :quantity, value: order_item.quantity.to_i, min: 1, class: 'form-control' %>
+<% if @orders.length>0 %>
+  <% @orders.each do |order| %>
+   <div>
+    <% if order.order_items.length>0 %>
+      <% order.order_items.each do |order_item| %>
+        <div class="well">
+          <div class="row">
+            <div class="col-sm-8">
+              <h3><%= order_item.orderitemable.name %></h3>
+            </div>
+            <div class="col-sm-4">
+              <div class="pull-right">
+                <%= form_for([order_item.orderitemable, order_item], remote: true) do |f| %>
+
+                  <%= f.hidden_field :product_id, value: order_item.id %>
+                  <h5>prix : <%= order_item.unit_price/100 %></h5>
+                  <div class="form-group">
+                    <%= f.text_field :quantity, value: order_item.quantity.to_i, min: 1, class: 'form-control' %>
+                  </div>
+                  <div class="btn-group">
+                    <%= f.submit "Update Quantity", class: 'btn btn-primary' %>
+                    <%= link_to "Delete", [order_item.orderitemable, order_item], method: :delete, remote: true, class: 'btn btn-danger'  %>
+                  </div>
+                  <span>Sous Total : <%= order_item.total_price/100 %></span>
+                <% end %>
               </div>
-              <div class="btn-group">
-                <%= f.submit "Update Quantity", class: 'btn btn-primary' %>
-                <%= link_to "Delete", [presta, order_item], method: :delete, remote: true, class: 'btn btn-danger'  %>
-              </div>
-              <span>Sous Total : <%= order_item.total_price_cents %></span>
-            <% end %>
+            </div>
           </div>
         </div>
+      <% end %>
+      <h3>TOTAL : <%= order.subtotal_price/100 %></h3>
+       <div class="btn-group">
+
+        <%= form_for order, :url => new_order_payment_path(order), :method => :get do |f| %>
+
+        <%= f.submit "Payement", class: 'btn btn-primary' %>
+        <!--
+        < %= link_to "Payer", redirect_to new_order_payment_path(order), remote: true, class: 'btn btn-danger'  %>
+        -->
+        <% end %>
+
       </div>
+    <% end %>
     </div>
   <% end %>
-  <h3>TOTAL : </h3>
-
-<% else %>
 
 <% end %>
