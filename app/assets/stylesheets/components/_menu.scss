@@ -6,55 +6,110 @@ body {
     min-height: 100vh;
 }
 
+.w-50 {
+    
+        width: 48% !important;
+    
+}
+
 .header {
     display:flex;
-    background-image :url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1611936777/ifl6tdn28chnfawg5bza.jpg");
-    width: 100%;
-    min-height: 100vh;
+    background-image :url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1613284035/zqjkwwoz2w0rnchevcpk.png");
+    // width: 100%;
+    // min-height: 100vh;
+
+    width: 100vw;  
+    height: 56.25vw;
+
     background-repeat: no-repeat;
     background-size: cover;
     // height: 230px;
     // padding-top: 30px;
     // padding-bottom: 20px;
     // border: 3px solid red;
-    justify-content: space-around;
+    justify-content: center;
     // padding-bottom: 140px;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     background-color:#393b3a;
     // position: fixed;
-    max-width:100%;
+    // max-width:100%;
     margin-bottom: 20px;
     z-index:0;
 
     h1 {
-        font-family: 'monsterrat';
-        color: white;
+        font-family: 'Montserrat', sans-serif;
+        color: rgb(104, 93, 93);
+        font-size: 75px;
+        line-height: 60px
+    }
+
+    h3 {
+        font-family: 'Montserrat', sans-serif;
+        color: rgb(104, 93, 93);
+        font-size: 75px;
+        line-height: 43px
     }
 }
 
+.menu-container{
+    display:flex;
+    flex-direction: column;
+    margin-top: -15vw;
+    margin-right: 4vw;
+    position: relative;
 
-.logorelook{
-    width: 320px;
-    height: 274px;
-    background-image: url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1611944510/lewxtiqdjcpanmmawq8x.png");
-    background-position: center;
+}
+.menu-container.active{
+    display:flex;
+    flex-direction: column;
+    margin-top: 0;
+    margin-right: 0;
+    position: relative;
+    width:100vw;
+
+}
+.logo{
+    // width: 800px;
+    // height: 274px;
+    // background-image: url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1613244586/df5heu8yopi2qwxvjqsn.png");
+    // background-position: center;
     
-    background-repeat: no-repeat;
+    // background-repeat: no-repeat;
     // background-size: cover;
-    padding-bottom: 10px;
+    // padding-bottom: 30px;
+    // margin-left: 58vw;
+    // margin-top: 13vw;
 }
 
+// .titre {
+//     font-family: 'Cormorant Garamond', serif;
+// }
+.fa-shopping-cart{
+    position:fixed;
+    right: 20px;
+    top: 20px;
+    color:   rgb(104, 93, 93);
+    font-size: 24px;
+}
+
+.logo {
+    position: absolute;
+    top: -29px;
+    left: 327px;
+}
 
 
 .navmenu {
     display: flex;
-    justify-content: center;
+    // justify-content: center;
     list-style-type: none;
     // grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
-    font-family: Montserrat;
-
+    font-family: 'Montserrat', sans-serif;
+    // margin-top: 10px;
+    // margin-left: 58vw;
+    // margin-top: -3vw;
     // padding-top: 30%;
     transition: 0.4s;
     
@@ -63,13 +118,14 @@ body {
     li {
     display: flex;
     align-items: center;
-    padding-left: 45px;
-    padding-right: 45px;
+    padding-left: 10px;
+    padding-right: 10px;
     // border-left: 1px solid #ac814a;
-    color: #ffffff;
-     border-right: 1px solid #ffffff;
-     font-size: 16px;
+    color: #5c5353;
+     border-right: 1px solid #5c5353;
+     font-size: 12px;
      transition: 0.4s;
+     font-weight:bold;
 
 }
 
@@ -82,9 +138,12 @@ li:hover {
  li:last-child {
     border-right: none;
 }
-
+// li:first-child {
+    
+//     padding-left: 0px;
+// }
 a {
-    color: #fffdfd;
+    color: #5c5353;
     text-decoration: none;
     // padding: 10px;
 }
@@ -97,6 +156,22 @@ a {
     width: 100%;
     height: 80px;
     transition: 0.4s;
+    font-size: 18px;
+    // padding-left: 40px;
+    // padding-right: 40px;
+    justify-content: center;
+    // font-weight:light;
+li{
+    border-right: 1px solid white;
+}
+
+    a{
+        color:white;
+        font-size: 16px;
+        font-weight: lighter; 
+        padding-right: 25px;
+        padding-left: 25px;  
+    }
 }
 
 .bloc{

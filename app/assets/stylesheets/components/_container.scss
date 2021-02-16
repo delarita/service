@@ -129,11 +129,16 @@
   //     grid-template-columns: 1fr 1fr ;
   //   }
   // }
+
+.blockbann{
+  display:flex;
+
+}
 .patricia{
-  width:320px;
-  height: 200px;
+  width:302px;
+  // height: 200px;
   background-size:cover;
-  margin-right:15px;
+  // margin-right:15px;
   
   
 }
@@ -157,7 +162,7 @@ body{
   display:grid;
   grid-template-columns: 1fr 1fr;
   background-color: white;
-  width:1000px;
+ 
   margin-top: 100px;
   
 
@@ -257,6 +262,8 @@ body{
   }
 
   @media (max-width: 740px) {
+
+    
     /* For a screen < 720px, this CSS will be read */
     .bloc
      {
@@ -283,6 +290,11 @@ body{
 
   @media (max-width: 540px) {
     /* For a screen < 540px, this CSS will be read */
+
+.container {
+  grid-template-columns: 1fr  ;
+}
+
     .bloc
      {
       grid-template-columns: 1fr;

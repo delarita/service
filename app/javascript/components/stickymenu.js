@@ -1,6 +1,9 @@
 const selectNav = () => { 
   // on cible l'objet nav
   let objNav = document.querySelector(".navmenu");
+  let contain = document.querySelector(".menu-container");
+  let title = document.querySelector(".titre");
+  let logoDiv = document.querySelector(".logo");
   // on mémorise la position de nav
   let memoPositionNav = objNav.offsetTop;
 
@@ -15,10 +18,16 @@ const selectNav = () => {
       objNav.style.top = 0;
       objNav.style.zIndex = 999;
       objNav.classList.add("active");
+      contain.classList.add("active");
+      title.style.display ="none";
+      logoDiv.style.display ="none";
     }
     if(posCurseur<101){
       objNav.style.position = "";
       objNav.classList.remove("active");
+      contain.classList.remove("active");
+      title.style.display ="";
+      logoDiv.style.display ="";
     }
   }
   // evenement
