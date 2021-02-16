@@ -93,11 +93,38 @@ body {
     font-size: 24px;
 }
 
+.aboutaccueil{
+    display: flex;
+    position:fixed;
+    right: 50px;
+    top: 21px;
+
+    li {
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        // border-left: 1px solid #ac814a;
+        color: #5c5353;
+        //  border-right: 1px solid #5c5353;
+         font-size: 16px;
+
+        }
+         a {
+            color: #5c5353;
+            text-decoration: none;
+            // padding: 10px;
+        }
+
+}
+
 .logo {
     position: absolute;
     top: -29px;
     left: 327px;
 }
+
+
 
 
 .navmenu {
