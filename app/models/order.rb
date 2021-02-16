@@ -1,5 +1,7 @@
 class Order < ApplicationRecord
   has_many :order_items
+
+  belongs_to :user
   #monetize :total_price_cents
   #monetize :subtotal_price_cents
 
@@ -19,6 +21,7 @@ class Order < ApplicationRecord
         #p order_item.unit_price*order_item.quantity
         p order_item.unit_price
         p "inter 0 ---------- if"
+        p order_item.quantity
         p order_item.unit_price*order_item.quantity
         p "inter 1 ---------- if"
         p calc

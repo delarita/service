@@ -9,6 +9,10 @@ class SoinvisagesController < ApplicationController
     #@soinvisages = Soinvisage.all
     @soinvisages = policy_scope(Soinvisage)
     @order_item = current_order.order_items.new
+
+
+    @bc_soinvisage = Soinvisage.first
+    @boncadeau = current_order.order_items.new
   end
 
   def new

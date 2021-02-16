@@ -28,6 +28,9 @@ class OrderItemsController < ApplicationController
 
     #p "14"
     #binding.pry
+    #puts current_or_guest_user.id
+    #puts "***************************************"
+    @order.user = current_or_guest_user
     @order.save
     #puts "save"
     session[:order_id] = @order.id
