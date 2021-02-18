@@ -40,7 +40,7 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'letter_opener', group: :development
-
+gem 'geocoder'
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'

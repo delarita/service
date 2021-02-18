@@ -42,44 +42,60 @@
 
 <%# <div class="mainpage"></div> %>
 <div class="container">
-<div class = "bloc1">
-
-    <img class = "d-block w-100" src ="https://images.unsplash.com/photo-1487412912498-0447578fcca8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80" alt="soinvisage">
-
-
+<div class = "bloc">
     <div class="text">
       <h2 class = "text-center">Maquillage Permanent</h2>
-      <p>Le maquillage permanent : Ravissante à toute heure. Vous désirez avoir bonne mine même au réveil ? Envie d’un maquillage durable ? Grâce à Relook Esthétique, offrez-vous un moment purement féminin.</p>
+      <h3 class = "text-center">~</h3>
+      <p class = "text-center">Vous désirez avoir bonne mine même au réveil ? Envie d’un maquillage durable ? Grâce à Relook Esthétique, offrez-vous un moment purement féminin.</p>
+      <%= link_to "Plus d'infos", maquillages_path, class: "btn btn-ghost" %> 
     </div>
-</div>
 
-<div class = "bloc">
+    <%# <div class="img-bloc1"> %>
+    <%# <img class = "d-block w-100" src ="https://images.unsplash.com/photo-1487412912498-0447578fcca8?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80" alt="soinvisage"> %>
+
+    
+    
+
+
+
+    <%# <div class="img-bloc2"> %>
+    <%# <img class = "d-block w-100" src ="https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="soinvisage"> %>
+    <%# </div> %>
     <div class="text">
       <h2 class = "text-center">Massage</h2>
-            <p>Évacuez votre stress et gagnez en énergie.
-Par le biais du massage, la découverte est double: l'éveil de la sensibilité et la redécouverte du plaisir.</p>
-
-    </div>
-    <img class = "d-block w-100" src ="https://images.unsplash.com/photo-1600334129128-685c5582fd35?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="soinvisage">
-
-</div>
-
-<div class = "bloc1">
-    <img class = "d-block w-100" src ="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="soinvisage">
-    <div class="text">
-      <h2 class = "text-center">Soins du Visage</h2>
-            <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nulla quaerat delectus, dolorum nam magnam in maxime amet assumenda corrupti obcaecati enim accusantium consequuntur. Quam explicabo asperiores consequatur natus numquam!</p>
-
+      <h3 class = "text-center">~</h3>
+        <p class = "text-center">Évacuez votre stress et gagnez en énergie. Par le biais du massage, la découverte est double: l'éveil de la sensibilité et la redécouverte du plaisir.</p>
+        <%= link_to "Plus d'infos", massages_path, class: "btn btn-ghost" %> 
     </div>
 </div>
+
+    <div class="img-bloc2"></div>
 
 <div class = "bloc">
+
+
+    <%# <img class = "d-block w-100" src ="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="soinvisage"> %>
+    <div class="text">
+      <h2 class = "text-center">Soins du Visage</h2>
+       <h3 class = "text-center">~</h3>
+            <p class = "text-center" >Aidez votre peau à se préserver et à lutter efficacement contre les signes du temps. Notre gamme comprend une large palette de produits cosmétiques naturels 100% Bio à base d’Aloe vera et d’Alginates (algues) répondant aux besoins de toutes les peaux.</p>
+         <%= link_to "Plus d'infos", soinvisages_path, class: "btn btn-ghost" %>
+    </div>
+
+    <%# <div class="img-bloc3"></div> %>
+
+
+
+<%# <div class="img-bloc4"></div> %>
      <div class="text">
         <h2 class = "text-center">Épilations</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nulla quaerat delectus, dolorum nam magnam in maxime amet assumenda corrupti obcaecati enim accusantium consequuntur. Quam explicabo asperiores consequatur natus numquam!</p>
+        <h3 class = "text-center">~</h3>
+              <p class = "text-center">Nous utilisons les produits PERRONT RIGOT, pionnier et expert de l’épilation. Cette gamme répond à tous les besoins de façon ciblée et adaptée par ses différentes cires. Après chaque épilation, des soins « ralentisseurs de pousse de poils » et « spécial poils incarnés » sont utilisés.</p>
+            <%= link_to "Plus d'infos", epilations_path, class: "btn btn-ghost" %> 
 
      </div>
-    <img class = "d-block w-100" src ="https://images.unsplash.com/photo-1529982412356-901cc3a363cf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="soinvisage">
+    <%# <img class = "d-block w-100" src ="https://images.unsplash.com/photo-1529982412356-901cc3a363cf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="soinvisage"> %>
+
 </div>
 
 <div class="menu-button"><i class="fas fa-bars fa-3x"></i></div>

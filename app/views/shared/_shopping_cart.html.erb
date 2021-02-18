@@ -1,4 +1,41 @@
-<%= link_to carts_path do %>
 
-<i class="fas fa-shopping-cart"></i>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+    
+  </div>
+
+<div class= "aboutaccueil">
+
+
+
+
+
+
+
+<li><%= link_to "CONTACT", root_path%></li>
+<li><a href="#about">A PROPOS</a></li>
+<ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+         <li class="nav-item dropdown">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+           
+            <%= render 'layouts/mini_cart', class: "dropdown-item" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+</div>
+
+<%= link_to carts_path do %>
+<div class="cart-view">
+    <i class="fas fa-shopping-cart"></i>
+    <div class="cart-inside">
+    <%= current_order.order_items.size %>
+    </div>
+</div>    
 <% end %>
