@@ -3,6 +3,7 @@ class CartsController < ApplicationController
   skip_after_action :verify_policy_scoped
 
   def index
+    #Tout doit etre remis en ligne
     #orders = Order.where(user_id: current_user.id)
     @orders = current_or_guest_user.orders.where(state: 'pending')
 
