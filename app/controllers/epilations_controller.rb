@@ -65,8 +65,8 @@ class EpilationsController < ApplicationController
 
   def set_epilation
     @epilation = Epilation.find(params[:id])
-    p self.policy_class
-    raise
+    #p self.policy_class
+    #raise
     authorize @epilation
   end
 
