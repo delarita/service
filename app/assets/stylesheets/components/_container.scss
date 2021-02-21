@@ -130,10 +130,27 @@
   //   }
   // }
 
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+.service{
+  padding-right: 10px;
+}
+.form-group{
+  width: 20%;
+  margin-bottom: 0;
+}
+
 .blockbann{
   display:flex;
 
 }
+
+
+
 .patricia{
   width:302px;
   // height: 200px;
@@ -160,7 +177,7 @@ body{
 
 .container {
 
-    background-color: white;
+  background-color: transparent;
     margin-top: 20px;
     display: flex;
     flex-direction: column;

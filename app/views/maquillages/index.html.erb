@@ -1,14 +1,25 @@
-<%= form_for([@bc_maquillage, @order_item], remote: true) do |f| %>
-  <%= f.hidden_field :orderitemable_type, value: "Maquillage" %>
-  <%= f.hidden_field :orderitemable_id, value: @bc_maquillage.id %>
-  <%= f.hidden_field :quantity, value: 1 %>
-  <% @order_item = @boncadeau %>
-  <% p @order_item %>
-  <%= f.submit "BON CADEAU", class: 'btn btn-primary btn-sm' %>
-<% end %>
+<%# <%= form_for([@bc_maquillage, @order_item], remote: true) do |f| %>
+  <%# <%= f.hidden_field :orderitemable_type, value: "Maquillage" %> 
+  <%# <%= f.hidden_field :orderitemable_id, value: @bc_maquillage.id %> 
+  <%# <%= f.hidden_field :quantity, value: 1 %> 
+  <%# <% @order_item = @boncadeau %> 
+  <%# <% p @order_item %> 
+  <%# <%= f.submit "BON CADEAU", class: 'btn btn-primary btn-sm' %> 
+<%# <% end %> 
+<div class="navmenu active">
+            
+                <%# <li><%= link_to "ACCUEIL", root_path%>
+                <%# </li> %> 
+                <%# <li><a href="#about">A PROPOS</a></li> %>
+                <li><%= link_to "EPILATIONS", epilations_path %></li>
+                <li><%= link_to "MASSAGES", massages_path %></li>
+                <li><%= link_to "SOINS DU VISAGE", soinvisages_path %></li>
+                <li><%= link_to "MAQUILLAGE PERMANENT", maquillages_path %></li>
 
+            </div>
+<div class="makeup-bann"></div>
 <div class="container">
-  <h1>Les Maquillages Permanent</h1>
+  <h1>Maquillage Permanent</h1>
 
       <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -28,32 +39,34 @@
 <div>
 <div class="card-wrapper">
   <% @maquillages.each do |maquillage| %>
-    <div class="cards">
-      <p>
-        <!-- ins 2 l--->
-        <%= form_for([maquillage, @order_item], remote: true) do |f| %>
-          <%= f.hidden_field :orderitemable_type, value: "Maquillage" %>
-          <%= f.hidden_field :orderitemable_id, value: maquillage.id %>
+      <div class="cards">
+          <div class="service">
+            <!-- ins 2 l--->
+            <%= form_for([maquillage, @order_item], remote: true) do |f| %>
+              <%= f.hidden_field :orderitemable_type, value: "Maquillage" %>
+              <%= f.hidden_field :orderitemable_id, value: maquillage.id %>
 
-          <%= maquillage.name %><%= "|" if maquillage.description != "" %>
-          <%= maquillage.description %><%= "|" if maquillage.price != "" %>
-          <%= humanized_money_with_symbol(maquillage.price) %>
-
+              <%= maquillage.name %><%= "" if maquillage.description != "" %>
+              <%= maquillage.description %><%= "~" if maquillage.price != "" %>
+              <%= humanized_money_with_symbol(maquillage.price) %>
+          </div>
           <!-- ins 4 l--->
           <div class="form-group">
             <%= f.number_field :quantity, value: 1, min: 1, class: 'form-control' %>
           </div>
+
           <%= f.submit "Add to cart", class: 'btn btn-ghost btn-sm' %>
-        <% end %>
-      </p>
-      <p>
-        <% if maquillage.photo.attached? %>
-          <%= cl_image_tag maquillage.photo.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
-      </p>
-      <p>
-        <%= link_to "En savoir plus", maquillage_path(maquillage) %>
-      </p>
+
+  <% end %>
+      <%# </p> %>
+      <%# <p> %>
+        <%# <% if maquillage.photo.attached? %> 
+          <%# <%= cl_image_tag maquillage.photo.key, height: 300, width: 400, crop: :fill %> 
+        <%# <% end %> 
+      <%# </p> %>
+      <%# <p> %>
+        <%# <%= link_to "En savoir plus", maquillage_path(maquillage) %> 
+      <%# </p> %>
       <p>
         <% if policy(Maquillage).destroy? %>
           <%= link_to "del",

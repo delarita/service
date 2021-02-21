@@ -11,7 +11,13 @@ body {
         width: 48% !important;
     
 }
-
+.makeup-bann{
+    background-image: url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1613939181/oyunli52djlj6y57pnbr.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;  
+    height: 56.25vw;
+}
 .header {
     display:flex;
     background-image :url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1613284035/zqjkwwoz2w0rnchevcpk.png");
@@ -304,6 +310,7 @@ li{
     transition: opacity 0.3s ease;
     font-family: 'Montserrat';
     font-size: 16px;
+    margin-left:auto;
   }
   
   .btn-ghost:hover {
