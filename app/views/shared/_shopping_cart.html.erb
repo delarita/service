@@ -11,7 +11,7 @@
 
 
 
-<li><%= link_to "CONTACT", root_path%></li>
+<li><%= link_to "CONTACT", salons_path%></li>
 <li><a href="#about">A PROPOS</a></li>
 <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
@@ -35,7 +35,8 @@
 <div class="cart-view">
     <i class="fas fa-shopping-cart"></i>
     <div class="cart-inside">
-    <%= current_order.order_items.size %>
+      <%# <%= current_order.order_items.size %> 
+      <%= render 'layouts/cart_icon' %>
     </div>
 </div>    
 <% end %>

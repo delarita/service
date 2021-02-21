@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   include Pundit
   include ApplicationHelper
 
+  before_action :set_counter  
 
   # Pundit: white-list approach.
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
@@ -43,6 +44,10 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def set_counter
+    @cart_count = current_order.order_items.size
+  end
 
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/

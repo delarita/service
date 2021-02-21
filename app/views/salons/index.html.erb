@@ -1,0 +1,39 @@
+
+<div class="navmenu active">
+            
+                <%# <li><%= link_to "ACCUEIL", root_path%>
+                <%# </li> %> 
+                <%# <li><a href="#about">A PROPOS</a></li> %>
+                <li><%= link_to "EPILATIONS", epilations_path %></li>
+                <li><%= link_to "MASSAGES", massages_path %></li>
+                <li><%= link_to "SOINS DU VISAGE", soinvisages_path %></li>
+                <li><%= link_to "MAQUILLAGE PERMANENT", maquillages_path %></li>
+
+            </div>
+
+
+<div class="container">
+     <div class="map-container">
+          <div class="contact-infos">
+
+               <div class="titre">
+                    <h1>RELOOK
+                    ESTHETIQUE</h1>
+               </div>
+
+               <div class="adresse">
+                    <p>225 Chemin Saint-Georges, Residence Lou Casteu</p>
+                    <p>13150 Tarascon </p> 
+                    <p>Téléphone : 04 90 91 04 73</p> 
+                    <p>Portable : 06 13 57 71 58</p>
+               </div>
+
+          </div>
+
+          <div id="map"
+               style="width: 40vw; height: 30vw;"
+               data-markers="<%= @markers.to_json %>"
+               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
+     </div>
+</div>

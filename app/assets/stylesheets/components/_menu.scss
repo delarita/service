@@ -351,6 +351,19 @@ li{
 
 }
 
+.map-container{
+    display: flex;
+
+    h1 {
+        font-family: 'Montserrat', sans-serif;
+        color: #685d5d;
+        font-size: 75px;
+
+    }
+}
+
+
+
 
 // .mainpage{
 //     margin-bottom: 10vw;
@@ -374,7 +387,9 @@ li{
     flex-direction: column;
     // justify-content: center;
     align-items: center;
-    padding-bottom: 30px;
+    padding-bottom: 10vw;
+    padding-top: 10vw;
+
     p{
         padding-bottom: 2px;
         padding-top: 2px;

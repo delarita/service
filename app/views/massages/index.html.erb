@@ -24,8 +24,9 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-</div>
+
 <div>
+<div class="card-wrapper">
   <% @massages.each do |massage| %>
     <div class="cards">
       <p>
@@ -40,9 +41,9 @@
 
           <!-- ins 4 l--->
           <div class="form-group">
-            <%= f.text_field :quantity, value: 1, min: 1, class: 'form-control' %>
+            <%= f.number_field :quantity, value: 1, min: 1, class: 'form-control' %>
           </div>
-          <%= f.submit "Add to cart", class: 'btn btn-primary btn-sm' %>
+          <%= f.submit "Add to cart", class: 'btn btn-ghost btn-sm' %>
         <% end %>
       </p>
       <p>
@@ -64,9 +65,9 @@
     </div>
   <% end %>
 </div>
-
+</div>
 <% if policy(Massage).new? %>
 <p><%= link_to "Nouvelle Prestation", new_massage_path %></p>
 <% end %>
-
+</div>
 

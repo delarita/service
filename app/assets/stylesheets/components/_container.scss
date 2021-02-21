@@ -161,7 +161,7 @@ body{
 .container {
 
     background-color: white;
-    margin-top: 100px;
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -292,6 +292,13 @@ body{
 
   @media (max-width: 540px) {
     /* For a screen < 540px, this CSS will be read */
+
+.header{
+  height: 84vw;
+  margin-bottom: 0px;
+}
+
+.menu-container{display:none}
 
 .container {
   grid-template-columns: 1fr  ;
