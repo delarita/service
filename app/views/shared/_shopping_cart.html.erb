@@ -35,7 +35,8 @@
 <div class="cart-view">
     <i class="fas fa-shopping-cart"></i>
     <div class="cart-inside">
-    <%= current_order.order_items.size %>
+      <%# <%= current_order.order_items.size %> 
+      <%= render 'layouts/cart_icon' %>
     </div>
 </div>    
 <% end %>

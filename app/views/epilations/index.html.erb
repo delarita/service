@@ -8,7 +8,7 @@
 <% end %>
 
 <div class="container">
-  <h1>Les Epilations</h1>
+  <h1>Epilations</h1>
 
       <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -24,7 +24,7 @@
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
       </nav>
-</div>
+
 <div>
   <% @epilations.each do |epilation| %>
     <div class="cards">
@@ -40,9 +40,9 @@
 
           <!-- ins 4 l--->
           <div class="form-group">
-            <%= f.text_field :quantity, value: 1, min: 1, class: 'form-control' %>
+            <%= f.number_field :quantity, value: 1, min: 1, class: 'form-control' %>
           </div>
-          <%= f.submit "Add to cart", class: 'btn btn-primary btn-sm' %>
+          <%= f.submit "Add to cart", class: 'btn btn-ghost btn-sm' %>
         <% end %>
       </p>
       <p>
@@ -68,5 +68,5 @@
 <% if policy(Epilation).new? %>
 <p><%= link_to "Nouvelle Prestation", new_epilation_path %></p>
 <% end %>
-
+</div>
 
