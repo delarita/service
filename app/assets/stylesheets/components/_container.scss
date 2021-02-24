@@ -129,7 +129,23 @@
   //     grid-template-columns: 1fr 1fr ;
   //   }
   // }
+.makeup-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 50px;
+    grid-gap: 16px;
+}
 
+
+.card-wrapper{
+  width: 35vw;
+  font-family: 'Open sans', sans-serif;   
+ 
+  margin-right: 20px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
 .cards {
   display: flex;
   align-items: center;
@@ -138,6 +154,13 @@
 }
 .service{
   padding-right: 10px;
+}
+
+.service-price{
+  margin-left:auto;
+}
+.price{
+  margin-right: 15px;
 }
 .form-group{
   width: 20%;
@@ -169,20 +192,39 @@ body{
   // border-left: 0.5px solid grey;
   padding-left: 10px;
   background-color: white;
+    p{
+      font-family:'Open sans', sans-serif;   
+    }
 }
 .pic {
-  display:flex;
-  justify-content: center;
+  // display:flex;
+  // justify-content: center;
+  // width: 15vw;
+  // height: 10vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("https://coolwallpapers.me/picsup/2611782-monica-bellucci-cool-wallpaper-for-pc.jpg");
 }
 
+.about-container{
+  margin-top: 50px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap:16px;
+
+}
+
+.caddie-container{
+  margin-top:50px;
+}
 .container {
 
   background-color: transparent;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    // margin-top: 20px;
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
   
 
   h1 {
@@ -193,7 +235,7 @@ body{
    }
 
    p{
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Open sans', sans-serif;   
    }
 }
