@@ -5,7 +5,30 @@
     <% end %>
   </ul>
 <% end %>
+<div class="navmenu-presta">
+            
+                <%# <li><%= link_to "ACCUEIL", root_path%>
+                <%# </li> %> 
+                <%# <li><a href="#about">A PROPOS</a></li> %>
 
+                <div class="logo"></div>
+
+
+
+                <li><%= link_to "EPILATIONS", epilations_path %></li>
+                <li><%= link_to "MASSAGES", massages_path %></li>
+                <li><%= link_to "SOINS DU VISAGE", soinvisages_path %></li>
+                <li><%= link_to "MAQUILLAGE PERMANENT", maquillages_path %></li>
+
+            </div>
+<div class="false-menu"></div>
+<div class="under-menu">
+
+<h1 class="under-title">Caddie</h1>
+
+</div>
+<div class="container">
+<div class="caddie-container">
 <% if @orders.length>0 %>
   <% @orders.each do |order| %>
    <div>
@@ -53,3 +76,5 @@
   <% end %>
 
 <% end %>
+</div>
+</div>

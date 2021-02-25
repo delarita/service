@@ -11,7 +11,34 @@ body {
         width: 48% !important;
     
 }
-
+.false-menu{
+    height:70px;
+}
+.under-menu{
+    
+    width:100%;
+    height: 90px;
+    background-color: #f0b5e3;
+    display:flex;
+    align-items:center;
+    padding-left: 14vw;
+        h1{
+            font-family:'Montserrat', sans-serif;
+            color:white;
+        }
+}
+// .under-title{
+//     max-width: 1140px;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
+.makeup-bann{
+    background-image: url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1613939181/oyunli52djlj6y57pnbr.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 39vw;  
+    height: 25vw;
+}
 .header {
     display:flex;
     background-image :url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1613284035/zqjkwwoz2w0rnchevcpk.png");
@@ -223,14 +250,105 @@ li{
         font-weight: lighter; 
         padding-right: 25px;
         padding-left: 25px;  
+
+        position: relative;
+	// padding: 1rem 0 0.5rem;
+	// margin: 0 1.5rem;
+	color:#5c5353;
+	text-decoration: none;
+	
+	
+	&::after {
+		content: '';
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		transform: translateX(-50%) scaleX(0);
+		transform-origin: 50% 50%;
+		width: 100%;
+		height: 1px;
+		background-color: #5c5353;
+		transition: transform 250ms;
+	}
+	
+	&:hover {
+		
+		&::after {
+			transform: translateX(-50%) scaleX(1);
+		}
+		
+	}
     }
 
-    a:hover{
-        font-weight: bold;
+    // a:hover{
+    //     font-weight: bold;
         
-    }
+    // }
 }
 
+
+
+.navmenu-presta{
+    position:fixed;
+    display: flex;
+    // justify-content: center;
+    list-style-type: none;
+    // grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+    width: 100%;
+    height: 70px;
+    transition: 0.4s;
+    font-size: 18px;
+    // padding-left: 40px;
+    // padding-right: 40px;
+    justify-content: center;
+    z-index:999;
+    
+li{
+    // border-right: 1px solid white;
+}
+
+
+
+    a{
+        // color:white;
+        position:relative;
+        color: #5c5353;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: lighter; 
+        padding-right: 25px;
+        padding-left: 25px;  
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%) scaleX(0);
+            transform-origin: 50% 50%;
+            width: 80%;
+            height: 1px;
+            background-color: #5c5353;
+            transition: transform 250ms;
+        }
+        
+        &:hover {
+            
+            &::after {
+                transform: translateX(-50%) scaleX(1);
+            }
+            
+        }
+    }
+
+    // a:hover{
+    //     font-weight: bold;
+        
+    // }
+}
 
 .bloc{
     // width:80%;
@@ -304,9 +422,26 @@ li{
     transition: opacity 0.3s ease;
     font-family: 'Montserrat';
     font-size: 16px;
+    // margin-left:auto;
   }
   
   .btn-ghost:hover {
+    opacity: 1;
+  }
+  .btn-ghost2 {
+    color: #4A4A4A;
+    border: 1px solid #4A4A4A;
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-weight: lighter;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    font-family: 'Open sans';
+    font-size: 12px;
+    margin-left:auto;
+  }
+  
+  .btn-ghost2:hover {
     opacity: 1;
   }
 
@@ -323,7 +458,7 @@ li{
     
     background-image: url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80");
    
-    width: 100vw;
+    // width: 100vw;
     background-attachment: fixed;
     background-size:cover;
     min-height: 46vw;
@@ -353,6 +488,7 @@ li{
 
 .map-container{
     display: flex;
+    margin-top:50px;
 
     h1 {
         font-family: 'Montserrat', sans-serif;
@@ -514,5 +650,18 @@ transition: 0.6s;
 //     // color: rgb(0, 0, 0);
 //     // z-index: 1;
 
+// }
+
+
+
+
+// ul {
+// 	list-style: none;
+// 	margin: 0;
+// 	padding: 0;
+// }
+
+// li {
+// 	display: inline-flex;
 // }
 
