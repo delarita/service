@@ -4,8 +4,7 @@ class CartsController < ApplicationController
 
   def index
 
-    #Tout doit etre remis en ligne
-    #orders = Order.where(user_id: current_user.id)
+    # puts "Tout doit etre remis en ligne"
     @orders = current_or_guest_user.orders.where(state: 'pending')
 
     @orders.each do |order|
@@ -22,6 +21,8 @@ class CartsController < ApplicationController
           success_url: carts_url,
           cancel_url: carts_url
         )
+        p "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+        p stripe_session
         order.update(checkout_session_id: stripe_session.id)
       end
     end

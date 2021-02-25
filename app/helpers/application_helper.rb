@@ -24,7 +24,7 @@ module ApplicationHelper
         if session[:guest_user_id] && session[:guest_user_id] != current_user.id
           logging_in
           # reload guest_user to prevent caching problems before destruction
-          guest_user(with_retry = false).try(:reload).try(:destroy)
+          guest_user(with_retry = false).try(:destroy)
           session[:guest_user_id] = nil
         end
         current_user
@@ -64,7 +64,7 @@ module ApplicationHelper
     end
 
     def create_guest_user
-      u = User.new(:nick_name => "guest", :email => "guest_#{Time.now.to_i}#{rand(100)}@example.com")
+      u = User.new(:nick_name => "guest", :email => "guest_#{Time.now.to_i}#{rand(100)}devise@example.com")
       u.save!(:validate => false)
       session[:guest_user_id] = u.id
       u

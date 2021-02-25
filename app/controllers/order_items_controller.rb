@@ -15,16 +15,28 @@ class OrderItemsController < ApplicationController
   def update
     puts "on passe par le update controller"
     @order = current_order
-    @order_item = @order.order_items.find(params[:id])
-    @order_item.update(order_item_params)
+    begin
+      @order_item = @order.order_items.find(params[:id])
+      @order_item.update(order_item_params)
+    rescue
+      @order_item = OrderItem.find(params[:id])
+      @order_item.update(order_item_params)
+    end
     @order_items = @order.order_items
     redirect_to carts_path
   end
 
   def destroy
+    puts "on passe par le destroy controller"
     @order = current_order
-    @order_item = @order.order_items.find(params[:id])
-    @order_item.destroy
+    begin
+      @order_item = @order.order_items.find(params[:id])
+      @order_item.destroy
+    rescue
+      @order_item = OrderItem.find(params[:id])
+      @order_item.destroy
+    end
+    puts "on continue dans le destroy controller"
     @order_items = @order.order_items
     redirect_to carts_path
   end

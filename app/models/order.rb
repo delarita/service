@@ -1,11 +1,12 @@
 class Order < ApplicationRecord
-  has_many :order_items
+  has_many :order_items, dependent: :destroy
 
   belongs_to :user
   #monetize :total_price_cents
   #monetize :subtotal_price_cents
 
   before_save :set_subtotal
+
 
   def subtotal_price
     calc = 0
@@ -20,8 +21,9 @@ class Order < ApplicationRecord
   end
 
   private
-    def set_subtotal
-      puts "--------------------3 - set_subtotal "
-      self[:subtotal_price_cents] = subtotal_price
-    end
+  def set_subtotal
+    # puts "--------------------3 - set_subtotal "
+    self[:subtotal_price_cents] = subtotal_price
+  end
+
 end
