@@ -6,10 +6,8 @@ class MaquillagesController < ApplicationController
   end
 
   def index
-    #@maquillages = Maquillage.all
     @maquillages = policy_scope(Maquillage)
     @order_item = current_order.order_items.new
-
     @bc_maquillage = Maquillage.first
     @boncadeau = current_order.order_items.new
   end
@@ -20,8 +18,6 @@ class MaquillagesController < ApplicationController
   end
 
   def show
-    #@maquillage = Maquillage.find(params[:id])
-    #authorize @maquillage
   end
 
   def create
@@ -36,19 +32,14 @@ class MaquillagesController < ApplicationController
   end
 
   def edit
-    #@maquillage = Maquillage.find(params[:id])
-    #authorize @maquillage
   end
 
   def update
-    #@maquillage = Maquillage.find(params[:id])
-    #authorize @maquillage
     @maquillage.update(maquillage_params)
     redirect_to maquillage_path(@maquillage)
   end
 
   def destroy
-    #@maquillage = Maquillage.find(params[:id])
     authorize @maquillage
     @maquillage.destroy
     redirect_to maquillages_path
