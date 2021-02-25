@@ -6,9 +6,9 @@
   </ul>
 <% end %>
 <div class="navmenu-presta">
-            
+
                 <%# <li><%= link_to "ACCUEIL", root_path%>
-                <%# </li> %> 
+                <%# </li> %>
                 <%# <li><a href="#about">A PROPOS</a></li> %>
 
                 <div class="logo"></div>
@@ -31,6 +31,7 @@
 <div class="caddie-container">
 <% if @orders.length>0 %>
   <% @orders.each do |order| %>
+  <% raise %>
    <div>
     <% if order.order_items.length>0 %>
       <% order.order_items.each do |order_item| %>

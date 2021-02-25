@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   include Pundit
   include ApplicationHelper
 
-  before_action :set_counter  
+  before_action :set_counter
 
   # Pundit: white-list approach.
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 
 
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
-  rescue_from Exception, with: :not_found
+  #rescue_from Exception, with: :not_found
   rescue_from ActionController::RoutingError, with: :not_found
 
   # def raise_not_found

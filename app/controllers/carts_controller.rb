@@ -3,10 +3,10 @@ class CartsController < ApplicationController
   skip_after_action :verify_policy_scoped
 
   def index
+
     #Tout doit etre remis en ligne
     #orders = Order.where(user_id: current_user.id)
     @orders = current_or_guest_user.orders.where(state: 'pending')
-
     @orders.each do |order|
       p order.subtotal_price_cents
       if order.subtotal_price_cents != 0
@@ -23,6 +23,7 @@ class CartsController < ApplicationController
         )
         order.update(checkout_session_id: stripe_session.id)
       end
+
     end
   end
 end
