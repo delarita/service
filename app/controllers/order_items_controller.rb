@@ -4,35 +4,11 @@ class OrderItemsController < ApplicationController
   before_action :load_orderitemable
   skip_after_action :verify_authorized
 
-    def create
-
-    #puts "here"
-    #p @orderitemable
-    #p "12"
-    #p current_order
+  def create
     @order = current_order
-    #p "6"
-    #p @order
     @order_item = @order.order_items.new(order_item_params)
-    puts "new order item"
-    p @order_item
-    #p params
-    #prod = OrderItem.where("orderitemable_type = ? AND orderitemable_id = ?", params[:order_item][:orderitemable_type], params[:order_item][:orderitemable_id].to_i)
-    # p prod
-    #p "13"
-
-    #_____________________
-    #authorize @order
-    #authorize @order_item
-    #---------------------
-
-    #p "14"
-    #binding.pry
-    #puts current_or_guest_user.id
-    #puts "***************************************"
     @order.user = current_or_guest_user
     @order.save
-    #puts "save"
     session[:order_id] = @order.id
   end
 

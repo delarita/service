@@ -5,35 +5,38 @@
     <% end %>
   </ul>
 <% end %>
+
+
 <div class="navmenu-presta">
-            
-                <%# <li><%= link_to "ACCUEIL", root_path%>
-                <%# </li> %> 
-                <%# <li><a href="#about">A PROPOS</a></li> %>
+  <%# <li><%= link_to "ACCUEIL", root_path%>
+  <%# </li> %>
+  <%# <li><a href="#about">A PROPOS</a></li> %>
+  <div class="logo"></div>
+  <li><%= link_to "EPILATIONS", epilations_path %></li>
+  <li><%= link_to "MASSAGES", massages_path %></li>
+  <li><%= link_to "SOINS DU VISAGE", soinvisages_path %></li>
+  <li><%= link_to "MAQUILLAGE PERMANENT", maquillages_path %></li>
+</div>
 
-                <div class="logo"></div>
 
-
-
-                <li><%= link_to "EPILATIONS", epilations_path %></li>
-                <li><%= link_to "MASSAGES", massages_path %></li>
-                <li><%= link_to "SOINS DU VISAGE", soinvisages_path %></li>
-                <li><%= link_to "MAQUILLAGE PERMANENT", maquillages_path %></li>
-
-            </div>
 <div class="false-menu"></div>
 <div class="under-menu">
-
 <h1 class="under-title">Caddie</h1>
+
 
 </div>
 <div class="container">
 <div class="caddie-container">
 <% if @orders.length>0 %>
   <% @orders.each do |order| %>
+
    <div>
     <% if order.order_items.length>0 %>
-      <% order.order_items.each do |order_item| %>
+
+      <!--- pour l'instant seule façon de classer les order_items avec la variable oi --->
+      <% oi = order.order_items.sort_by &:created_at %>
+      <% oi.each do |order_item| %>
+
         <div class="well">
           <div class="row">
             <div class="col-sm-8">
@@ -61,9 +64,7 @@
       <% end %>
       <h3>TOTAL : <%= order.subtotal_price/100 %></h3>
        <div class="btn-group">
-
         <%= form_for order, :url => new_order_payment_path(order), :method => :get do |f| %>
-
         <%= f.submit "Payement", class: 'btn btn-primary' %>
         <!--
         < %= link_to "Payer", redirect_to new_order_payment_path(order), remote: true, class: 'btn btn-danger'  %>

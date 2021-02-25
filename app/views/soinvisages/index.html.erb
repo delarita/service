@@ -1,73 +1,74 @@
-<%= form_for([@bc_soinvisage, @order_item], remote: true) do |f| %>
-  <%= f.hidden_field :orderitemable_type, value: "Soinvisage" %>
-  <%= f.hidden_field :orderitemable_id, value: @bc_soinvisage.id %>
-  <%= f.hidden_field :quantity, value: 1 %>
-  <% @order_item = @boncadeau %>
-  <% p @order_item %>
-  <%= f.submit "BON CADEAU", class: 'btn btn-primary btn-sm' %>
-<% end %>
+<%# <%= form_for([@bc_soinvisage, @order_item], remote: true) do |f| %>
+<%#  <%= f.hidden_field :orderitemable_type, value: "Soinvisage" %>
+<%#  <%= f.hidden_field :orderitemable_id, value: @bc_soinvisage.id %>
+<%#  <%= f.hidden_field :quantity, value: 1 %>
+<%#  <% @order_item = @boncadeau %>
+<%#  <% p @order_item %>
+<%#  <%= f.submit "BON CADEAU", class: 'btn btn-primary btn-sm' %>
+<%# <% end %>
+
+
+<div class="navmenu-presta">
+  <%# <li><%= link_to "ACCUEIL", root_path%>
+  <%# </li> %>
+  <%# <li><a href="#about">A PROPOS</a></li> %>
+
+  <div class="logo"></div>
+  <li><%= link_to "EPILATIONS", epilations_path %></li>
+  <li><%= link_to "MASSAGES", massages_path %></li>
+  <li><%= link_to "SOINS DU VISAGE", soinvisages_path %></li>
+  <li><%= link_to "MAQUILLAGE PERMANENT", maquillages_path %></li>
+</div>
+
+<div class="false-menu"></div>
+
+<div class="under-menu">
+  <h1 class="under-title">Les Soins du Visages</h1>
+</div>
 
 <div class="container">
-  <h1>Les Soins du Visages</h1>
+  <p>Description</p>
+  <div class="makeup-container">
+    <div class="card-wrapper">
+      <% @soinvisages.each do |soinvisage| %>
+        <div class="cards">
+          <div class="service">
+            <%= form_for([soinvisage, @order_item], remote: true) do |f| %>
+              <%= f.hidden_field :orderitemable_type, value: "Soinvisage" %>
+              <%= f.hidden_field :orderitemable_id, value: soinvisage.id %>
+              <%= soinvisage.name %><%= " " if soinvisage.description != "" %>
+              <%= soinvisage.description %><%= "~" if soinvisage.price != "" %>
 
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-            </button>
+              <div class="form-group">
+                <%= f.number_field :quantity, value: 1, min: 1, class: 'form-control' %>
+              </div>
+
+              <div class="service-price">
+                <span class="price">
+                 <%= humanized_money_with_symbol(soinvisage.price) %>
+                </span>
+                <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
+              </div>
+            <% end %>
+            <%= link_to "En savoir plus", soinvisage_path(soinvisage) %>
+            <% if policy(Soinvisage).destroy? %>
+              <p>
+                <%= link_to "del",
+                  soinvisage_path(soinvisage),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+              </p>
+            <% end %>
           </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active cart"><%= render 'layouts/cart' %></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </nav>
-
-<div>
-  <% @soinvisages.each do |soinvisage| %>
-    <div class="cards">
-      <p>
-        <!-- ins 2 l--->
-        <%= form_for([soinvisage, @order_item], remote: true) do |f| %>
-          <%= f.hidden_field :orderitemable_type, value: "Soinvisage" %>
-          <%= f.hidden_field :orderitemable_id, value: soinvisage.id %>
-
-          <%= soinvisage.name %><%= "|" if soinvisage.description != "" %>
-          <%= soinvisage.description %><%= "|" if soinvisage.price != "" %>
-          <%= humanized_money_with_symbol(soinvisage.price) %>
-
-          <!-- ins 4 l--->
-          <div class="form-group">
-            <%= f.number_field :quantity, value: 1, min: 1, class: 'form-control' %>
-          </div>
-          <%= f.submit "Add to cart", class: 'btn btn-ghost btn-sm' %>
-        <% end %>
-      </p>
-      <p>
-        <% if soinvisage.photo.attached? %>
-          <%= cl_image_tag soinvisage.photo.key, height: 300, width: 400, crop: :fill %>
-        <% end %>
-      </p>
-      <p>
-        <%= link_to "En savoir plus", soinvisage_path(soinvisage) %>
-      </p>
-      <p>
-        <% if policy(Soinvisage).destroy? %>
-          <%= link_to "del",
-            soinvisage_path(soinvisage),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-        <% end %>
-      </p>
+        </div>
+      <% end %>
     </div>
+  </div>
+  <% if policy(Soinvisage).new? %>
+    <p>
+      <%= link_to "Nouvelle Prestation", new_soinvisage_path %>
+    </p>
   <% end %>
 </div>
 
-<% if policy(Soinvisage).new? %>
-<p><%= link_to "Nouvelle Prestation", new_soinvisage_path %></p>
-<% end %>
-
-</div>
 

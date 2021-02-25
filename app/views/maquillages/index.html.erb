@@ -1,113 +1,72 @@
 <%# <%= form_for([@bc_maquillage, @order_item], remote: true) do |f| %>
-  <%# <%= f.hidden_field :orderitemable_type, value: "Maquillage" %> 
-  <%# <%= f.hidden_field :orderitemable_id, value: @bc_maquillage.id %> 
-  <%# <%= f.hidden_field :quantity, value: 1 %> 
-  <%# <% @order_item = @boncadeau %> 
-  <%# <% p @order_item %> 
-  <%# <%= f.submit "BON CADEAU", class: 'btn btn-primary btn-sm' %> 
-<%# <% end %> 
+  <%# <%= f.hidden_field :orderitemable_type, value: "Maquillage" %>
+  <%# <%= f.hidden_field :orderitemable_id, value: @bc_maquillage.id %>
+  <%# <%= f.hidden_field :quantity, value: 1 %>
+  <%# <% @order_item = @boncadeau %>
+  <%# <% p @order_item %>
+  <%# <%= f.submit "BON CADEAU", class: 'btn btn-primary btn-sm' %>
+<%# <% end %>
 <div class="navmenu-presta">
-            
-                <%# <li><%= link_to "ACCUEIL", root_path%>
-                <%# </li> %> 
-                <%# <li><a href="#about">A PROPOS</a></li> %>
+  <%# <li><%= link_to "ACCUEIL", root_path%>
+  <%# </li> %>
+  <%# <li><a href="#about">A PROPOS</a></li> %>
 
-                <div class="logo"></div>
-
-
-
-                <li><%= link_to "EPILATIONS", epilations_path %></li>
-                <li><%= link_to "MASSAGES", massages_path %></li>
-                <li><%= link_to "SOINS DU VISAGE", soinvisages_path %></li>
-                <li><%= link_to "MAQUILLAGE PERMANENT", maquillages_path %></li>
-
-            </div>
+  <div class="logo"></div>
+  <li><%= link_to "EPILATIONS", epilations_path %></li>
+  <li><%= link_to "MASSAGES", massages_path %></li>
+  <li><%= link_to "SOINS DU VISAGE", soinvisages_path %></li>
+  <li><%= link_to "MAQUILLAGE PERMANENT", maquillages_path %></li>
+</div>
 <div class="false-menu"></div>
 <div class="under-menu">
-
-<h1 class="under-title">Maquillage Permanent</h1>
-
+  <h1 class="under-title">Maquillage Permanent</h1>
 </div>
 <div class="container">
-
-  
-
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-              <span class="sr-only">Toggle navigation</span>
-            </button>
-          </div>
-          <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active cart"><%= render 'layouts/cart' %></li>
-            </ul>
-          </div><!--/.nav-collapse -->
-        </div><!--/.container-fluid -->
-      </nav>
-
-<div class="container">
-<p>Soyez sublime à tout moment de la journée grâce au maquillage permanent.
-Pour votre confort et votre sécurité, nous vous proposons un travail de qualité dans un cadre adapté avec du matériel et des pigments aux normes.
-
-Relook Esthétique s’engage à respecter les règles d’hygiène du ministère de la santé.</p>
-
-
-<div class="makeup-container">
-  <div class="card-wrapper">
-    <% @maquillages.each do |maquillage| %>
+  <p>Soyez sublime à tout moment de la journée grâce au maquillage permanent.
+     Pour votre confort et votre sécurité, nous vous proposons un travail de qualité dans un cadre adapté avec du matériel et des pigments aux normes.
+     Relook Esthétique s’engage à respecter les règles d’hygiène du ministère de la santé.
+  </p>
+  <div class="makeup-container">
+    <div class="card-wrapper">
+      <% @maquillages.each do |maquillage| %>
         <div class="cards">
-            <div class="service">
-              <!-- ins 2 l--->
-              <%= form_for([maquillage, @order_item], remote: true) do |f| %>
-                <%= f.hidden_field :orderitemable_type, value: "Maquillage" %>
-                <%= f.hidden_field :orderitemable_id, value: maquillage.id %>
+          <div class="service">
+            <%= form_for([maquillage, @order_item], remote: true) do |f| %>
+              <%= f.hidden_field :orderitemable_type, value: "Maquillage" %>
+              <%= f.hidden_field :orderitemable_id, value: maquillage.id %>
+              <%= maquillage.name %><%= " " if maquillage.description != "" %>
+              <%= maquillage.description %><%= "~" if maquillage.price != "" %>
 
-                <%= maquillage.name %><%= "" if maquillage.description != "" %>
-                <%= maquillage.description %><%= "~" if maquillage.price != "" %>
-                
-            </div>
+              <div class="form-group">
+                <%= f.number_field :quantity, value: 1, min: 1, class: 'form-control' %>
+              </div>
 
-          
-            <!-- ins 4 l--->
-            <div class="form-group">
-              <%= f.hidden_field :quantity, value: 1, min: 1, class: 'form-control' %>
-             </div>
-              
-            <div class="service-price">
-            <span class="price"><%= humanized_money_with_symbol(maquillage.price) %></span>
-            <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
-            </div>
-    <% end %>
-        <%# </p> %>
-        <%# <p> %>
-          <%# <% if maquillage.photo.attached? %> 
-            <%# <%= cl_image_tag maquillage.photo.key, height: 300, width: 400, crop: :fill %> 
-          <%# <% end %> 
-        <%# </p> %>
-        <%# <p> %>
-          <%# <%= link_to "En savoir plus", maquillage_path(maquillage) %> 
-        <%# </p> %>
-          <p>
-            <% if policy(Maquillage).destroy? %>
+              <div class="service-price">
+                <span class="price">
+                  <%= humanized_money_with_symbol(maquillage.price) %>
+                </span>
+                <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
+              </div>
+            <% end %>
+          </div>
+          <% if policy(Maquillage).destroy? %>
+            <p>
               <%= link_to "del",
                 maquillage_path(maquillage),
                 method: :delete,
                 data: { confirm: "Are you sure?" } %>
-            <% end %>
-          </p>
-          
+            </p>
+          <% end %>
         </div>
-    <% end %>
-    
-</div>
-<div class="makeup-bann"></div>
-  </div>
- 
-<%# </div> %>
+      <% end %>
 
-<% if policy(Maquillage).new? %>
-<p><%= link_to "Nouvelle Prestation", new_maquillage_path %></p>
-<% end %>
+    </div>
+    <div class="makeup-bann"></div>
+  </div>
+
+  <% if policy(Maquillage).new? %>
+    <p>
+      <%= link_to "Nouvelle Prestation", new_maquillage_path %>
+    </p>
+  <% end %>
 </div>

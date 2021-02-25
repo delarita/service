@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   include Pundit
   include ApplicationHelper
 
-  before_action :set_counter  
+  before_action :set_counter
 
   # Pundit: white-list approach.
   after_action :verify_authorized, except: :index, unless: :skip_pundit?

@@ -6,10 +6,8 @@ class MassagesController < ApplicationController
   end
 
   def index
-    #@massages = Massage.all
     @massages = policy_scope(Massage)
     @order_item = current_order.order_items.new
-
     @bc_massage = Massage.first
     @boncadeau = current_order.order_items.new
   end
@@ -20,8 +18,6 @@ class MassagesController < ApplicationController
   end
 
   def show
-    #@massage = Massage.find(params[:id])
-    authorize @massage
   end
 
   def create
@@ -36,20 +32,14 @@ class MassagesController < ApplicationController
   end
 
   def edit
-    #@massage = Massage.find(params[:id])
-    authorize @massage
   end
 
   def update
-    #@massage = Massage.find(params[:id])
-    authorize @massage
     @massage.update(massage_params)
     redirect_to massages_path
   end
 
   def destroy
-    #@massage = Massage.find(params[:id])
-    authorize @massage
     @massage.destroy
     redirect_to massages_path
   end
@@ -62,6 +52,7 @@ class MassagesController < ApplicationController
 
   def set_massage
     @massage = Massage.find(params[:id])
+    authorize @massage
   end
 
 end

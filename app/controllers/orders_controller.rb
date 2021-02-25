@@ -10,8 +10,5 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     p @order
     authorize @order
-    #@order = current_user.orders.find(params[:id])
-
-    #authorize @order
   end
 end

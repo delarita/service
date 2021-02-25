@@ -6,15 +6,10 @@ class EpilationsController < ApplicationController
   end
 
   def index
-    #@epilations = Epilation.all
-    puts "index"
     @epilations = policy_scope(Epilation)
     @order_item = current_order.order_items.new
-
-
     @bc_epililation = Epilation.first
     @boncadeau = current_order.order_items.new
-
   end
 
   def new
@@ -23,7 +18,6 @@ class EpilationsController < ApplicationController
   end
 
   def show
-    #@epilation = Epilation.find(params[:id])
   end
 
   def create
@@ -39,20 +33,14 @@ class EpilationsController < ApplicationController
   end
 
   def edit
-    #@epilation = Epilation.find(params[:id])
-    #authorize @epilation
   end
 
   def update
-    #@epilation = Epilation.find(params[:id])
-    #authorize @epilation
     @epilation.update(epilation_params)
     redirect_to epilation_path(@epilation)
   end
 
   def destroy
-    #@epilation = Epilation.find(params[:id])
-    #authorize @epilation
     @epilation.destroy
     redirect_to epilations_path
   end
@@ -65,8 +53,6 @@ class EpilationsController < ApplicationController
 
   def set_epilation
     @epilation = Epilation.find(params[:id])
-    #p self.policy_class
-    #raise
     authorize @epilation
   end
 

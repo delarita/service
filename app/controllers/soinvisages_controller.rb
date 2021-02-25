@@ -6,11 +6,8 @@ class SoinvisagesController < ApplicationController
   end
 
   def index
-    #@soinvisages = Soinvisage.all
     @soinvisages = policy_scope(Soinvisage)
     @order_item = current_order.order_items.new
-
-
     @bc_soinvisage = Soinvisage.first
     @boncadeau = current_order.order_items.new
   end
@@ -21,8 +18,6 @@ class SoinvisagesController < ApplicationController
   end
 
   def show
-    #@soinvisage = Soinvisage.find(params[:id])
-    #authorize @soinvisage
   end
 
   def create
@@ -37,19 +32,14 @@ class SoinvisagesController < ApplicationController
   end
 
   def edit
-    #@soinvisage = Soinvisage.find(params[:id])
   end
 
   def update
-    #@soinvisage = Soinvisage.find(params[:id])
-    #authorize @soinvisage
     @soinvisage.update(soinvisage_params)
     redirect_to soinvisages_path
   end
 
   def destroy
-    #@soinvisage = Soinvisage.find(params[:id])
-    #authorize @soinvisage
     @soinvisage.destroy
     redirect_to soinvisages_path
   end
