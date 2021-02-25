@@ -1,11 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-
+  before_action :delete_oldusers
   before_action :authenticate_user!
+
   include Pundit
   include ApplicationHelper
 
   before_action :set_counter
+
+
 
   # Pundit: white-list approach.
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
@@ -20,12 +23,12 @@ class ApplicationController < ActionController::Base
 
 
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
-  rescue_from Exception, with: :not_found
-  rescue_from ActionController::RoutingError, with: :not_found
+  #rescue_from Exception, with: :not_found
+  #rescue_from ActionController::RoutingError, with: :not_found
 
-  # def raise_not_found
-  #   raise ActionController::RoutingError.new("No route matches #{params[:unmatched_route]}")
-  # end
+  #  def raise_not_found
+  #    raise ActionController::RoutingError.new("No route matches #{params[:unmatched_route]}")
+  #  end
 
   # def not_found
   #   respond_to do |format|
@@ -53,5 +56,13 @@ class ApplicationController < ActionController::Base
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
 
+  def delete_oldusers
+    users = User.all
+    users.each do |user|
+      if (user.created_at < 10.minute.ago) && (user.email.include? "devise@example.com")
+        user.destroy
+      end
+    end
+  end
 
 end

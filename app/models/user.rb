@@ -5,7 +5,7 @@ class User < ApplicationRecord
   has_many :maquillages
   has_many :massages
   has_many :soinvisages
-  has_many :orders
+  has_many :orders, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
