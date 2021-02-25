@@ -1,10 +1,9 @@
 <% if @order.errors.any? || @order_item.errors.any? %>
   alert("Invalid")
 <% else %>
-  $(".cart").html("<%= escape_javascript(render 'layouts/cart') %>")
+  $(".cart-inside").html("<%= escape_javascript(render 'layouts/cart_icon') %> ")
 <% end %>
 
 
 
-  <%# $(".cart-inside").html("<%= escape_javascript(render 'layouts/cart_icon') %><%# ") %>
 
