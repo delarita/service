@@ -13,6 +13,8 @@ Salon.create(address: '225 Chemin Saint-Georges, Residence Lou Casteu, 13150 Tar
 puts 'Map créée'
 
 #create epilations
+Epilation.create(name:"Forfait 1/2 jambes:", description: "Lèvres + sourcils + 1/2 jambes + maillot intégral ou intégral + aisselles", price_cents:4000, user_id:1)
+Epilation.create(name:"Forfait Jambes entières:", description:"Lèvres + sourcils + jambes entières + maillot intégral ou intégral + aisselles", price_cents:4500, user_id:1)
 Epilation.create(name:"Lèvres, sourcils ou menton", price_cents:700, user_id:1)
 Epilation.create(name:"Structuration des sourcils", price_cents:1300, user_id:1)
 Epilation.create(name:"Aisselles", price_cents:1000, user_id:1)
@@ -24,8 +26,8 @@ Epilation.create(name:"Maillot intégral", price_cents:2200, user_id:1)
 Epilation.create(name:"1/2 jambe", price_cents:1500, user_id:1)
 Epilation.create(name:"Jambes entières", price_cents:2400, user_id:1)
 
-Epilation.create(name:"Forfait lèvres + sourcils + 1/2 jambes + maillot intégral ou intégral + aisselles ", price_cents:4000, user_id:1)
-Epilation.create(name:"Forfait lèvres + sourcils + jambes entières + maillot intégral ou intégral + aisselles ", price_cents:4500, user_id:1)
+
+
 
 puts 'Epilations créées'
 
@@ -36,10 +38,11 @@ Massage.create(name:"Drainant ou relaxant: 1h", price_cents:5000, user_id:1)
 puts 'Massages créés'
 
 #create soins du visage
+Soinvisage.create(name:"Forfait Matinée ou Après midi « Bien être » – (3h)", description: "Soins du visage + modelage du corps  + manucure", price_cents: 9500, user_id:1)
+
 Soinvisage.create(name:"Soin du visage à l'Aloe Vera", price_cents:5000, user_id:1)
 Soinvisage.create(name:"Soin du visage galvanic spa", price_cents:5500, user_id:1)
 Soinvisage.create(name:"Teinture des cils ou sourcils", price_cents:1000, user_id:1)
-
 puts 'Soins du Visage créés'
 
 #create maquillage permanent

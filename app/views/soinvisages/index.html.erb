@@ -21,36 +21,44 @@
 </div>
 
 <div class="false-menu"></div>
-
 <div class="under-menu">
   <h1 class="under-title">Les Soins du Visages</h1>
 </div>
 
 <div class="container">
-  <p>Description</p>
-  <div class="makeup-container">
-    <div class="card-wrapper">
-      <% @soinvisages.each do |soinvisage| %>
+  <p>Soins du visage spécifiques et anti-âge pour retrouver une peau éclatante.
+
+Aidez votre peau à se préserver et à lutter efficacement contre les signes du temps.
+Notre gamme comprend une large palette de produits cosmétiques naturels 100% Bio à base d’Aloe vera et d’Alginates (algues) répondant aux besoins de toutes les peaux.
+
+Ces soins sont le premier pas vers une peau saine et en bonne santé.
+
+Les produits utilisés pour les soins sont aussi disponible à la vente.
+Mes compléments alimentaires sont une bonne aide pour rééquilibrer votre peau.</p>
+<% @soinvisages[0...1].each do |soinvisage| %>
         <div class="cards">
-          <div class="service">
+          <div class="presta-name">
+              <%= soinvisage.name %><%= " " if soinvisage.description != "" %>
+              <%= soinvisage.description %><%= " " if soinvisage.price != "" %>
+          </div>
+          <div class="presta-price">
             <%= form_for([soinvisage, @order_item], remote: true) do |f| %>
               <%= f.hidden_field :orderitemable_type, value: "Soinvisage" %>
               <%= f.hidden_field :orderitemable_id, value: soinvisage.id %>
-              <%= soinvisage.name %><%= " " if soinvisage.description != "" %>
-              <%= soinvisage.description %><%= "~" if soinvisage.price != "" %>
 
-              <div class="form-group">
-                <%= f.number_field :quantity, value: 1, min: 1, class: 'form-control' %>
-              </div>
+              
+                <%= f.hidden_field :quantity, value: 1, min: 1, class: 'form-control' %>
+              
 
-              <div class="service-price">
-                <span class="price">
+              <%# <div class="service-price">
+                <span class="price"> %>
                  <%= humanized_money_with_symbol(soinvisage.price) %>
-                </span>
+                <%# </span> %>
                 <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
-              </div>
+              <%# </div> %>
             <% end %>
-            <%= link_to "En savoir plus", soinvisage_path(soinvisage) %>
+            </div> 
+            <%# <%= link_to "En savoir plus", soinvisage_path(soinvisage) %> 
             <% if policy(Soinvisage).destroy? %>
               <p>
                 <%= link_to "del",
@@ -60,9 +68,50 @@
               </p>
             <% end %>
           </div>
-        </div>
+        <%# </div> %>
+      <% end %>
+  <div class="makeup-container">
+  
+    <div class="card-wrapper-flex-start">
+      <% @soinvisages[1..].each do |soinvisage| %>
+        <div class="cards">
+          <div class="presta-name">
+              <%= soinvisage.name %><%= " " if soinvisage.description != "" %>
+              <%= soinvisage.description %><%= " " if soinvisage.price != "" %>
+          </div>
+          <div class="presta-price">
+            <%= form_for([soinvisage, @order_item], remote: true) do |f| %>
+              <%= f.hidden_field :orderitemable_type, value: "Soinvisage" %>
+              <%= f.hidden_field :orderitemable_id, value: soinvisage.id %>
+
+              
+                <%= f.hidden_field :quantity, value: 1, min: 1, class: 'form-control' %>
+              
+
+              <%# <div class="service-price">
+                <span class="price"> %>
+                 <%= humanized_money_with_symbol(soinvisage.price) %>
+                <%# </span> %>
+                <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
+              <%# </div> %>
+            <% end %>
+            </div> 
+            <%# <%= link_to "En savoir plus", soinvisage_path(soinvisage) %> 
+            <% if policy(Soinvisage).destroy? %>
+              <p>
+                <%= link_to "del",
+                  soinvisage_path(soinvisage),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+              </p>
+            <% end %>
+          </div>
+        <%# </div> %>
       <% end %>
     </div>
+  <%# </div> %>
+  <div class="soinvisage-bann"></div>
+  <%# <span>Photo by <a href="https://unsplash.com/@raphaellovaski?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Raphael Lovaski</a> on <a href="https://unsplash.com/@raphaellovaski?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span> %>
   </div>
   <% if policy(Soinvisage).new? %>
     <p>

@@ -23,34 +23,41 @@
 <div class="false-menu"></div>
 
 <div class="under-menu">
-  <h1 class="under-title">Les Soins du Visages</h1>
+  <h1 class="under-title">Epilation</h1>
 </div>
 
 <div class="container">
-  <p>Description</p>
-  <div class="makeup-container">
-    <div class="card-wrapper">
-      <% @epilations.each do |epilation| %>
+
+ <%# <p>Épilation toutes zones pour les femmes.<br />
+    Épilation Messieurs : Sourcils, Narines, Oreilles, Torse, Dos. <br /> %>
+ <p>Pionnier et expert de l’épilation, PERRONT RIGOT répond à tous les besoins de façon ciblée et adaptée par ses différentes cires. Après chaque épilation, des soins « ralentisseurs de pousse de poils » et « spécial poils incarnés » sont utilisés.<br />
+  <%# <span class="forfait">Forfait 1/2 Jambes</span> : Lèvres + sourcils + 1/2 jambes + maillot intégral ou intégral + aisselles<br />
+  <span class="forfait">Forfait Jambes entières</span> : Lèvres + sourcils + jambes entières + maillot intégral ou intégral + aisselles %>
+  </p>
+  <% @epilations[0..1].each do |epilation| %>
         <div class="cards">
-          <div class="service">
+          <%# <div class="service"> %>
+          <div class="presta-name">
+              <span class="forfait"><%= epilation.name %><%= " " if epilation.description != "" %></span>
+              <%= epilation.description %><%= " " if epilation.price != "" %>
+          </div>
+          <div class="presta-price">
             <%= form_for([epilation, @order_item], remote: true) do |f| %>
               <%= f.hidden_field :orderitemable_type, value: "Epilation" %>
               <%= f.hidden_field :orderitemable_id, value: epilation.id %>
-              <%= epilation.name %><%= " " if epilation.description != "" %>
-              <%= epilation.description %><%= "~" if epilation.price != "" %>
 
-              <div class="form-group">
-                <%= f.number_field :quantity, value: 1, min: 1, class: 'form-control' %>
-              </div>
+              
+                <%= f.hidden_field :quantity, value: 1, min: 1, class: 'form-control' %>
+              
 
-              <div class="service-price">
-                <span class="price">
+              
                  <%= humanized_money_with_symbol(epilation.price) %>
-                </span>
+                
                 <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
-              </div>
+              
             <% end %>
-            <%= link_to "En savoir plus", epilation_path(epilation) %>
+            </div>
+            <%# <%= link_to "En savoir plus", epilation_path(epilation) %> 
             <% if policy(Epilation).destroy? %>
               <p>
                 <%= link_to "del",
@@ -60,9 +67,46 @@
               </p>
             <% end %>
           </div>
-        </div>
-      <% end %>
+         <% end %>
+    <div class="makeup-container">
+  
+    <div class="card-wrapper">
+      <% @epilations[2..].each do |epilation| %>
+        <div class="cards">
+          <%# <div class="service"> %>
+          <div class="presta-name">
+              <%= epilation.name %><%= " " if epilation.description != "" %>
+              <%= epilation.description %><%= " " if epilation.price != "" %>
+          </div>
+          <div class="presta-price">
+            <%= form_for([epilation, @order_item], remote: true) do |f| %>
+              <%= f.hidden_field :orderitemable_type, value: "Epilation" %>
+              <%= f.hidden_field :orderitemable_id, value: epilation.id %>
+
+              
+                <%= f.hidden_field :quantity, value: 1, min: 1, class: 'form-control' %>
+              
+
+              
+                 <%= humanized_money_with_symbol(epilation.price) %>
+                
+                <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
+              
+            <% end %>
+            </div>
+            <%# <%= link_to "En savoir plus", epilation_path(epilation) %> 
+            <% if policy(Epilation).destroy? %>
+              <p>
+                <%= link_to "del",
+                  epilation_path(epilation),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+              </p>
+            <% end %>
+          </div>
+         <% end %>
     </div>
+    <div class="epil-bann"></div>
   </div>
   <% if policy(Epilation).new? %>
     <p>

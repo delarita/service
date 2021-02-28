@@ -23,34 +23,50 @@
 <div class="false-menu"></div>
 
 <div class="under-menu">
-  <h1 class="under-title">Les Massages</h1>
+  <h1 class="under-title">Massages</h1>
 </div>
 
 <div class="container">
-  <p>Description</p>
+  <p>« C’est par notre peau, grâce au toucher, que nous ressentons, aimons, détestons »
+
+J.Lionel Taylor, 1921.<br />
+Le massage de relaxation utilise plusieurs techniques de massages traditionnelles du monde pour en faire un massage détente et bien-être. Il se compose de mouvements fluides, continus et enveloppants, de longs effleurages et pétrissages et de mouvements glissés pouvant aller en profondeur dans les tissus. Il s’effectue avec des l’huiles essentielles.
+Les bienfaits sont nombreux et variés. Le massage est un support au bien-être physique, nerveux, émotionnel et mental, il contribue en ce sens à :
+
+Une meilleure irrigation des tissus grâce aux manoeuvres de drainage de la circulation veineuse et de la circulation lymphatique.
+Un retour à l'équilibre nerveux dû à l'effet d'apaisement provoqué par la stimulation de nombreuses terminaisons nerveuses.
+Les effets
+Evacuation du stress
+Libération des tensions et des raideurs musculaires
+Gain d'énergie </p>
   <div class="makeup-container">
-    <div class="card-wrapper">
+    <div class="card-wrapper-flex-start">
       <% @massages.each do |massage| %>
         <div class="cards">
-          <div class="service">
+          <%# <div class="service"> %>
+          <div class="presta-name">
+              <%= massage.name %><%= " " if massage.description != "" %>
+              <%= massage.description %><%= "~" if massage.price != "" %>
+          </div>
+           <div class="presta-price">
             <%= form_for([massage, @order_item], remote: true) do |f| %>
               <%= f.hidden_field :orderitemable_type, value: "Massage" %>
               <%= f.hidden_field :orderitemable_id, value: massage.id %>
-              <%= massage.name %><%= " " if massage.description != "" %>
-              <%= massage.description %><%= "~" if massage.price != "" %>
+              
 
-              <div class="form-group">
-                <%= f.number_field :quantity, value: 1, min: 1, class: 'form-control' %>
-              </div>
+              <%# <div class="form-group"> %>
+                <%= f.hidden_field :quantity, value: 1, min: 1, class: 'form-control' %>
+              <%# </div> %>
 
-              <div class="service-price">
-                <span class="price">
+              <%# <div class="service-price">
+                <span class="price"> %>
                  <%= humanized_money_with_symbol(massage.price) %>
-                </span>
+                <%# </span> %>
                 <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
-              </div>
+              
             <% end %>
-            <%= link_to "En savoir plus", massage_path(massage) %>
+            </div>
+            <%# <%= link_to "En savoir plus", massage_path(massage) %> 
             <% if policy(Massage).destroy? %>
               <p>
                 <%= link_to "del",
@@ -60,9 +76,11 @@
               </p>
             <% end %>
           </div>
-        </div>
+        <%# </div> %>
       <% end %>
     </div>
+    <div class="massage-bann"></div>
+    <%# <span>Photo by <a href="https://unsplash.com/@kmile_ch?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Camille Brodard ~ Kmile Feminine Creative Designer</a> on <a href="https://unsplash.com/s/photos/massage?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span> %>
   </div>
   <% if policy(Massage).new? %>
     <p>
