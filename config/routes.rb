@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'reviews/index'
   get 'salons/index'
   #devise_for :users
   devise_for :users, controllers: {
@@ -10,6 +11,9 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "about", to: 'pages#about'
   get "contact", to: 'pages#contact'
+  resources :reviews do
+    match '/scrape', to: 'reviews#scrape', via: :post, on: :collection
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 

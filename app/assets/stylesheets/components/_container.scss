@@ -129,6 +129,40 @@
   //     grid-template-columns: 1fr 1fr ;
   //   }
   // }
+
+  .contact-icon {
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 1px solid white;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e2b288;
+    // background-color: #d981d8;
+    color: white;
+
+      
+  }
+
+  .contact-link {
+    text-decoration: none;
+    color: grey;
+
+  }
+  .contact-link:hover{
+    color: grey;
+
+  }
+
+  .contact-text{
+display:inline;
+padding-left: 10px;
+color: grey;
+font-family: 'Montserrat';
+
+  }
 .makeup-container{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -136,8 +170,18 @@
     grid-gap: 16px;
 }
 
+.presta-price {
+  margin-left:auto;
+}
 
+// .presta-name{
+//   font-family: 'Open sans', sans-serif; 
+// }
+.forfait {
+  font-weight: bold;
+}
 .card-wrapper{
+
   width: 35vw;
   font-family: 'Open sans', sans-serif;   
  
@@ -146,11 +190,24 @@
   flex-direction: column;
   justify-content: space-between;
 }
+.card-wrapper-flex-start{
+
+  width: 35vw;
+  font-family: 'Open sans', sans-serif;   
+ 
+  margin-right: 20px;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 .cards {
   display: flex;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
   margin-bottom: 5px;
+  color: grey;
+  font-family: 'Montserrat', sans-serif;
 }
 .service{
   padding-right: 10px;
@@ -172,7 +229,9 @@
 
 }
 
-
+.adresse {
+  padding-left:8px;
+}
 
 .patricia{
   width:302px;
@@ -201,10 +260,46 @@ body{
   // justify-content: center;
   // width: 15vw;
   // height: 10vw;
+  
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("https://coolwallpapers.me/picsup/2611782-monica-bellucci-cool-wallpaper-for-pc.jpg");
+
+  
+  animation-name: fadeInOpacity;
+  
+  animation-iteration-count: 1;
+  
+  animation-timing-function: ease-in;
+  
+  animation-duration: 2s;
+
+
+
 }
+
+
+
+@-webkit-keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
+
 
 .about-container{
   margin-top: 50px;
@@ -225,18 +320,21 @@ body{
     // flex-direction: column;
     // justify-content: center;
     // align-items: center;
-  
+    margin-top: 50px; 
 
   h1 {
     font-family: 'Montserrat', sans-serif;
   }
    h2 {
     font-family: 'Montserrat', sans-serif;
+    color: grey;
    }
 
    p{
     font-size: 14px;
-    font-family: 'Open sans', sans-serif;   
+    font-family: 'Open sans', sans-serif;  
+    color: grey;
+    // margin-top: 50px; 
    }
 }
 
