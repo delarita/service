@@ -41,7 +41,6 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 
 gem 'geocoder'
-#gem 'kimurai'
 
 group :development, :test do
   gem 'pry-byebug'
