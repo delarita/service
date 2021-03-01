@@ -18,7 +18,7 @@ class CartsController < ApplicationController
             currency: 'eur',
             quantity: 1
           }],
-          success_url: carts_url,
+          success_url: order_url(order),
           cancel_url: carts_url
         )
         p "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
