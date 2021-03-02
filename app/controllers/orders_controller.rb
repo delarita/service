@@ -1,6 +1,13 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show]
   before_action :send_confirm_mail, only: [:show]
+  after_action :reset_session, only: [:show]
+
+  def index
+    # @orders = policy_scope(Order).sort_by &:updated_at
+    @orders = policy_scope(Order).sort_by { |m| [m.updated_at] }.reverse!
+  end
+
   def show
     puts "entree dans le controller OrdersController"
   end
@@ -13,6 +20,15 @@ class OrdersController < ApplicationController
   end
 
   def send_confirm_mail
-    UserMailer.with(user: current_or_guest_user).voucher.deliver_now
+    p @order
+    if !@order.email_sent
+      UserMailer.with(user: current_or_guest_user).voucher(@order).deliver_now
+      @order.email_sent = true
+      @order.save!
+    end
+  end
+
+  def reset_session
+    session[:order_id] = nil
   end
 end

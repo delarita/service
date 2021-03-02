@@ -5,7 +5,8 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.voucher.subject
   #
-  def voucher
+  def voucher(order)
+    @order = order
     @user = params[:user] # Instance variable => available in view
     mail(to: @user.email, subject: 'Votre bon cadeau Relook Esthétique')
   end

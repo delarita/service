@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
 
  resources :salons,  only: [:index]
- 
+
   resources :epilations do
     resources :order_items, only: [:create, :update, :destroy]
   end
@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 
   resources :massages do
     resources :order_items, only: [:create, :update, :destroy]
-  end 
+  end
 
   #resources :massages, only: [:index, :show, :new, :edit, :update, :create, :destroy]
   #get "massages", to: "massages#index"
@@ -53,7 +53,7 @@ Rails.application.routes.draw do
   # resources :epilations, :massages, :maquillages, :soinvisages do
   #resources :order_items, only: [:create, :update, :destroy]
   # end
-  resources :orders, only: [:show]
+  resources :orders, only: [:index, :show]
 
   resources :carts, only: [:index]
   resources :carts, only: [:new], as: :order do
