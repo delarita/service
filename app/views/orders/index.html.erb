@@ -1,4 +1,21 @@
-<h1>Mes Commandes</h1>
+<div class="navmenu-presta">
+  <%# <li><%= link_to "ACCUEIL", root_path%>
+  <%# </li> %>
+  <%# <li><a href="#about">A PROPOS</a></li> %>
+  <div class="logo"></div>
+  <li><%= link_to "EPILATIONS", epilations_path %></li>
+  <li><%= link_to "MASSAGES", massages_path %></li>
+  <li><%= link_to "SOINS DU VISAGE", soinvisages_path %></li>
+  <li><%= link_to "MAQUILLAGE PERMANENT", maquillages_path %></li>
+</div>
+
+
+<div class="false-menu"></div>
+<div class="under-menu">
+<h1 class="under-title">Mes Commandes</h1>
+</div>
+<div class="container">
+
 <% @orders.each do |order| %>
 <ul>
   <li><%= order.updated_at.to_formatted_s(:short)%></li>
@@ -7,3 +24,4 @@
   <li><%= order.state%></li>
 </ul>
 <% end %>
+</div>
