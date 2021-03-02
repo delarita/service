@@ -455,6 +455,27 @@ body{
   margin-bottom: 0px;
 }
 
+.fa-user{
+  display:block;
+}
+.nav-link{
+  display:none;
+}
+.footer-copyright{
+  display:none;
+}
+
+.about-container{
+  grid-template-columns: 1fr;
+}
+.pic{
+  width: 285px;
+    height: 185px
+}
+
+.makeup-container{
+  grid-template-columns: 1fr;
+}
 .menu-container{display:none}
 
 .container {
