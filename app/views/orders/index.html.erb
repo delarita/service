@@ -1,0 +1,9 @@
+<h1>Mes Commandes</h1>
+<% @orders.each do |order| %>
+<ul>
+  <li><%= order.updated_at.to_formatted_s(:short)%></li>
+  <li><%= link_to order.id, order_path(order)%></li>
+  <li><%= order.subtotal_price_cents/100%>€</li>
+  <li><%= order.state%></li>
+</ul>
+<% end %>

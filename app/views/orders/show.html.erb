@@ -1,17 +1,11 @@
 <div class="container">
   <div class="row py-4">
-<!--     <div class="col-md-3">< % = image_tag @order.teddy.photo_url, width: '100%' %></div>
- -->    <div class="col">
-      <h1>Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
+    <div class="col">
+      <h1>Commande n° #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
       <ul class="list-unstyled">
-        <li><strong>ISSUED ON</strong> <%= @order.created_at.to_date %></li>
-        <!-- <li><strong>TEDDY</strong> < % = @order.teddy.name %> [< % = @order.teddy_sku %>]</li>
-        <li><strong>TOTAL</strong> < % = humanized_money_with_symbol @order.amount %></li>
-
-        -->
-
+        <li><strong>Echéance</strong> <%= @order.created_at.to_date %></li>
       </ul>
-      <p>Estimated delivery in <strong>2 business days</strong></p>
+      <p>Présentez vous avec l'<strong>email</strong> qui vous a été envoyé ce jour</p>
     </div>
   </div>
 </div>
