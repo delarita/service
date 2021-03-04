@@ -24,8 +24,20 @@
   </head>
 
   <body>
-    <%# <%= render 'shared/navbar' %>
-     <%= render 'shared/shopping_cart'  %>
+    
+    <div class="menu-button">
+      <i class="fas fa-bars fa-3x"></i>
+    </div>
+
+    <div class="call-footer">
+      <div class="call-button">
+        <a href="tel:+33500000000"><i class="fas fa-phone"></a></i>
+      </div>
+    </div>
+
+    <%= render 'shared/mobile_menu' %>
+    <%= render 'shared/shopping_cart'  %>
+     
       <%= render 'shared/flashes' %>
     <%= yield %>
      <%= render 'shared/footer'  %>
