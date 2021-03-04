@@ -1,134 +1,6 @@
-// Smallest device
-// .carousel-item {
-//     width: 100%;
-//     height: 500px;  
-//     background-size: cover;
-// }
-
-
-// .bloc{
-//     width:100%;
-//     height:100%;
-//     display:grid;
-//     grid-template-columns: 1fr 1fr;
-//     padding-bottom: 10px;
-//     h2 {
-//         font-size: Montserrat;
-//         color: rgb(185, 185, 185);
-
-//     }
-
-//     p {
-//         color: rgb(185, 185, 185);
-//         padding: 30px;
-//         font-style: italic;
-
-//     }
-    
-// }
-
-// .mainpage{
-//     margin-bottom: 35px;
-//     background-color: rgb(211, 130, 211);
-//     background-image: url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80");
-//     width: 100%;
-//     height: 550px;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-// }
 
 
 
-
-// @media (min-width: 100px) and (max-width: 575px) {
-//     .bloc
-//      {
-//       grid-template-columns: 1fr;
-
-      
-      
-//     }
-
-//     .navmenu {
-//         display:none;
-//     }
-
-//     .menu-button {
-//       display:block;
-//     }
-    
-//   }
-  
-//   // Small devices (landscape phones, 576px and up)
-//   @media (min-width: 576px) {
-
-//     .bloc
-//      {
-//       grid-template-columns: 1fr;
-      
-//     }
-
-//     .navmenu {
-
-//       li {
-//         padding-left: 20px;
-//         padding-right: 20px;
-//         font-size: 8px;
-//       }
-//     }
-    
-    
-  // }
-  
-  // Medium devices (tablets, 768px and up)
-  // @media (min-width: 768px) {
-  //   .bloc
-  //    {
-  //     grid-template-columns: 1fr 1fr;
-
-  //     h2 {
-  //       font-size: 16px;
-
-  //     }
-
-  //     p{
-  //       font-size: 12px;
-  //     }
-  //   }
-
-  //   .navmenu {
-
-  //     li {
-  //       padding-left: 25px;
-  //       padding-right: 25px;
-  //       font-size: 10px;
-  //     }
-  //   }
-  // }
-  
-  // Large devices (desktops, 992px and up)
-  // @media (min-width: 992px) {
-  //   .bloc
-  //    {
-  //     grid-template-columns: 1fr 1fr ;
-  //   }
-  //   .navmenu {
-
-  //     li {
-  //       padding-left: 45px;
-  //       padding-right: 45px;
-  //       font-size: 16px;
-  //     }
-  //   }
-  // }
-  
-  // Extra large devices (large desktops, 1200px and up)
-  // @media (min-width: 1200px) {
-  //   .bloc
-  //    {
-  //     grid-template-columns: 1fr 1fr ;
-  //   }
-  // }
 
   .contact-icon {
     font-size: 20px;
@@ -140,7 +12,6 @@
     justify-content: center;
     align-items: center;
     background-color: #e2b288;
-    // background-color: #d981d8;
     color: white;
 
       
@@ -156,7 +27,7 @@
 
   }
 
-  .contact-text{
+.contact-text{
 display:inline;
 padding-left: 10px;
 color: grey;
@@ -174,17 +45,14 @@ font-family: 'Montserrat';
   margin-left:auto;
 }
 
-// .presta-name{
-//   font-family: 'Open sans', sans-serif; 
-// }
 .forfait {
   font-weight: bold;
 }
+
 .card-wrapper{
 
   width: 35vw;
   font-family: 'Open sans', sans-serif;   
- 
   margin-right: 20px;
   display:flex;
   flex-direction: column;
@@ -194,7 +62,6 @@ font-family: 'Montserrat';
 
   width: 35vw;
   font-family: 'Open sans', sans-serif;   
- 
   margin-right: 20px;
   display:flex;
   flex-direction: column;
@@ -204,7 +71,6 @@ font-family: 'Montserrat';
 .cards {
   display: flex;
   align-items: center;
-  // justify-content: center;
   margin-bottom: 5px;
   color: grey;
   font-family: 'Montserrat', sans-serif;
@@ -219,15 +85,16 @@ font-family: 'Montserrat';
 .price{
   margin-right: 15px;
 }
+
 .form-group{
   width: 20%;
   margin-bottom: 0;
 }
 
-.blockbann{
-  display:flex;
+// .blockbann{
+//   display:flex;
 
-}
+// }
 
 .adresse {
   padding-left:8px;
@@ -235,20 +102,12 @@ font-family: 'Montserrat';
 
 .patricia{
   width:302px;
-  // height: 200px;
   background-size:cover;
-  // margin-right:15px;
   
   
 }
-body{
-  background-color: white;
-  h1 {
-    font-family: 'Playfair Display', serif;
-  }
-}
+
 .bio {
-  // border-left: 0.5px solid grey;
   padding-left: 10px;
   background-color: white;
     p{
@@ -256,22 +115,13 @@ body{
     }
 }
 .pic {
-  // display:flex;
-  // justify-content: center;
-  // width: 15vw;
-  // height: 10vw;
-  
+    
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("https://coolwallpapers.me/picsup/2611782-monica-bellucci-cool-wallpaper-for-pc.jpg");
-
-  
   animation-name: fadeInOpacity;
-  
   animation-iteration-count: 1;
-  
   animation-timing-function: ease-in;
-  
   animation-duration: 2s;
 
 
@@ -312,15 +162,11 @@ body{
 .caddie-container{
   margin-top:50px;
 }
+
 .container {
 
   background-color: transparent;
-    // margin-top: 20px;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    margin-top: 50px; 
+  margin-top: 50px; 
 
   h1 {
     font-family: 'Montserrat', sans-serif;
@@ -334,8 +180,38 @@ body{
     font-size: 14px;
     font-family: 'Open sans', sans-serif;  
     color: grey;
-    // margin-top: 50px; 
    }
+}
+
+.menu-container{
+  display:flex;
+  flex-direction: column;
+  margin-top: -15vw;
+  margin-right: 4vw;
+  position: relative;
+
+}
+.menu-container.active{
+  display:flex;
+  flex-direction: column;
+  margin-top: 0;
+  margin-right: 0;
+  position: relative;
+  width:100vw;
+
+}
+.map-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  margin-top:50px;
+
+  h1 {
+      font-family: 'Montserrat', sans-serif;
+      color: #685d5d;
+      font-size: 75px;
+
+  }
 }
 
 
@@ -450,15 +326,132 @@ body{
   @media (max-width: 540px) {
     /* For a screen < 540px, this CSS will be read */
 
+.card-wrapper{
+  min-width:90vw;
+  margin-right:0;
+  font-size:9px;
+}
+
+.card-wrapper-flex-start{
+  min-width:90vw;
+  margin-right:0;
+  font-size:9px;
+}
+
+.under-menu{
+  box-shadow: -3px 7px 10px -8px grey;
+  h1{
+    font-size:32px;
+    
+  }
+}
+.btn-ghost2{
+  font-size:9px;
+  padding: 6px 14px;
+}
+.makeup-bann{
+  height:60vw;
+}
+.massage-bann{
+  height: 60vw;
+}
+.soinvisage-bann{
+  height: 60vw;
+}
+.epil-bann{
+  width: 90vw;
+  height: 60vw;
+}
+.makeup-container{
+  margin-top:0;
+}
 .header{
   height: 84vw;
   margin-bottom: 0px;
+  display: flex;
+  justify-content: flex-end;
+}
+.navmenu-presta{
+  display:none;
+}
+.logo-mobile{
+  display:flex;
+  justify-content: center;
+  margin-bottom:15px;
+  
 }
 
-.menu-container{display:none}
+.logo-mobile-menu{
+ 
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
 
+.aboutaccueil{
+  display:none;
+}
+.fa-user{
+  display:block;
+}
+.img-bloc2{
+  display:none;
+
+}
+.img-bloc1{
+  display:block;
+
+}
+.nav-link{
+  display:none;
+}
+.footer-copyright{
+  display:none;
+}
+
+.about-container{
+  grid-template-columns: 1fr;
+}
+.pic{
+  width: 285px;
+    height: 185px
+}
+
+.makeup-container{
+  grid-template-columns: 1fr;
+}
+.menu-container{display:none}
+.text{
+  padding-bottom:0;
+}
+.map-container{
+  justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  grid-template-columns: 1fr;
+  h1 {
+    font-size: 26px;
+  }
+}
+#map{
+  width: 291px;
+    height: 300px;
+}
+.contact-infos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
 .container {
   grid-template-columns: 1fr  ;
+  margin-top:0;
+  p{
+    font-family: Montserrat;
+    font-size:10px;
+    margin-top:15px;
+  }
 }
 
     .bloc
@@ -493,6 +486,10 @@ body{
 
     .menu-button {
       display:block;
+    }
+    
+    .call-footer{
+      display:flex;
     }
     
     

@@ -66,7 +66,7 @@ Gain d'énergie </p>
               
             <% end %>
             </div>
-            <%# <%= link_to "En savoir plus", massage_path(massage) %> 
+            <% link_to "En savoir plus", massage_path(massage) %> 
             <% if policy(Massage).destroy? %>
               <p>
                 <%= link_to "del",

@@ -22,7 +22,7 @@
 
 <div class="false-menu"></div>
 <div class="under-menu">
-  <h1 class="under-title">Les Soins du Visages</h1>
+  <h1 class="under-title">Soins du Visages</h1>
 </div>
 
 <div class="container">
@@ -35,45 +35,11 @@ Ces soins sont le premier pas vers une peau saine et en bonne santé.
 
 Les produits utilisés pour les soins sont aussi disponible à la vente.
 Mes compléments alimentaires sont une bonne aide pour rééquilibrer votre peau.</p>
-<% @soinvisages[0...1].each do |soinvisage| %>
-        <div class="cards">
-          <div class="presta-name">
-              <%= soinvisage.name %><%= " " if soinvisage.description != "" %>
-              <%= soinvisage.description %><%= " " if soinvisage.price != "" %>
-          </div>
-          <div class="presta-price">
-            <%= form_for([soinvisage, @order_item], remote: true) do |f| %>
-              <%= f.hidden_field :orderitemable_type, value: "Soinvisage" %>
-              <%= f.hidden_field :orderitemable_id, value: soinvisage.id %>
 
-              
-                <%= f.hidden_field :quantity, value: 1, min: 1, class: 'form-control' %>
-              
-
-              <%# <div class="service-price">
-                <span class="price"> %>
-                 <%= humanized_money_with_symbol(soinvisage.price) %>
-                <%# </span> %>
-                <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
-              <%# </div> %>
-            <% end %>
-            </div> 
-            <%# <%= link_to "En savoir plus", soinvisage_path(soinvisage) %> 
-            <% if policy(Soinvisage).destroy? %>
-              <p>
-                <%= link_to "del",
-                  soinvisage_path(soinvisage),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-              </p>
-            <% end %>
-          </div>
-        <%# </div> %>
-      <% end %>
   <div class="makeup-container">
   
     <div class="card-wrapper-flex-start">
-      <% @soinvisages[1..].each do |soinvisage| %>
+      <% @soinvisages.each do |soinvisage| %>
         <div class="cards">
           <div class="presta-name">
               <%= soinvisage.name %><%= " " if soinvisage.description != "" %>
@@ -96,7 +62,7 @@ Mes compléments alimentaires sont une bonne aide pour rééquilibrer votre peau
               <%# </div> %>
             <% end %>
             </div> 
-            <%# <%= link_to "En savoir plus", soinvisage_path(soinvisage) %> 
+             <%= link_to "En savoir plus", soinvisage_path(soinvisage) %> 
             <% if policy(Soinvisage).destroy? %>
               <p>
                 <%= link_to "del",
@@ -120,4 +86,5 @@ Mes compléments alimentaires sont une bonne aide pour rééquilibrer votre peau
   <% end %>
 </div>
 
-
+<%# <div class="menu-button"><i class="fas fa-bars fa-3x"></i></div>
+<div class="call-button"><a href="tel:+33500000000"><i class="fas fa-phone"></a></i></div> %>
