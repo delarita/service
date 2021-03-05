@@ -195,7 +195,7 @@ body {
 
 }
 
-.user-avatar{
+.avatar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -209,8 +209,9 @@ body {
     font-family: Montserrat;
     font-weight: bold;
     border: 0.5px solid #5c5353;
+    cursor:pointer;
 }
-.aboutaccueil2{
+.aboutaccueil-mobile{
     display: none;
     position:fixed;
     right: 50px;
@@ -369,6 +370,7 @@ li{
     font-size: 18px;
     justify-content: center;
     z-index:999;
+    top:0;
     
 li{
     padding-right: 25px;
