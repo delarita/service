@@ -326,6 +326,17 @@ font-family: 'Montserrat';
   @media (max-width: 540px) {
     /* For a screen < 540px, this CSS will be read */
 
+
+    .fa-user{
+      display:block;
+      position:fixed;
+      top:19px;
+      right:60px;
+      color:rgb(104, 93, 93);
+      z-index:45689;
+      font-size:25px;
+  }
+
 .card-wrapper{
   min-width:90vw;
   margin-right:0;
@@ -380,20 +391,36 @@ font-family: 'Montserrat';
   margin-bottom:15px;
   
 }
-
+.avatar {
+  width: 40px;
+  border-radius: 50%;
+  /* top: 13px; */
+  position: fixed;
+  top: 9px;
+  right: 55px;
+}
 .logo-mobile-menu{
  
   display: flex;
   justify-content: center;
   margin-top: 35px;
 }
+.aboutaccueil {
+  
+    display:none;
+  
+  
+}
+.aboutaccueil2 {
+  
+  display:flex;
 
-.aboutaccueil{
+
+}
+.accueil-menu{
   display:none;
 }
-.fa-user{
-  display:block;
-}
+
 .img-bloc2{
   display:none;
 
@@ -402,9 +429,9 @@ font-family: 'Montserrat';
   display:block;
 
 }
-.nav-link{
-  display:none;
-}
+// .nav-link{
+//   display:none;
+// }
 .footer-copyright{
   display:none;
 }
@@ -491,6 +518,8 @@ font-family: 'Montserrat';
     .call-footer{
       display:flex;
     }
+
+    
     
     
   }
