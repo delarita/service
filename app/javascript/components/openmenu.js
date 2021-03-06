@@ -6,7 +6,7 @@ const openNav = () => {
     const menuDiv = document.querySelector(".navmenu2")
   
     button.addEventListener("click", (event) => {
-      
+      console.log(event)
       openDiv.classList.toggle("active");
       menuDiv.classList.toggle("active");
       button.classList.toggle("colorize")
