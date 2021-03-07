@@ -22,7 +22,7 @@
 <div class="false-menu"></div>
 <div class="under-menu">
 <h1 class="under-title">Caddie</h1>
-
+<span class="retour-accueil"><%= link_to "ACCUEIL", root_path %></span>
 
 </div>
 <div class="container">
@@ -49,23 +49,23 @@
                   <%= f.hidden_field :product_id, value: order_item.id %>
                   <h5>prix : <%= order_item.unit_price/100 %></h5>
                   <div class="form-group">
-                    <%= f.text_field :quantity, value: order_item.quantity.to_i, min: 1, class: 'form-control' %>
+                    <%= f.number_field :quantity, value: order_item.quantity.to_i, min: 1, class: 'form-control' %>
                   </div>
                   <div class="btn-group">
-                    <%= f.submit "Update Quantity", class: 'btn btn-primary' %>
-                    <%= link_to "Delete", [order_item.orderitemable, order_item], method: :delete, remote: true, class: 'btn btn-danger'  %>
+                    <%= f.submit "Modifier quantité", class: 'btn btn-ghost' %>
+                    <%= link_to "Supprimer", [order_item.orderitemable, order_item], method: :delete, remote: true, class: 'btn btn-ghost'  %>
                   </div>
-                  <span>Sous Total : <%= order_item.total_price/100 %></span>
+                  <span class="subtotal">Sous Total : <%= order_item.total_price/100 %></span>
                 <% end %>
               </div>
             </div>
           </div>
         </div>
       <% end %>
-      <h3>TOTAL : <%= order.subtotal_price/100 %></h3>
+      <h3 class="total-price">TOTAL : <%= order.subtotal_price/100 %></h3>
        <div class="btn-group">
         <%= form_for order, :url => new_order_payment_path(order), :method => :get do |f| %>
-        <%= f.submit "Payement", class: 'btn btn-primary' %>
+        <%= f.submit "Commander", class: 'btn btn-ghost' %>
         <!--
         < %= link_to "Payer", redirect_to new_order_payment_path(order), remote: true, class: 'btn btn-danger'  %>
         -->
