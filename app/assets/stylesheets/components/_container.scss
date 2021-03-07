@@ -1,7 +1,39 @@
 
 
 
+#order_item_quantity{
+    border-radius: 20px;
+    box-shadow: 1px 1px 2px 0px #c9c6c6;
+    border: 0;
+    margin-bottom: 10px;
+    height: 25px;
+    width: 50px;
+    font-size: 12px;
+}
+.well{
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+ 
+  box-shadow:0 4px 2px -2px #e2dddd;
+  h3, h5{
+    font-family: Montserrat;
+    font-size: 20px;
+  }
 
+}
+
+.subtotal{
+  font-family: Montserrat;
+    font-size: 14px;
+   
+}
+.total-price{
+  font-family: MOntserrat;
+  font-weight: bold;
+}
+.btn-group{
+  margin-bottom: 3px;;
+}
   .contact-icon {
     font-size: 20px;
     width: 36px;
@@ -284,17 +316,38 @@ font-family: 'Montserrat';
       }
     }
 
+    .navmenu li {
+      padding-left: 8px;
+      padding-right: 8px;
+      font-size: 6px;
+     
 
-
-    .navmenu {
-
-      li {
-        padding-left: 25px;
-        padding-right: 25px;
-        font-size: 10px;
-      }
     }
+    .titre h1 {
+      line-height: 35px;
   }
+
+  .header h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #685d5d;
+    font-size: 42px;
+  }
+
+  .menu-container {
+    
+    margin-right: 3vw;
+    
+
+    // .navmenu {
+
+    //   li {
+    //     padding-left: 25px;
+    //     padding-right: 25px;
+    //     font-size: 10px;
+    //   }
+    // }
+  }
+}
 
   @media (max-width: 740px) {
 
@@ -310,17 +363,58 @@ font-family: 'Montserrat';
       grid-template-columns: 1fr;
       
     }
+    .navmenu li {
+      padding-left: 4px;
+      padding-right: 4px;
+      font-size: 6px;
+      
 
-    .navmenu {
-
-      li {
-        padding-left: 15px;
-        padding-right: 15px;
-        font-size: 8px;
-      }
     }
+    .titre h1 {
+      line-height: 29px;
+  }
+
+  .header h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #685d5d;
+    font-size: 35px;
+  }
+
+  .menu-container {
     
-    
+    margin-right: 1vw;}
+
+    // .nav
+
+    //   li {
+    //     padding-left: 15px;
+    //     padding-right: 15px;
+    //     font-size: 8px;
+    //   }
+    // }
+    .avatar {
+      font-size: 16px;
+      width: 32px;
+      height: 32px;
+    }
+    .aboutaccueil{
+      top:19px;
+    }
+    .aboutaccueil li {
+      font-size: 10px;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+    .navmenu.active a {
+      font-size: 10px;
+    }
+    .navmenu.active li {
+      padding-right: 15px;
+      padding-left: 15px;
+  }
+  .navmenu.active {
+    justify-content: start;
+  }
   }
 
   @media (max-width: 540px) {
@@ -356,6 +450,11 @@ font-family: 'Montserrat';
     
   }
 }
+
+.btn-ghost{
+  font-size:14px;
+}
+
 .btn-ghost2{
   font-size:9px;
   padding: 6px 14px;
@@ -395,6 +494,7 @@ font-family: 'Montserrat';
 }
 .avatar {
   width: 40px;
+  height:40px;
   border-radius: 50%;
   /* top: 13px; */
   position: fixed;
