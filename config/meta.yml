@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "Relook Esthétique"
+meta_title: "Soyez sublime à tout moment de la journée grâce au maquillage permanent."
+meta_description: "Nous mettons tout en oeuvre pour que votre passage dans notre institut de beauté soit unique ! Dans une ambiance chaleureuse, souriante et reposante ici le temps marque une pause, la vôtre."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

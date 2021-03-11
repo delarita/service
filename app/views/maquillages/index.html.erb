@@ -55,6 +55,9 @@
               <%# </div> %>
             <% end %>
          </div> 
+         <span class="plus"><%= link_to maquillage_path(maquillage) do %> </span>
+             <i class="fas fa-angle-right"></i>
+            <% end %>
          
           <% if policy(Maquillage).destroy? %>
             <p>

@@ -7,6 +7,7 @@ const selectNav = () => {
   let contain = document.querySelector(".menu-container");
   let title = document.querySelector(".titre");
   let logoDiv = document.querySelector(".logo");
+  let phone = document.querySelector(".tel")
   // on mémorise la position de nav
   if (objNav) {
   let memoPositionNav = objNav.offsetTop;
@@ -14,8 +15,8 @@ const selectNav = () => {
   function sticky(){
     // position du curseur au scroll
     let posCurseur = this.pageYOffset;
-    console.log(memoPositionNav, "before");
-    console.log(posCurseur);
+    // console.log(memoPositionNav, "before");
+    // console.log(posCurseur);
     // je teste la différence de distance entre le scroll et nav
     if(memoPositionNav-posCurseur<1){
       objNav.style.position = "fixed";
@@ -25,6 +26,7 @@ const selectNav = () => {
       contain.classList.add("active");
       title.style.display ="none";
       logoDiv.style.display ="none";
+      phone.style.display="none";
     }
     if(posCurseur<101){
       objNav.style.position = "";
@@ -32,6 +34,7 @@ const selectNav = () => {
       contain.classList.remove("active");
       title.style.display ="";
       logoDiv.style.display ="";
+      phone.style.display="";
     }
   }
   // evenement

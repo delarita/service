@@ -47,7 +47,7 @@ Gain d'énergie </p>
           <%# <div class="service"> %>
           <div class="presta-name">
               <%= massage.name %><%= " " if massage.description != "" %>
-              <%= massage.description %><%= "~" if massage.price != "" %>
+              <%= massage.description %><%= " " if massage.price != "" %>
           </div>
            <div class="presta-price">
             <%= form_for([massage, @order_item], remote: true) do |f| %>
@@ -67,7 +67,13 @@ Gain d'énergie </p>
               
             <% end %>
             </div>
-            <% link_to "En savoir plus", massage_path(massage) %> 
+
+
+            <span class="plus"><%= link_to massage_path(massage) do %> </span>
+              <i class="fas fa-angle-right"></i>
+            <% end %>
+
+
             <% if policy(Massage).destroy? %>
               <p>
                 <%= link_to "del",

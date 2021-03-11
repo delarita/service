@@ -5,6 +5,27 @@ body {
     
     min-height: 100vh;
 }
+.plus{
+    margin-left:6px;
+    
+}
+
+.fa-angle-right{
+    color:grey;
+}
+.orders {
+    list-style-type: none;
+    font-family: Open sans;
+    color:#5c5353;
+
+    a {
+        color:#5c5353;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+}
 
 .call-footer{
     display:none;
@@ -21,7 +42,7 @@ body {
     z-index:2;
 }
 .false-menu{
-    height:70px;
+    height:68px;
 }
 .under-menu{
     
@@ -68,11 +89,13 @@ a:hover{
 }
 
 .epil-bann{
-    background-image: url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1614454588/wtqp0yfl7dingcmohzwt.jpg");
+    // background-image: url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1614454588/wtqp0yfl7dingcmohzwt.jpg");
+    background-image: url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1615412141/lnuvxrhxuarswqwcdgui.jpg");
+    
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;  
-    height: 100%;
+    height: 41vw;
     animation-name: fadeInOpacity;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
@@ -117,7 +140,7 @@ a:hover{
     flex-direction: column;
     align-items: flex-end;
     background-color:#393b3a;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
     z-index:0;
 
     h1 {
@@ -136,7 +159,13 @@ a:hover{
 }
 
 
-
+.tel{
+    h2{
+    font-family: 'Montserrat';
+    padding-left: 10px;
+    color: grey;
+    }
+}
 
 .logo-mobile{
     display:none;
@@ -380,7 +409,7 @@ li{
     font-family: 'Montserrat', sans-serif;
     background-color: white;
     width: 100%;
-    height: 70px;
+    height: 67px;
     transition: 0.4s;
     font-size: 18px;
     justify-content: center;
@@ -525,6 +554,7 @@ li{
     background-attachment: fixed;
     background-size:cover;
     min-height: 46vw;
+    width:100vw;
      z-index: 0;
     
 
