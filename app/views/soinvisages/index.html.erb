@@ -35,11 +35,12 @@ Notre gamme comprend une large palette de produits cosmétiques naturels 100% Bi
 Ces soins sont le premier pas vers une peau saine et en bonne santé.
 
 Les produits utilisés pour les soins sont aussi disponible à la vente.
-Mes compléments alimentaires sont une bonne aide pour rééquilibrer votre peau.</p>
-
+Mes compléments alimentaires sont une bonne aide pour rééquilibrer votre peau.<br /><br />
+    <span class="forfait">Forfait Matinée ou Après midi « Bien être » :</span>(3h) Soins du visage + modelage du corps + manucures<br />
+</p>
   <div class="makeup-container">
-  
-    <div class="card-wrapper-flex-start">
+
+    <div class="card-wrapper">
       <% @soinvisages.each do |soinvisage| %>
         <div class="cards">
           <div class="presta-name">
@@ -63,7 +64,9 @@ Mes compléments alimentaires sont une bonne aide pour rééquilibrer votre peau
               <%# </div> %>
             <% end %>
             </div> 
-             <%= link_to "En savoir plus", soinvisage_path(soinvisage) %> 
+             <span class="plus"><%= link_to soinvisage_path(soinvisage) do %> </span>
+             <i class="fas fa-angle-right"></i>
+            <% end %>
             <% if policy(Soinvisage).destroy? %>
               <p>
                 <%= link_to "del",

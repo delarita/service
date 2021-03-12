@@ -18,11 +18,17 @@
 <div class="container">
 
 <% @orders.each do |order| %>
-<ul>
-  <li><%= order.updated_at.to_formatted_s(:short)%></li>
-  <li><%= link_to order.id, order_path(order)%></li>
-  <li><%= order.subtotal_price_cents/100%>€</li>
-  <li><%= order.state%></li>
+<ul class="orders">
+  <li>N° de commande: <%= link_to order.id, order_path(order)%></li>
+  <li>Effectuée le: <%= order.updated_at.to_formatted_s(:short)%></li>
+  <li>Montant: <%= order.subtotal_price_cents/100%>€</li>
+  <li> Statut: <% if order.state == "pending" %>
+  En attente de paiement 
+  <% else %>
+  Commande payée 
+  <% end %>
+  
+  </li>
 </ul>
 <% end %>
 </div>

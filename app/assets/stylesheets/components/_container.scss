@@ -43,7 +43,7 @@
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    background-color: #e2b288;
+    background-color: #d3ae8d;
     color: white;
 
       
@@ -83,7 +83,7 @@ font-family: 'Montserrat';
 
 .card-wrapper{
 
-  width: 35vw;
+  // width: 35vw;
   font-family: 'Open sans', sans-serif;   
   margin-right: 20px;
   display:flex;
@@ -92,7 +92,7 @@ font-family: 'Montserrat';
 }
 .card-wrapper-flex-start{
 
-  width: 35vw;
+  // width: 35vw;
   font-family: 'Open sans', sans-serif;   
   margin-right: 20px;
   display:flex;
@@ -129,7 +129,12 @@ font-family: 'Montserrat';
 // }
 
 .adresse {
+  margin-top:15px;
   padding-left:8px;
+
+  h3{
+    font-size: 25px;
+  }
 }
 
 .patricia{
@@ -246,8 +251,29 @@ font-family: 'Montserrat';
   }
 }
 
+.under-title{
+  margin-bottom:0;
+}
+@media (min-width: 1990px) {
+  .w-50 {
+    width: 64% !important;
+}
+  .logo {
+    position: absolute;
+    top: -37px;
+    left: 507px;}
 
-  @media (max-width: 1024px) {
+  .titre h1 {
+    line-height: 93px;
+}
+.header h1 {
+    
+    font-size: 118px;
+}
+}
+
+
+  @media (max-width: 1124px) {
     .bloc
     {
      grid-template-columns: 1fr 1fr;
@@ -274,21 +300,121 @@ font-family: 'Montserrat';
        font-size: 12px;
      }
    }
-    .navmenu {
 
-      li {
-        padding-left: 35px;
-        padding-right: 35px;
-        font-size: 12px;
-      }
-    }
+   .map-container h1 {
+    font-size: 40px;
+   }
+
+   .aboutaccueil{
+     top:15px;
+   }
+   .aboutaccueil li{
+    font-size:14px;
   }
 
+  .navmenu.active{
+    justify-content: start;
+  }
+  .navmenu.active li {
+    padding-right: 23px;
+    padding-left: 23px;
+}
+.navmenu.active a {
+  font-size: 14px;}
+
+  .navmenu-presta{
+    justify-content: start;
+  }
+
+  .navmenu-presta li {
+    padding-right: 23px;
+    padding-left: 23px;
+}
+.navmenu-presta a {
+  font-size: 14px;}
+
+
+   .about-container{
+    grid-template-columns: 1fr;
+  }
+  .tel {
+    h2{padding-left:2px;}
+  }
+  .pic{
+    width: 100%;
+      height: 57vw
+  }
+  
+  .makeup-container{
+    grid-template-columns: 1fr 1fr;
+  }
+  .card-wrapper{
+    width:100%;
+  }
+   .navmenu li {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 9px;
+}
+.menu-container {
+  
+  margin-right: 2vw;
+  
+}
+
+.header h1 {
+
+font-size: 50px;
+
+}
+.titre h1 {
+line-height: 40px;
+}
+
+.epil-bann{
+height:100%;}
+  
+
+  .makeup-bann{
+    height:31vw;
+  }
+  .soinvisage-bann{
+    height:31vw;
+  }
+  .massage-bann{
+    height:29vw;
+  }
+  .logo {
+    position: absolute;
+    top: -19px;
+    left: 214px;
+}
+}
 
 
   @media (max-width: 960px) {
     /* For a screen < 960px, this CSS will be read */
+    .about-container{
+      grid-template-columns: 1fr;
+    }
+
+    .pic{
+      width: 100%;
+      height: 57vw
+    }
     
+    .makeup-container{
+      grid-template-columns: 1fr;
+    }
+    .epil-bann{
+      height:100vw;
+    }
+.massage-bann{
+  height:60vw
+}
+.soinvisage-bann{
+  height:60vw;
+}
     .bloc
      {
       grid-template-columns: 1fr 1fr;
@@ -315,7 +441,17 @@ font-family: 'Montserrat';
         font-size: 12px;
       }
     }
-
+    .aboutaccueil {
+      
+      top: 15px;
+      
+  }
+  .aboutaccueil li {
+    
+    padding-left: 5px;
+    padding-right: 5px;
+   font-size: 12px;
+}
     .navmenu li {
       padding-left: 8px;
       padding-right: 8px;
@@ -323,14 +459,40 @@ font-family: 'Montserrat';
      
 
     }
-    .titre h1 {
-      line-height: 35px;
-  }
 
+    .navmenu.active{
+      justify-content: start;
+    }
+
+    .navmenu.active li {
+      padding-right: 15px;
+      padding-left: 15px;
+  }
+    .navmenu.active a {
+      font-size: 12px;
+    }
+
+
+    .titre h1 {
+      line-height: 32px;
+  }
+  .navmenu-presta{
+    justify-content: start;
+  }
+  .navmenu-presta li {
+    padding-right: 14px;
+    padding-left: 14px;
+}
+.navmenu-presta a {
+  
+  font-size: 12px;
+  
+}
   .header h1 {
     font-family: 'Montserrat', sans-serif;
     color: #685d5d;
-    font-size: 42px;
+    font-size: 38px;
+    margin-bottom:0;
   }
 
   .menu-container {
@@ -347,10 +509,40 @@ font-family: 'Montserrat';
     //   }
     // }
   }
+
+
+  .card-wrapper {
+    width: 100%;
+    margin-right:0}
+
+.makeup-bann{
+  height:60vw;
 }
 
-  @media (max-width: 740px) {
 
+
+.tel h2 {
+  font-family: 'Montserrat';
+  padding-left: 2px;
+  color: grey;
+  margin-bottom: 0;
+}
+.navmenu li:first-child{
+  padding-left:6px;
+}
+}
+  @media (max-width: 740px) {
+    .about-container{
+      grid-template-columns: 1fr;
+    }
+    .pic{
+      width: 100%;
+        height: 57vw
+    }
+    
+    .makeup-container{
+      grid-template-columns: 1fr;
+    }
     
     /* For a screen < 720px, this CSS will be read */
     .bloc
@@ -370,6 +562,8 @@ font-family: 'Montserrat';
       
 
     }
+
+    
     .titre h1 {
       line-height: 29px;
   }
@@ -416,10 +610,59 @@ font-family: 'Montserrat';
     justify-content: start;
   }
   }
+  @media (max-width: 670px) {
+    .navmenu.active li {
+      padding-right: 10px;
+      padding-left: 10px;
+  }
+  }
 
+  @media (max-width: 660px) {
+    .navmenu.active li {
+      padding-right: 9px;
+      padding-left: 9px;
+  }
+  }
+  @media (max-width: 640px){
+  .navmenu.active li {
+      padding-right: 8px;
+      padding-left: 8px;
+  }
+}
+  @media (max-width: 600px) {
+    .navmenu.active li {
+      padding-right: 7px;
+      padding-left: 7px;
+  }
+  .navmenu.active a {
+    font-size: 9px;
+}
+.aboutaccueil li {
+  font-size: 9px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+  }
   @media (max-width: 540px) {
     /* For a screen < 540px, this CSS will be read */
+    .adresse {
+      margin-top:15px;
+      // padding-left:8px;
+    
+      h3{
+        font-size: 18px;
+      }
+    }
 
+    .contact-icon {
+      font-size: 16px;
+      width: 30px;
+      height: 30px;
+    }
+
+    .tel{
+      display:none;
+    }
 
     .fa-user{
       display:block;
@@ -446,7 +689,7 @@ font-family: 'Montserrat';
 .under-menu{
   box-shadow: -3px 7px 10px -8px grey;
   h1{
-    font-size:32px;
+    font-size:20px;
     
   }
 }
@@ -469,8 +712,10 @@ font-family: 'Montserrat';
   height: 60vw;
 }
 .epil-bann{
-  width: 90vw;
-  height: 60vw;
+  .epil-bann {
+    width: 100%;
+    height: 100vw;
+}
 }
 .makeup-container{
   margin-top:0;
@@ -560,7 +805,7 @@ font-family: 'Montserrat';
     flex-direction: column;
   grid-template-columns: 1fr;
   h1 {
-    font-size: 26px;
+    font-size: 30px;
   }
 }
 #map{
