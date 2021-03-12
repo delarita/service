@@ -55,7 +55,7 @@
                     <%= f.submit "Modifier quantité", class: 'btn btn-ghost' %>
                     <%= link_to "Supprimer", [order_item.orderitemable, order_item], method: :delete, remote: true, class: 'btn btn-ghost'  %>
                   </div>
-                  <span class="subtotal">Sous Total : <%= order_item.total_price/100 %></span>
+                  <div class="subtotal">Sous Total : <%= order_item.total_price/100 %></div>
                 <% end %>
               </div>
             </div>
