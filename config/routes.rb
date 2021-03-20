@@ -22,7 +22,10 @@ Rails.application.routes.draw do
   resources :epilations do
     resources :order_items, only: [:create, :update, :destroy]
   end
-
+  
+  resource :contacts, only: [:new, :create] do
+    get "/thanks" => "contacts#thanks"
+  end
   #resources :epilations, only: [:index, :show, :new, :edit, :update, :create, :destroy]
   # get "epilations", to: "epilations#index"
   # get "epilations/new", to: "epilations#new"

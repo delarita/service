@@ -28,8 +28,8 @@
    
 }
 .total-price{
-  font-family: MOntserrat;
-  font-weight: bold;
+  font-family: Montserrat;
+  // font-weight: bold;
 }
 .btn-group{
   margin-bottom: 3px;;
@@ -148,19 +148,20 @@ font-family: 'Montserrat';
   padding-left: 10px;
   background-color: white;
     p{
-      font-family:'Open sans', sans-serif;   
+      font-family:'Montserrat', sans-serif;   
     }
 }
 .pic {
     
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("https://coolwallpapers.me/picsup/2611782-monica-bellucci-cool-wallpaper-for-pc.jpg");
+  background-image: url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1615548643/y6n1xsxrducombivnxgf.jpg");
   animation-name: fadeInOpacity;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-duration: 2s;
-
+  width: 100%;
+  height: 36vw;
 
 
 }
@@ -193,8 +194,15 @@ font-family: 'Montserrat';
   display:grid;
   grid-template-columns: 1fr 1fr;
   grid-gap:16px;
+  width: 72%;
 
 }
+
+.pat{
+display: flex;
+justify-content: center;
+}
+
 
 .caddie-container{
   margin-top:50px;
@@ -270,10 +278,59 @@ font-family: 'Montserrat';
     
     font-size: 118px;
 }
+.about-container{
+  width:100%;
+}
+.pic{
+  height:31vw;
+}
+.bio {
+  p{
+    font-size:18px;
+
+  }
+  h2 {
+    font-size:26px;
+  }
+}
+.epil-bann{
+  height: 24vw;
+}
+.massage-bann{
+  height:14vw;
+}
+.soinvisage-bann{
+  height:14vw;
+}
+.makeup-bann{
+  height:16vw;
+}
+.container {
+  p{
+    font-size:18px;
+  }
+}
 }
 
+@media (max-width: 1370px) {
+  .navmenu-presta li {
+    padding-right: 19px;
+    padding-left: 19px;
+    
 
+  }
+  .navmenu-active li {
+    padding-right: 19px;
+    padding-left: 19px;
+    
+
+  }
+}
   @media (max-width: 1124px) {
+
+    .w-50 {
+      width: 42% !important;
+  }
     .bloc
     {
      grid-template-columns: 1fr 1fr;
@@ -335,7 +392,8 @@ font-family: 'Montserrat';
 
 
    .about-container{
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    width:100%;
   }
   .tel {
     h2{padding-left:2px;}
@@ -393,14 +451,25 @@ height:100%;}
 
 
   @media (max-width: 960px) {
+    .logo {
+      position: absolute;
+      top: -13px;
+      left: 161px;
+  }
     /* For a screen < 960px, this CSS will be read */
     .about-container{
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
+      width:100%;
     }
-
+    .btn-group {
+      .btn-ghost{
+        font-size:12px;
+        padding: 8px 12px;
+      }
+    }
     .pic{
       width: 100%;
-      height: 57vw
+      height: 55vw
     }
     
     .makeup-container{
@@ -480,8 +549,8 @@ height:100%;}
     justify-content: start;
   }
   .navmenu-presta li {
-    padding-right: 14px;
-    padding-left: 14px;
+    padding-right: 12px;
+    padding-left: 12px;
 }
 .navmenu-presta a {
   
@@ -532,12 +601,26 @@ height:100%;}
 }
 }
   @media (max-width: 740px) {
+.btn-group {
+  .btn-ghost{
+    font-size:11px;
+    padding: 8px 10px;
+  }
+}
+    .bio{
+      p{
+        font-size:11px;
+      }
+      h2{
+        font-size:18px;
+      }
+    }
     .about-container{
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
     }
     .pic{
       width: 100%;
-        height: 57vw
+        height: 45vw
     }
     
     .makeup-container{
@@ -565,7 +648,7 @@ height:100%;}
 
     
     .titre h1 {
-      line-height: 29px;
+      line-height: 31px;
   }
 
   .header h1 {
@@ -606,43 +689,98 @@ height:100%;}
       padding-right: 15px;
       padding-left: 15px;
   }
+  .navmenu-presta a {
+    font-size: 10px;
+  }
+  .navmenu-presta li {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+
   .navmenu.active {
     justify-content: start;
   }
+  .navmenu-presta{
+    justify-content: start;
   }
+  }
+
+
   @media (max-width: 670px) {
     .navmenu.active li {
       padding-right: 10px;
       padding-left: 10px;
   }
+  .navmenu-presta li {
+    padding-right: 10px;
+    padding-left: 10px;
+}
   }
 
   @media (max-width: 660px) {
     .navmenu.active li {
-      padding-right: 9px;
-      padding-left: 9px;
-  }
-  }
-  @media (max-width: 640px){
-  .navmenu.active li {
       padding-right: 8px;
       padding-left: 8px;
   }
+  .navmenu-presta li {
+    padding-right: 8px;
+    padding-left: 8px;
 }
-  @media (max-width: 600px) {
-    .navmenu.active li {
+.pic {
+  width: 100%;
+  height: 50vw;
+}
+  }
+
+
+  @media (max-width: 640px){
+  .navmenu.active li {
       padding-right: 7px;
       padding-left: 7px;
   }
+  .navmenu-presta li {
+    padding-right: 7px;
+    padding-left: 7px;
+}
+.pic{
+  width: 100%;
+    height: 51vw
+}
+
+}
+
+
+  @media (max-width: 600px) {
+    .navmenu.active li {
+      padding-right: 6px;
+      padding-left: 6px;
+  }
   .navmenu.active a {
     font-size: 9px;
+}
+
+.navmenu-presta li {
+  padding-right: 6px;
+  padding-left: 6px;
+}
+.navmenu-presta a {
+font-size: 9px;
 }
 .aboutaccueil li {
   font-size: 9px;
   padding-left: 4px;
   padding-right: 4px;
 }
+.pic {
+  width: 100%;
+  height: 61vw;
+}
   }
+
+
+
+
   @media (max-width: 540px) {
     /* For a screen < 540px, this CSS will be read */
     .adresse {
@@ -788,7 +926,7 @@ height:100%;}
 }
 .pic{
   width: 100%;
-    height: 57vw
+    height: 123vw;
 }
 
 .makeup-container{

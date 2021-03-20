@@ -37,10 +37,13 @@
                     <a class="contact-link" href="tel:+33613577158">06 13 57 71 58</a>
                     </p>
 
-                    <i class="contact-icon fas fa-at"></i>
-                    <h3 class="contact-text">Courriel</h3>
-                     <p><a class="contact-link" href="mailto:patou@relook.com">Nous contacter par mail</a></p>
 
+                    <i class="contact-icon fas fa-at"></i>
+                    <%=link_to new_contacts_path do%>
+                    <h3 class="contact-text">Nous contacter</h3>
+                    <% end %>
+                     <%# <p>Nous contacter</p> %><br /><br />
+                    
                      <i class="contact-icon far fa-clock"></i><h3 class="contact-text">Horaires d'ouverture</h3>
                      <p>du lundi au samedi non stop</p>
                </div>

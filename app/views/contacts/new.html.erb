@@ -1,0 +1,10 @@
+<h3>Nous contacter</h3>
+<div class="container">
+    <%= simple_form_for (@contact) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :phone %>
+      <%= f.input :email, autocomplete: "email" %>
+      <%= f.input :content %>
+      <%= f.submit "Envoyer" %>
+     <% end %>
+</div>
