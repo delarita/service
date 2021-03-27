@@ -1,4 +1,22 @@
 
+.form-container {
+ 
+    display: flex;
+    
+    justify-content: center;
+   
+}
+.form-control.text.optional{
+  height:150px;
+}
+.simple_form.new_contact{
+  // padding: 40px 60px;
+  // border:1px solid black;
+  // border-radius:20px;
+  margin-top:20px;
+  width:60%;
+  font-family: Montserrat;
+}
 
 
 #order_item_quantity{
@@ -119,7 +137,7 @@ font-family: 'Montserrat';
 }
 
 .form-group{
-  width: 20%;
+  // width: 20%;
   margin-bottom: 0;
 }
 
@@ -134,6 +152,14 @@ font-family: 'Montserrat';
 
   h3{
     font-size: 25px;
+  }
+  a{
+    text-decoration:none;
+    
+  }
+  a:hover{
+   
+    cursor: pointer;
   }
 }
 
@@ -395,7 +421,7 @@ justify-content: center;
     grid-template-columns: 1fr 1fr;
     width:100%;
   }
-  .tel {
+  .phone-number {
     h2{padding-left:2px;}
   }
   .pic{
@@ -590,7 +616,7 @@ height:100%;}
 
 
 
-.tel h2 {
+.phone-number h2 {
   font-family: 'Montserrat';
   padding-left: 2px;
   color: grey;
@@ -783,6 +809,11 @@ font-size: 9px;
 
   @media (max-width: 540px) {
     /* For a screen < 540px, this CSS will be read */
+    .simple_form.new_contact{
+     
+      width:70%;
+      
+    }
     .adresse {
       margin-top:15px;
       // padding-left:8px;
@@ -798,7 +829,7 @@ font-size: 9px;
       height: 30px;
     }
 
-    .tel{
+    .phone-number{
       display:none;
     }
 
@@ -992,6 +1023,20 @@ font-size: 9px;
       align-items: center;
     }
 
+    .contact-button{
+      // display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .map-button{
+      // display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .call-button:hover{
       box-shadow: 1px 1px 10px white;
     }
@@ -1002,6 +1047,8 @@ font-size: 9px;
     
     .call-footer{
       display:flex;
+      justify-content: space-around;
+      
     }
 
     

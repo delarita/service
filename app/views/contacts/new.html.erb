@@ -1,10 +1,28 @@
-<h3>Nous contacter</h3>
+<div class="navmenu-presta">
+            
+                
+                <li><%= link_to "EPILATIONS", epilations_path %></li>
+                <li><%= link_to "MASSAGES", massages_path %></li>
+                <li><%= link_to "SOINS DU VISAGE", soinvisages_path %></li>
+                <li><%= link_to "MAQUILLAGE PERMANENT", maquillages_path %></li>
+
+</div>
+
+<div class="false-menu"></div>
+<div class="under-menu">
+     <h1 class="under-title">Nous contacter</h1>
+     <span class="retour-accueil"><%= link_to "ACCUEIL", root_path %></span>
+</div>
+
 <div class="container">
+<div class="form-container">
+
     <%= simple_form_for (@contact) do |f| %>
-      <%= f.input :name %>
-      <%= f.input :phone %>
+      <%= f.input :name, label: 'Nom' %>
+      <%= f.input :phone, label: 'Numéro de téléphone' %>
       <%= f.input :email, autocomplete: "email" %>
-      <%= f.input :content %>
-      <%= f.submit "Envoyer" %>
+      <%= f.input :content, label: 'Votre message'%>
+      <%= f.submit "Envoyer", class: "btn btn-secondary btn-lg btn-block"%>
      <% end %>
+</div>
 </div>
