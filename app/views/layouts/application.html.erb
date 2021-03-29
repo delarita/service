@@ -48,8 +48,17 @@
     </div>
 
     <div class="call-footer">
+
+    <div class="contact-button">
+    <%=link_to new_contacts_path do%> <i class="far fa-envelope"></i><% end %>
+    </div>
       <div class="call-button">
+       
         <a href="tel:+33613577158"><i class="fas fa-phone"></a></i>
+
+      </div>
+      <div class="map-button">
+        <%= link_to salons_path(anchor: 'map')do%><i class="fas fa-map-marker-alt"></i><% end %>
       </div>
     </div>
 

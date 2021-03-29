@@ -4,7 +4,7 @@ class SalonPolicy < ApplicationPolicy
       scope.all
     end
 
-    def index
+    def new?
     end
   end
 end
