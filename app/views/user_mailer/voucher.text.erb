@@ -1,3 +1,5 @@
-User#voucher
+Bonjour <%= @user.email %>, voici
+votre bon cadeau Relook Esthétique
 
-<%= @greeting %>, find me in app/views/user_mailer/voucher.text.erb
+Commande n° <%= @order.id %> du <%= @order.updated_at %>
+<%= link_to "get back", root_url %>

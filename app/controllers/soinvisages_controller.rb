@@ -6,7 +6,7 @@ class SoinvisagesController < ApplicationController
   end
 
   def index
-    @soinvisages = policy_scope(Soinvisage)
+    @soinvisages = policy_scope(Soinvisage).sort_by { |m| [m.updated_at] }.reverse!
     @order_item = current_order.order_items.new
     @bc_soinvisage = Soinvisage.first
     @boncadeau = current_order.order_items.new

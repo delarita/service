@@ -6,7 +6,7 @@ class EpilationsController < ApplicationController
   end
 
   def index
-    @epilations = policy_scope(Epilation)
+    @epilations = policy_scope(Epilation).sort_by { |m| [m.updated_at] }.reverse!
     @order_item = current_order.order_items.new
     @bc_epililation = Epilation.first
     @boncadeau = current_order.order_items.new

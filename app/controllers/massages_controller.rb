@@ -6,7 +6,7 @@ class MassagesController < ApplicationController
   end
 
   def index
-    @massages = policy_scope(Massage)
+    @massages = policy_scope(Massage).sort_by { |m| [m.updated_at] }.reverse!
     @order_item = current_order.order_items.new
     @bc_massage = Massage.first
     @boncadeau = current_order.order_items.new

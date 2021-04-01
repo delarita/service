@@ -33,32 +33,33 @@
         <div class="cards">
           <%# <div class="service"> %>
           <div class="presta-name">
-              <%= maquillage.name %><%= " " if maquillage.description != "" %>
-              <%= maquillage.description %><%= " " if maquillage.price != "" %>
+              <%= maquillage.name %><%#<%= " " if maquillage.description != "" %>
+              <%#<%= maquillage.description %><%= " " if maquillage.price != "" %>
           </div>
 
           <div class="presta-price">
             <%= form_for([maquillage, @order_item], remote: true) do |f| %>
               <%= f.hidden_field :orderitemable_type, value: "Maquillage" %>
               <%= f.hidden_field :orderitemable_id, value: maquillage.id %>
-              
+
 
               <%# <div class="form-group"> %>
                 <%= f.hidden_field :quantity, value: 1, min: 1, class: 'form-control' %>
               <%# </div> %>
 
               <%# <div class="service-price"> %>
-               
+
                 <%= humanized_money_with_symbol(maquillage.price) %>
-                
+
                 <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
               <%# </div> %>
             <% end %>
-         </div> 
-         <span class="plus"><%= link_to maquillage_path(maquillage) do %> </span>
-             <i class="fas fa-angle-right"></i>
-            <% end %>
-         
+         </div>
+          <% if !maquillage.description.nil? %>
+              <span class="plus"><%= link_to maquillage_path(maquillage) do %></span>
+                <i class="fas fa-angle-right"></i>
+              <% end %>
+          <% end %>
           <% if policy(Maquillage).destroy? %>
             <p>
               <%= link_to "del",

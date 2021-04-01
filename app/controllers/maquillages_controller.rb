@@ -6,7 +6,7 @@ class MaquillagesController < ApplicationController
   end
 
   def index
-    @maquillages = policy_scope(Maquillage)
+    @maquillages = policy_scope(Maquillage).sort_by { |m| [m.updated_at] }.reverse!
     @order_item = current_order.order_items.new
     @bc_maquillage = Maquillage.first
     @boncadeau = current_order.order_items.new
