@@ -7,7 +7,7 @@ const selectNav = () => {
   let contain = document.querySelector(".menu-container");
   let title = document.querySelector(".titre");
   let logoDiv = document.querySelector(".logo");
-  let phone = document.querySelector(".tel")
+  let phone = document.querySelector(".phone-number")
   // on mémorise la position de nav
   if (objNav) {
   let memoPositionNav = objNav.offsetTop;
