@@ -288,55 +288,189 @@ justify-content: center;
 .under-title{
   margin-bottom:0;
 }
-@media (min-width: 1990px) {
-  .w-50 {
-    width: 64% !important;
-}
-  .logo {
-    position: absolute;
-    top: -37px;
-    left: 507px;}
+// @media (min-width: 2000px) {
+
+//   .w-50 {
+//     width: 64% !important;
+// }
+//   .logo {
+//     position: absolute;
+//     top: -37px;
+//     left: 507px;}
+
+//   .titre h1 {
+//     line-height: 93px;
+// }
+// .header h1 {
+    
+//     font-size: 118px;
+// }
+// .about-container{
+//   width:100%;
+// }
+// .pic{
+//   height:31vw;
+// }
+// .bio {
+//   p{
+//     font-size:18px;
+
+//   }
+//   h2 {
+//     font-size:26px;
+//   }
+// }
+// .epil-bann{
+//   height: 24vw;
+// }
+// .massage-bann{
+//   height:14vw;
+// }
+// .soinvisage-bann{
+//   height:14vw;
+// }
+// .makeup-bann{
+//   height:16vw;
+// }
+// .container {
+//   p{
+//     font-size:18px;
+//   }
+// }
+
+// .navmenu li {
+//     font-size:25px;
+//   }
+
+//   .aboutaccueil li {
+//     font-size:28px}
+  
+
+//   .phone-number h2{
+// font-size:56px;
+//   }
+  
+// .fa-shopping-cart {
+//  right: 14px;
+//  top: 20px;
+    
+//  font-size: 42px;
+// }
+// .cart-inside {
+  
+//   padding: 16px;
+//   font-size: 21px;
+//   width: 22px;
+//   height: 22px;
+ 
+//   right: 7px;
+//   top: 10px;
+ 
+// }
+// .navmenu.active {
+//   height:90px;}
+
+
+// .navmenu.active a {
+//   font-size: 28px;
+// }
+// .false-menu {
+//   height: 90px;
+// }
+// .navmenu-presta {
+//   height:90px;
+// }
+
+// .navmenu-presta a {
+//   font-size: 28px;
+// }
+// .retour-accueil a {
+  
+//   font-size: 32px;
+// }
+
+// }
+
+
+@media (min-width: 1700px) {
 
   .titre h1 {
-    line-height: 93px;
+    line-height: 70px;
 }
 .header h1 {
     
-    font-size: 118px;
+    font-size: 90px;
 }
-.about-container{
-  width:100%;
-}
-.pic{
-  height:31vw;
-}
-.bio {
-  p{
-    font-size:18px;
 
-  }
-  h2 {
-    font-size:26px;
-  }
+.navmenu li {
+  font-size:18px;
 }
-.epil-bann{
-  height: 24vw;
+
+.logo {
+  
+  top: -38px;
+  left: 380px;
 }
-.massage-bann{
-  height:14vw;
+
+
+.aboutaccueil li {
+  font-size:22px}
+
+
+.phone-number h2{
+font-size:50px;
 }
-.soinvisage-bann{
-  height:14vw;
+
+.fa-shopping-cart {
+right: 14px;
+top: 20px;
+  
+font-size: 32px;
 }
-.makeup-bann{
-  height:16vw;
+.cart-inside {
+
+padding: 13px;
+font-size: 18px;
+width: 22px;
+height: 22px;
+
+right: 7px;
+top: 10px;
+
 }
-.container {
-  p{
-    font-size:18px;
-  }
+.navmenu.active {
+height:77px;}
+
+
+.navmenu.active a {
+font-size: 22px;
 }
+
+.container p{
+  font-size:18px;
 }
+
+.about-container {
+  width:100%;
+
+}
+.navmenu-presta {
+  height:77px;
+}
+
+.navmenu-presta a {
+  font-size: 22px;
+}
+.retour-accueil a {
+  
+  font-size: 26px;
+}
+.false-menu {
+  height: 77px;
+}
+ }
+
+
 
 @media (max-width: 1370px) {
   .navmenu-presta li {
@@ -351,6 +485,7 @@ justify-content: center;
     
 
   }
+
 }
   @media (max-width: 1124px) {
 
@@ -470,16 +605,42 @@ height:100%;}
   }
   .logo {
     position: absolute;
-    top: -19px;
+    top: -8px;
     left: 214px;
 }
 }
 
 
   @media (max-width: 960px) {
+
+.navmenu-tablette {
+    display: flex;
+    // position: absolute;
+    left: 10px;
+    top: 12px;
+    position: fixed;
+    font-size: 14px;
+    list-style-type: none;
+    text-decoration: none;
+    font-family:Montserrat;
+    
+    li {
+      padding: 10px;
+    }
+    a {
+      color:#685d5d;
+      
+      // font-weight:bold;
+    }
+  }
+
+// .navmenu{
+//   display:none
+// }
+
     .logo {
       position: absolute;
-      top: -13px;
+      top: -23px;
       left: 161px;
   }
     /* For a screen < 960px, this CSS will be read */
@@ -550,7 +711,7 @@ height:100%;}
     .navmenu li {
       padding-left: 8px;
       padding-right: 8px;
-      font-size: 6px;
+      font-size: 8px;
      
 
     }
@@ -626,188 +787,465 @@ height:100%;}
   padding-left:6px;
 }
 }
-  @media (max-width: 740px) {
-.btn-group {
-  .btn-ghost{
-    font-size:11px;
-    padding: 8px 10px;
+  @media (max-width: 810px) {
+
+    .title-mobile {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-weight: bold;
+    background-color: white;
+    width: 100%;
+    opacity: 0.6;
+    z-index: 5;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+  h1 {
+    font-size: 22px;
+  }
+  }
+
+    .simple_form.new_contact{
+     
+      width:70%;
+      
+    }
+    .adresse {
+      margin-top:15px;
+      // padding-left:8px;
+    
+      h3{
+        font-size: 18px;
+      }
+    }
+
+    .contact-icon {
+      font-size: 16px;
+      width: 30px;
+      height: 30px;
+    }
+
+    .phone-number{
+      display:none;
+    }
+
+    .fa-user{
+      display:block;
+      position:fixed;
+      top:19px;
+      right:60px;
+      color:rgb(104, 93, 93);
+      z-index:45689;
+      font-size:25px;
+  }
+
+.card-wrapper{
+  min-width:90vw;
+  margin-right:0;
+  font-size:9px;
+}
+
+.card-wrapper-flex-start{
+  min-width:90vw;
+  margin-right:0;
+  font-size:9px;
+}
+
+.under-menu{
+  box-shadow: -3px 7px 10px -8px grey;
+  h1{
+    font-size:20px;
+    
   }
 }
-    .bio{
-      p{
-        font-size:11px;
-      }
-      h2{
-        font-size:18px;
-      }
-    }
-    .about-container{
-      grid-template-columns: 1fr 1fr;
-    }
-    .pic{
-      width: 100%;
-        height: 45vw
-    }
-    
-    .makeup-container{
-      grid-template-columns: 1fr;
-    }
-    
-    /* For a screen < 720px, this CSS will be read */
+
+.btn-ghost{
+  font-size:14px;
+}
+
+.btn-ghost2{
+  font-size:9px;
+  padding: 6px 14px;
+}
+.makeup-bann{
+  height:60vw;
+}
+.massage-bann{
+  height: 60vw;
+}
+.soinvisage-bann{
+  height: 60vw;
+}
+.epil-bann{
+  .epil-bann {
+    width: 100%;
+    height: 100vw;
+}
+}
+.makeup-container{
+  margin-top:0;
+}
+.header{
+  height: 84vw;
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: flex-end;
+}
+.navmenu-presta a{
+  display:none;
+  
+}
+
+.logo-mobile{
+  display:flex;
+  justify-content: center;
+  margin-bottom:15px;
+  
+}
+.avatar {
+  width: 40px;
+  height:40px;
+  border-radius: 50%;
+  /* top: 13px; */
+  position: fixed;
+  top: 9px;
+  right: 55px;
+}
+.logo-mobile-menu{
+ 
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+}
+.aboutaccueil {
+  
+    display:none;
+  
+  
+}
+.aboutaccueil-mobile {
+  
+  display:flex;
+
+
+}
+.accueil-menu{
+  display:none;
+}
+
+.img-bloc2{
+  display:none;
+
+}
+.img-bloc1{
+  display:block;
+
+}
+// .nav-link{
+//   display:none;
+// }
+.footer-copyright{
+  display:none;
+}
+
+.about-container{
+  grid-template-columns: 1fr;
+}
+.pic{
+  width: 100%;
+    height: 123vw;
+}
+
+.makeup-container{
+  grid-template-columns: 1fr;
+}
+.menu-container{display:none}
+.text{
+  padding-bottom:0;
+}
+.map-container{
+  justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  grid-template-columns: 1fr;
+  h1 {
+    font-size: 30px;
+  }
+}
+#map{
+  width: 291px;
+    height: 300px;
+}
+.contact-infos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column
+}
+.container {
+  grid-template-columns: 1fr  ;
+  margin-top:0;
+  p{
+    font-family: Montserrat;
+    font-size:12px;
+    margin-top:15px;
+  }
+}
+
     .bloc
      {
       grid-template-columns: 1fr;
+
+      
       
     }
     .bloc1
      {
       grid-template-columns: 1fr;
+
+      
       
     }
-    .navmenu li {
-      padding-left: 4px;
-      padding-right: 4px;
-      font-size: 6px;
+
+    .navmenu {
+        display:none;
+    }
+
+    .call-button{
+      // display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contact-button{
+      // display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .map-button{
+      // display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .call-button:hover{
+      box-shadow: 1px 1px 10px white;
+    }
+
+    .menu-button {
+      display:block;
+    }
+    
+    .call-footer{
+      display:none;
+      // justify-content: space-around;
+      
+    }
+
+  
+    
+
+
+
+
+
+
+
+// .btn-group {
+//   .btn-ghost{
+//     font-size:11px;
+//     padding: 8px 10px;
+//   }
+// }
+//     .bio{
+//       p{
+//         font-size:11px;
+//       }
+//       h2{
+//         font-size:18px;
+//       }
+//     }
+//     .about-container{
+//       grid-template-columns: 1fr 1fr;
+//     }
+//     .pic{
+//       width: 100%;
+//         height: 45vw
+//     }
+    
+//     .makeup-container{
+//       grid-template-columns: 1fr;
+//     }
+    
+//     /* For a screen < 720px, this CSS will be read */
+//     .bloc
+//      {
+//       grid-template-columns: 1fr;
+      
+//     }
+//     .bloc1
+//      {
+//       grid-template-columns: 1fr;
+      
+//     }
+//     .navmenu li {
+//       padding-left: 4px;
+//       padding-right: 4px;
+//       font-size: 6px;
       
 
-    }
+//     }
 
     
-    .titre h1 {
-      line-height: 31px;
-  }
+//     .titre h1 {
+//       line-height: 31px;
+//   }
 
-  .header h1 {
-    font-family: 'Montserrat', sans-serif;
-    color: #685d5d;
-    font-size: 35px;
-  }
+//   .header h1 {
+//     font-family: 'Montserrat', sans-serif;
+//     color: #685d5d;
+//     font-size: 35px;
+//   }
 
-  .menu-container {
+//   .menu-container {
     
-    margin-right: 1vw;}
+//     margin-right: 1vw;}
 
-    // .nav
+//     // .nav
 
-    //   li {
-    //     padding-left: 15px;
-    //     padding-right: 15px;
-    //     font-size: 8px;
-    //   }
-    // }
-    .avatar {
-      font-size: 16px;
-      width: 32px;
-      height: 32px;
-    }
-    .aboutaccueil{
-      top:19px;
-    }
-    .aboutaccueil li {
-      font-size: 10px;
-      padding-left: 8px;
-      padding-right: 8px;
-    }
-    .navmenu.active a {
-      font-size: 10px;
-    }
-    .navmenu.active li {
-      padding-right: 15px;
-      padding-left: 15px;
-  }
-  .navmenu-presta a {
-    font-size: 10px;
-  }
-  .navmenu-presta li {
-    padding-right: 15px;
-    padding-left: 15px;
-}
-
-
-  .navmenu.active {
-    justify-content: start;
-  }
-  .navmenu-presta{
-    justify-content: start;
-  }
-  }
+//     //   li {
+//     //     padding-left: 15px;
+//     //     padding-right: 15px;
+//     //     font-size: 8px;
+//     //   }
+//     // }
+//     .avatar {
+//       font-size: 16px;
+//       width: 32px;
+//       height: 32px;
+//     }
+//     .aboutaccueil{
+//       top:19px;
+//     }
+//     .aboutaccueil li {
+//       font-size: 10px;
+//       padding-left: 8px;
+//       padding-right: 8px;
+//     }
+//     .navmenu.active a {
+//       font-size: 10px;
+//     }
+//     .navmenu.active li {
+//       padding-right: 15px;
+//       padding-left: 15px;
+//   }
+//   .navmenu-presta a {
+//     font-size: 10px;
+//   }
+//   .navmenu-presta li {
+//     padding-right: 15px;
+//     padding-left: 15px;
+// }
 
 
-  @media (max-width: 670px) {
-    .navmenu.active li {
-      padding-right: 10px;
-      padding-left: 10px;
-  }
-  .navmenu-presta li {
-    padding-right: 10px;
-    padding-left: 10px;
-}
-  }
-
-  @media (max-width: 660px) {
-    .navmenu.active li {
-      padding-right: 8px;
-      padding-left: 8px;
-  }
-  .navmenu-presta li {
-    padding-right: 8px;
-    padding-left: 8px;
-}
-.pic {
-  width: 100%;
-  height: 50vw;
-}
+//   .navmenu.active {
+//     justify-content: start;
+//   }
+//   .navmenu-presta{
+//     justify-content: start;
+//   }
   }
 
 
-  @media (max-width: 640px){
-  .navmenu.active li {
-      padding-right: 7px;
-      padding-left: 7px;
-  }
-  .navmenu-presta li {
-    padding-right: 7px;
-    padding-left: 7px;
-}
-.pic{
-  width: 100%;
-    height: 51vw
-}
+//   @media (max-width: 670px) {
+//     .navmenu.active li {
+//       padding-right: 10px;
+//       padding-left: 10px;
+//   }
+//   .navmenu-presta li {
+//     padding-right: 10px;
+//     padding-left: 10px;
+// }
+//   }
 
-}
+//   @media (max-width: 660px) {
+//     .navmenu.active li {
+//       padding-right: 8px;
+//       padding-left: 8px;
+//   }
+//   .navmenu-presta li {
+//     padding-right: 8px;
+//     padding-left: 8px;
+// }
+// .pic {
+//   width: 100%;
+//   height: 50vw;
+// }
+//   }
 
 
-  @media (max-width: 600px) {
-    .navmenu.active li {
-      padding-right: 6px;
-      padding-left: 6px;
-  }
-  .navmenu.active a {
-    font-size: 9px;
-}
+//   @media (max-width: 640px){
+//   .navmenu.active li {
+//       padding-right: 7px;
+//       padding-left: 7px;
+//   }
+//   .navmenu-presta li {
+//     padding-right: 7px;
+//     padding-left: 7px;
+// }
+// .pic{
+//   width: 100%;
+//     height: 51vw
+// }
 
-.navmenu-presta li {
-  padding-right: 6px;
-  padding-left: 6px;
-}
-.navmenu-presta a {
-font-size: 9px;
-}
-.aboutaccueil li {
-  font-size: 9px;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-.pic {
-  width: 100%;
-  height: 61vw;
-}
-  }
+// }
+
+
+//   @media (max-width: 600px) {
+//     .navmenu.active li {
+//       padding-right: 6px;
+//       padding-left: 6px;
+//   }
+//   .navmenu.active a {
+//     font-size: 9px;
+// }
+
+// .navmenu-presta li {
+//   padding-right: 6px;
+//   padding-left: 6px;
+// }
+// .navmenu-presta a {
+// font-size: 9px;
+// }
+// .aboutaccueil li {
+//   font-size: 9px;
+//   padding-left: 4px;
+//   padding-right: 4px;
+// }
+// .pic {
+//   width: 100%;
+//   height: 61vw;
+// }
+//   }
 
 
 
 
   @media (max-width: 540px) {
+
+.title-mobile {
+  display:none
+}
+
+    .navmenu-tablette {
+      display:none;}
     /* For a screen < 540px, this CSS will be read */
     .simple_form.new_contact{
      
