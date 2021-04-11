@@ -91,6 +91,12 @@ font-family: 'Montserrat';
     grid-gap: 16px;
 }
 
+
+.presta-name {
+  width:56%
+}
+
+
 .presta-price {
   margin-left:auto;
 }
@@ -107,6 +113,10 @@ font-family: 'Montserrat';
   display:flex;
   flex-direction: column;
   justify-content: space-between;
+  h3 {
+    font-family: 'Montserrat';
+    font-size: 24px;
+  }
 }
 .card-wrapper-flex-start{
 
@@ -248,8 +258,8 @@ justify-content: center;
    }
 
    p{
-    font-size: 14px;
-    font-family: 'Open sans', sans-serif;  
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;  
     color: grey;
    }
 }
