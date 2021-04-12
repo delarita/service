@@ -1,11 +1,4 @@
-<%# <%= form_for([@bc_maquillage, @order_item], remote: true) do |f| %>
-  <%# <%= f.hidden_field :orderitemable_type, value: "Maquillage" %>
-  <%# <%= f.hidden_field :orderitemable_id, value: @bc_maquillage.id %>
-  <%# <%= f.hidden_field :quantity, value: 1 %>
-  <%# <% @order_item = @boncadeau %>
-  <%# <% p @order_item %>
-  <%# <%= f.submit "BON CADEAU", class: 'btn btn-primary btn-sm' %>
-<%# <% end %>
+
 <div class="navmenu-presta">
   <%# <li><%= link_to "ACCUEIL", root_path%>
   <%# </li> %>
@@ -23,6 +16,14 @@
   <span class="retour-accueil"><%= link_to "ACCUEIL", root_path %></span>
 </div>
 <div class="container">
+  <%= form_for([@bc_maquillage, @order_item], remote: true) do |f| %>
+  <%= f.hidden_field :orderitemable_type, value: "Maquillage" %>
+  <%= f.hidden_field :orderitemable_id, value: @bc_maquillage.id %>
+  <%= f.hidden_field :quantity, value: 1 %>
+  <% @order_item = @boncadeau %>
+  <% p @order_item %>
+  <%= f.submit "BON CADEAU", class: 'btn btn-primary btn-sm' %>
+<% end %>
   <p>Soyez sublime à tout moment de la journée grâce au maquillage permanent.
      Pour votre confort et votre sécurité, nous vous proposons un travail de qualité dans un cadre adapté avec du matériel et des pigments aux normes.
      Relook Esthétique s’engage à respecter les règles d’hygiène du ministère de la santé.

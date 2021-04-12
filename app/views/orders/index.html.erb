@@ -29,7 +29,9 @@
   <% end %>
   </li>
   <li>
-    <% if policy(order).destroy? %><%= link_to "Supprimer la commande", order_path(order),method: :delete, data: { confirm: "Are you sure?" } %>
+    <% if policy(order).destroy? %>
+      <%= link_to "Supprimer la commande", order_path(order),method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
   </li>
 </ul>
 <% end %>
