@@ -41,7 +41,7 @@ Evacuation du stress
 Libération des tensions et des raideurs musculaires
 Gain d'énergie </p>
   <div class="makeup-container">
-    <div class="card-wrapper-flex-start">
+    <div class="card-wrapper">
       <% @massages.each do |massage| %>
         <div class="cards">
           <%# <div class="service"> %>
@@ -53,7 +53,7 @@ Gain d'énergie </p>
             <%= form_for([massage, @order_item], remote: true) do |f| %>
               <%= f.hidden_field :orderitemable_type, value: "Massage" %>
               <%= f.hidden_field :orderitemable_id, value: massage.id %>
-              
+
 
               <%# <div class="form-group"> %>
                 <%= f.hidden_field :quantity, value: 1, min: 1, class: 'form-control' %>
@@ -64,7 +64,7 @@ Gain d'énergie </p>
                  <%= humanized_money_with_symbol(massage.price) %>
                 <%# </span> %>
                 <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
-              
+
             <% end %>
             </div>
 

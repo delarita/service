@@ -1,10 +1,10 @@
 
 .form-container {
- 
+
     display: flex;
-    
+
     justify-content: center;
-   
+
 }
 .form-control.text.optional{
   height:150px;
@@ -31,7 +31,7 @@
 .well{
   margin-bottom: 20px;
   padding-bottom: 20px;
- 
+
   box-shadow:0 4px 2px -2px #e2dddd;
   h3, h5{
     font-family: Montserrat;
@@ -43,7 +43,7 @@
 .subtotal{
   font-family: Montserrat;
     font-size: 14px;
-   
+
 }
 .total-price{
   font-family: Montserrat;
@@ -64,7 +64,7 @@
     background-color: #d3ae8d;
     color: white;
 
-      
+
   }
 
   .contact-link {
@@ -91,6 +91,10 @@ font-family: 'Montserrat';
     grid-gap: 16px;
 }
 
+.presta-name {
+  width:56%
+}
+
 .presta-price {
   margin-left:auto;
 }
@@ -102,16 +106,20 @@ font-family: 'Montserrat';
 .card-wrapper{
 
   // width: 35vw;
-  font-family: 'Open sans', sans-serif;   
+  font-family: 'Open sans', sans-serif;
   margin-right: 20px;
   display:flex;
   flex-direction: column;
   justify-content: space-between;
+  h3 {
+    font-family: 'Montserrat';
+    font-size: 24px;
+  }
 }
 .card-wrapper-flex-start{
 
   // width: 35vw;
-  font-family: 'Open sans', sans-serif;   
+  font-family: 'Open sans', sans-serif;
   margin-right: 20px;
   display:flex;
   flex-direction: column;
@@ -155,10 +163,10 @@ font-family: 'Montserrat';
   }
   a{
     text-decoration:none;
-    
+
   }
   a:hover{
-   
+
     cursor: pointer;
   }
 }
@@ -166,19 +174,19 @@ font-family: 'Montserrat';
 .patricia{
   width:302px;
   background-size:cover;
-  
-  
+
+
 }
 
 .bio {
   padding-left: 10px;
   background-color: white;
     p{
-      font-family:'Montserrat', sans-serif;   
+      font-family:'Montserrat', sans-serif;
     }
 }
 .pic {
-    
+
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1615548643/y6n1xsxrducombivnxgf.jpg");
@@ -237,7 +245,7 @@ justify-content: center;
 .container {
 
   background-color: transparent;
-  margin-top: 50px; 
+  margin-top: 50px;
 
   h1 {
     font-family: 'Montserrat', sans-serif;
@@ -248,8 +256,8 @@ justify-content: center;
    }
 
    p{
-    font-size: 14px;
-    font-family: 'Open sans', sans-serif;  
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
     color: grey;
    }
 }
@@ -301,7 +309,7 @@ justify-content: center;
     line-height: 93px;
 }
 .header h1 {
-    
+
     font-size: 118px;
 }
 .about-container{
@@ -342,13 +350,13 @@ justify-content: center;
   .navmenu-presta li {
     padding-right: 19px;
     padding-left: 19px;
-    
+
 
   }
   .navmenu-active li {
     padding-right: 19px;
     padding-left: 19px;
-    
+
 
   }
 }
@@ -428,7 +436,7 @@ justify-content: center;
     width: 100%;
       height: 57vw
   }
-  
+
   .makeup-container{
     grid-template-columns: 1fr 1fr;
   }
@@ -441,9 +449,9 @@ justify-content: center;
     font-size: 9px;
 }
 .menu-container {
-  
+
   margin-right: 2vw;
-  
+
 }
 
 .header h1 {
@@ -457,7 +465,7 @@ line-height: 40px;
 
 .epil-bann{
 height:100%;}
-  
+
 
   .makeup-bann{
     height:31vw;
@@ -497,7 +505,7 @@ height:100%;}
       width: 100%;
       height: 55vw
     }
-    
+
     .makeup-container{
       grid-template-columns: 1fr;
     }
@@ -537,12 +545,12 @@ height:100%;}
       }
     }
     .aboutaccueil {
-      
+
       top: 15px;
-      
+
   }
   .aboutaccueil li {
-    
+
     padding-left: 5px;
     padding-right: 5px;
    font-size: 12px;
@@ -551,7 +559,7 @@ height:100%;}
       padding-left: 8px;
       padding-right: 8px;
       font-size: 6px;
-     
+
 
     }
 
@@ -579,9 +587,9 @@ height:100%;}
     padding-left: 12px;
 }
 .navmenu-presta a {
-  
+
   font-size: 12px;
-  
+
 }
   .header h1 {
     font-family: 'Montserrat', sans-serif;
@@ -591,9 +599,9 @@ height:100%;}
   }
 
   .menu-container {
-    
+
     margin-right: 3vw;
-    
+
 
     // .navmenu {
 
@@ -648,31 +656,31 @@ height:100%;}
       width: 100%;
         height: 45vw
     }
-    
+
     .makeup-container{
       grid-template-columns: 1fr;
     }
-    
+
     /* For a screen < 720px, this CSS will be read */
     .bloc
      {
       grid-template-columns: 1fr;
-      
+
     }
     .bloc1
      {
       grid-template-columns: 1fr;
-      
+
     }
     .navmenu li {
       padding-left: 4px;
       padding-right: 4px;
       font-size: 6px;
-      
+
 
     }
 
-    
+
     .titre h1 {
       line-height: 31px;
   }
@@ -684,7 +692,7 @@ height:100%;}
   }
 
   .menu-container {
-    
+
     margin-right: 1vw;}
 
     // .nav
@@ -810,14 +818,14 @@ font-size: 9px;
   @media (max-width: 540px) {
     /* For a screen < 540px, this CSS will be read */
     .simple_form.new_contact{
-     
+
       width:70%;
-      
+
     }
     .adresse {
       margin-top:15px;
       // padding-left:8px;
-    
+
       h3{
         font-size: 18px;
       }
@@ -859,7 +867,7 @@ font-size: 9px;
   box-shadow: -3px 7px 10px -8px grey;
   h1{
     font-size:20px;
-    
+
   }
 }
 
@@ -897,14 +905,14 @@ font-size: 9px;
 }
 .navmenu-presta a{
   display:none;
-  
+
 }
 
 .logo-mobile{
   display:flex;
   justify-content: center;
   margin-bottom:15px;
-  
+
 }
 .avatar {
   width: 40px;
@@ -916,19 +924,19 @@ font-size: 9px;
   right: 55px;
 }
 .logo-mobile-menu{
- 
+
   display: flex;
   justify-content: center;
   margin-top: 35px;
 }
 .aboutaccueil {
-  
+
     display:none;
-  
-  
+
+
 }
 .aboutaccueil-mobile {
-  
+
   display:flex;
 
 
@@ -1001,15 +1009,15 @@ font-size: 9px;
      {
       grid-template-columns: 1fr;
 
-      
-      
+
+
     }
     .bloc1
      {
       grid-template-columns: 1fr;
 
-      
-      
+
+
     }
 
     .navmenu {
@@ -1044,14 +1052,14 @@ font-size: 9px;
     .menu-button {
       display:block;
     }
-    
+
     .call-footer{
       display:flex;
       justify-content: space-around;
-      
+
     }
 
-    
-    
-    
+
+
+
   }

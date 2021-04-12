@@ -7,6 +7,8 @@ class SoinvisagesController < ApplicationController
 
   def index
     @soinvisages = policy_scope(Soinvisage)
+    @soinvisages_visages=@soinvisages.select{ |soin| soin.category == "Soins du visage" }
+    @soinvisages_esths=@soinvisages.select{ |soin| soin.category == "Soins Esthétiques" }
     @order_item = current_order.order_items.new
     @bc_soinvisage = Soinvisage.first
     @boncadeau = current_order.order_items.new

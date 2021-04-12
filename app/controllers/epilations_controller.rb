@@ -7,6 +7,8 @@ class EpilationsController < ApplicationController
 
   def index
     @epilations = policy_scope(Epilation)
+    @epilations_hommes=@epilations.select{ |epil| epil.category == "homme" }
+    @epilations_femmes=@epilations.select{ |epil| epil.category == "femme" }
     @order_item = current_order.order_items.new
     @bc_epililation = Epilation.first
     @boncadeau = current_order.order_items.new
