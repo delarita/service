@@ -3,14 +3,23 @@
 
   <div class="form-inputs">
     <%= f.input :name, :label => "Nouvelle Prestation" %>
-    <%= f.input :description, as: :text, :input_html => { :cols => 5, :rows => 6 } %>
+    <%= f.input :description, as: :text, :input_html => { :cols => 25, :rows => 6 } %>
     <%= f.input :price_cents, :label => "Prix" %>
 <!--     < %= f.input :description, :label => "Descrption" %>
  --><%= f.rich_text_area :rich_content %>
-    <%= f.input :photo, as: :file, label: "Ajoutez une photo" %>
+    <% if @epilation.photo.attached? %>
+      <br/>
+      <%= cl_image_tag @epilation.photo.key, height: 300, width: 400, crop: :fill %>
+      <br/>
+      <%= f.input :remove_photo, as: :boolean, label: "Supprimer la photo", checked_value: :true, unchecked_value: :false %>
+    <% else %>
+      <%= f.input :photo, as: :file, label: "Ajoutez une photo" %>
+    <% end %>
+
   </div>
 
   <div class="form-actions">
     <%= f.button :submit, :value => "Enregistrer", class: "btn btn-dark" %>
   </div>
 <% end %>
+

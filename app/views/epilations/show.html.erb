@@ -1,16 +1,22 @@
+<div class="false-menu"></div>
+<div class="under-menu">
+  <h1 class="under-title">Epilation</h1>
+  <h2><%= @epilation.name %></h2>
+  <span class="retour-accueil"><%= link_to "ACCUEIL", root_path %></span>
+</div>
 <div class = "container">
-  <div class="cards">
-    <%= @epilation.name %>
-    </br>
-    <%= @epilation.rich_content %>
-    </br>
-    <% if @epilation.photo.attached? %>
-      <%= cl_image_tag @epilation.photo.key, height: 300, width: 400, crop: :fill %>
-      </br>
-    <% end %>
+  <div class="cardsnoflex">
     <%= @epilation.description %>
-    </br>
+    <br/>
+    <%= @epilation.rich_content %>
+    <% if @epilation.photo.attached? %>
+      <br/>
+      <%= cl_image_tag @epilation.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+
     <% if policy(Epilation).edit? %>
+      <br/>
+      <br/>
       <%= link_to "Editer", edit_epilation_path(@epilation) %>
     <% end %>
   </div>

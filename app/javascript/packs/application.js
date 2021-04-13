@@ -22,6 +22,8 @@ ActiveStorage.start()
 require("trix")
 require("@rails/actiontext")
 
+import "./actiontext.scss"
+
 // External imports
 import "bootstrap";
 
@@ -40,7 +42,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   selectNav();
   openNav();
-  
+
 });
 
 

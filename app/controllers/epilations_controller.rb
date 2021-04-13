@@ -36,6 +36,7 @@ class EpilationsController < ApplicationController
   end
 
   def update
+    purge_photo if !params[:epilation][:remove_photo].nil? && params[:epilation][:remove_photo].to_sym == :true
     @epilation.update(epilation_params)
     redirect_to epilation_path(@epilation)
   end
@@ -45,10 +46,17 @@ class EpilationsController < ApplicationController
     redirect_to epilations_path
   end
 
+  def delete_attachment
+    attachment = ActiveStorage::Attachment.find(params[:id])
+    attachment.purge
+    raise
+    redirect_back(fallback_location: epilation_path(@epilation))
+  end
+
   private
 
   def epilation_params
-    params.require(:epilation).permit(:name, :description, :user_id, :photo, :rich_content, :price_cents)
+    params.require(:epilation).permit(:name, :remove_photo, :description, :user_id, :photo, :rich_content, :price_cents)
   end
 
   def set_epilation
@@ -56,5 +64,8 @@ class EpilationsController < ApplicationController
     authorize @epilation
   end
 
+  def purge_photo
+    @epilation.photo.purge
+  end
 end
 
