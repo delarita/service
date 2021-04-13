@@ -12,15 +12,15 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-
+require("trix")
+require("@rails/actiontext")
 
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
-require("trix")
-require("@rails/actiontext")
+
 
 // External imports
 import "bootstrap";
@@ -40,7 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   selectNav();
   openNav();
-  
+
 });
 
 

@@ -1,13 +1,13 @@
 
 body {
-   
+
     background-color:white;
-    
+
     min-height: 100vh;
 }
 .plus{
     margin-left:6px;
-    
+
 }
 
 .fa-angle-right{
@@ -45,10 +45,10 @@ body {
     height:68px;
 }
 .under-menu{
-    
+
     width:100%;
     height: 90px;
-   
+
     background-color: #e2b288;
     box-shadow: 1px 0px 10px 0px grey;
     display:flex;
@@ -63,11 +63,11 @@ body {
 
 .retour-accueil{
     margin-right: 50px;
-    
+
     a{
     color: white;
     font-family: Montserrat;
-    
+
 }
 a:hover{
     text-decoration: none;
@@ -79,7 +79,7 @@ a:hover{
     background-image: url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1614441954/yonyaoel2rabuhrjbeyd.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;  
+    width: 100%;
     height: 23vw;
     animation-name: fadeInOpacity;
     animation-iteration-count: 1;
@@ -91,10 +91,10 @@ a:hover{
 .epil-bann{
     // background-image: url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1614454588/wtqp0yfl7dingcmohzwt.jpg");
     background-image: url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1615412141/lnuvxrhxuarswqwcdgui.jpg");
-    
+
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;  
+    width: 100%;
     height: 41vw;
     animation-name: fadeInOpacity;
     animation-iteration-count: 1;
@@ -107,8 +107,8 @@ a:hover{
     background-image: url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1614502799/e1b0wihzyaj2ykgealxd.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;  
-    height: 23vw;
+    width: 100%;
+    height: 25vw;
     animation-name: fadeInOpacity;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
@@ -120,7 +120,7 @@ a:hover{
     background-image: url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1614538206/ia890cv6cyo92hjqepk0.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100%;  
+    width: 100%;
     height: 23vw;
     animation-name: fadeInOpacity;
     animation-iteration-count: 1;
@@ -132,7 +132,7 @@ a:hover{
 .header {
     display:flex;
     background-image :url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1613284035/zqjkwwoz2w0rnchevcpk.png");
-    width: 100vw;  
+    width: 100vw;
     height: 56.25vw;
     background-repeat: no-repeat;
     background-size: cover;
@@ -169,12 +169,12 @@ a:hover{
 
 .logo-mobile{
     display:none;
-    
+
 }
 
 .logo-mobile-menu{
     display:none;
-    
+
 }
 
 .titre{
@@ -295,7 +295,7 @@ a:hover{
     align-items: center;
     font-family: 'Montserrat', sans-serif;
     transition: 0.4s;
-    
+
 
 
     li {
@@ -325,27 +325,27 @@ a {
     color: #5c5353;
     text-decoration: none;
     position: relative;
-    
+
     &::after {
-		content: '';
-		position: absolute;
-		left: 50%;
-		bottom: 0;
-		transform: translateX(-50%) scaleX(0);
-		transform-origin: 50% 50%;
-		width: 100%;
-		height: 1px;
-		background-color: #5c5353;
-		transition: transform 250ms;
-	}
-	
-	&:hover {
-		
-		&::after {
-			transform: translateX(-50%) scaleX(1);
-		}
-		
-	}
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: 50% 50%;
+    width: 100%;
+    height: 1px;
+    background-color: #5c5353;
+    transition: transform 250ms;
+  }
+
+  &:hover {
+
+    &::after {
+      transform: translateX(-50%) scaleX(1);
+    }
+
+  }
 }
 
 
@@ -358,45 +358,45 @@ a {
     transition: 0.4s;
     font-size: 18px;
     justify-content: center;
-    
+
 li{
     padding-right: 25px;
-    padding-left: 25px;  
+    padding-left: 25px;
 }
 
 
 
     a{
         font-size: 16px;
-        font-weight: lighter; 
+        font-weight: lighter;
         position: relative;
-	    color:#5c5353;
-	    text-decoration: none;
-	
-	
-	&::after {
-		content: '';
-		position: absolute;
-		left: 50%;
-		bottom: 0;
-		transform: translateX(-50%) scaleX(0);
-		transform-origin: 50% 50%;
-		width: 100%;
-		height: 1px;
-		background-color: #5c5353;
-		transition: transform 250ms;
-	}
-	
-	&:hover {
-		
-		&::after {
-			transform: translateX(-50%) scaleX(1);
-		}
-		
-	}
+      color:#5c5353;
+      text-decoration: none;
+
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: 50% 50%;
+    width: 100%;
+    height: 1px;
+    background-color: #5c5353;
+    transition: transform 250ms;
+  }
+
+  &:hover {
+
+    &::after {
+      transform: translateX(-50%) scaleX(1);
     }
 
-    
+  }
+    }
+
+
 }
 
 
@@ -415,10 +415,10 @@ li{
     justify-content: center;
     z-index:999;
     top:0;
-    
+
 li{
     padding-right: 25px;
-        padding-left: 25px; 
+        padding-left: 25px;
         border-right: 1px solid #5c5353;
 }
 
@@ -429,8 +429,8 @@ li{
         color: #5c5353;
         text-decoration: none;
         font-size: 16px;
-        font-weight: lighter; 
-         
+        font-weight: lighter;
+
 
         &::after {
             content: '';
@@ -444,13 +444,13 @@ li{
             background-color: #5c5353;
             transition: transform 250ms;
         }
-        
+
         &:hover {
-            
+
             &::after {
                 transform: translateX(-50%) scaleX(1);
             }
-            
+
         }
     }
 
@@ -473,7 +473,7 @@ li{
         color: #373737;
         padding: 30px;
         font-size: 16px;
-        font-family: 'Open sans', sans-serif;   
+        font-family: 'Open sans', sans-serif;
 
     }
 
@@ -513,7 +513,7 @@ li{
     font-family: 'Montserrat';
     font-size: 16px;
   }
-  
+
   .btn-ghost:hover {
     opacity: 1;
   }
@@ -529,7 +529,7 @@ li{
     font-size: 12px;
     margin-left:20px;
   }
-  
+
   .btn-ghost2:hover {
     opacity: 1;
   }
@@ -537,29 +537,29 @@ li{
   .img-bloc1{
     display:none;
     background-image: url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1614671939/axgf0evfika5gmquwedl.jpg");
-   
+
     background-attachment: fixed;
     background-size:100%;
     // background-size:cover;
     min-height: 144vw;
      z-index: 0;
-    
+
 
 
 
 }
 
 .img-bloc2{
-    
+
     background-image: url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1614701793/mcc51f0gull5ax6vb13b.jpg");
-   
+
     background-attachment: fixed;
     background-size:100%;
     // background-size:cover;
     min-height: 46vw;
     width:100vw;
      z-index: 0;
-    
+
 
 
 }
@@ -589,19 +589,19 @@ li{
     position: fixed;
     left: 12px;
     top: 12px;
-    font-size:12px;  
+    font-size:12px;
     color: #685d5d;
     z-index: 1252;
 
-    
+
 }
 
 .menu-button.colorize{
-    
-    color: rgb(0, 0, 0);
-    
 
-    
+    color: rgb(0, 0, 0);
+
+
+
 }
 
 .call-button{
@@ -616,12 +616,12 @@ li{
     width: 60px;
     // border: 0.5px solid black;
     height: 60px;
-    
+
 
 a {
     color: #d981d8;
 }
-    
+
 }
 
 .contact-button{
@@ -636,7 +636,7 @@ a {
     width: 60px;
     // border: 0.5px solid black;
     height: 60px;
-    
+
 
 a {
     color: #d981d8;
@@ -655,18 +655,19 @@ a {
     width: 60px;
     // border: 0.5px solid black;
     height: 60px;
-    
+
 
 a {
     color: #d981d8;
 }
-    
+
 }
-    
+
 
 
 // .fa-phone {
-    
+
+
 //     // font-size: 40px;
 // }
 
@@ -683,7 +684,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    
+
 }
 
 .title-landscape {
@@ -727,4 +728,6 @@ transition: 0.6s;
 }
 
 .navmenu-tablette {
+
     display:none;}
+

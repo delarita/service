@@ -1,10 +1,10 @@
 
 .form-container {
- 
+
     display: flex;
-    
+
     justify-content: center;
-   
+
 }
 .form-control.text.optional{
   height:150px;
@@ -31,7 +31,7 @@
 .well{
   margin-bottom: 20px;
   padding-bottom: 20px;
- 
+
   box-shadow:0 4px 2px -2px #e2dddd;
   h3, h5{
     font-family: Montserrat;
@@ -43,7 +43,7 @@
 .subtotal{
   font-family: Montserrat;
     font-size: 14px;
-   
+
 }
 .total-price{
   font-family: Montserrat;
@@ -64,7 +64,7 @@
     background-color: #d3ae8d;
     color: white;
 
-      
+
   }
 
   .contact-link {
@@ -91,6 +91,12 @@ font-family: 'Montserrat';
     grid-gap: 16px;
 }
 
+
+.presta-name {
+  width:56%
+}
+
+
 .presta-price {
   margin-left:auto;
 }
@@ -102,16 +108,20 @@ font-family: 'Montserrat';
 .card-wrapper{
 
   // width: 35vw;
-  font-family: 'Open sans', sans-serif;   
+  font-family: 'Open sans', sans-serif;
   margin-right: 20px;
   display:flex;
   flex-direction: column;
   justify-content: space-between;
+  h3 {
+    font-family: 'Montserrat';
+    font-size: 24px;
+  }
 }
 .card-wrapper-flex-start{
 
   // width: 35vw;
-  font-family: 'Open sans', sans-serif;   
+  font-family: 'Open sans', sans-serif;
   margin-right: 20px;
   display:flex;
   flex-direction: column;
@@ -155,10 +165,10 @@ font-family: 'Montserrat';
   }
   a{
     text-decoration:none;
-    
+
   }
   a:hover{
-   
+
     cursor: pointer;
   }
 }
@@ -166,19 +176,19 @@ font-family: 'Montserrat';
 .patricia{
   width:302px;
   background-size:cover;
-  
-  
+
+
 }
 
 .bio {
   padding-left: 10px;
   background-color: white;
     p{
-      font-family:'Montserrat', sans-serif;   
+      font-family:'Montserrat', sans-serif;
     }
 }
 .pic {
-    
+
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1615548643/y6n1xsxrducombivnxgf.jpg");
@@ -195,21 +205,21 @@ font-family: 'Montserrat';
 
 
 @-webkit-keyframes fadeInOpacity {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeInOpacity {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 
@@ -237,7 +247,7 @@ justify-content: center;
 .container {
 
   background-color: transparent;
-  margin-top: 50px; 
+  margin-top: 50px;
 
   h1 {
     font-family: 'Montserrat', sans-serif;
@@ -248,8 +258,8 @@ justify-content: center;
    }
 
    p{
-    font-size: 14px;
-    font-family: 'Open sans', sans-serif;  
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
     color: grey;
    }
 }
@@ -302,7 +312,7 @@ justify-content: center;
 //     line-height: 93px;
 // }
 // .header h1 {
-    
+
 //     font-size: 118px;
 // }
 // .about-container{
@@ -344,28 +354,28 @@ justify-content: center;
 
 //   .aboutaccueil li {
 //     font-size:28px}
-  
+
 
 //   .phone-number h2{
 // font-size:56px;
 //   }
-  
+
 // .fa-shopping-cart {
 //  right: 14px;
 //  top: 20px;
-    
+
 //  font-size: 42px;
 // }
 // .cart-inside {
-  
+
 //   padding: 16px;
 //   font-size: 21px;
 //   width: 22px;
 //   height: 22px;
- 
+
 //   right: 7px;
 //   top: 10px;
- 
+
 // }
 // .navmenu.active {
 //   height:90px;}
@@ -385,7 +395,7 @@ justify-content: center;
 //   font-size: 28px;
 // }
 // .retour-accueil a {
-  
+
 //   font-size: 32px;
 // }
 
@@ -398,7 +408,7 @@ justify-content: center;
     line-height: 70px;
 }
 .header h1 {
-    
+
     font-size: 90px;
 }
 
@@ -407,7 +417,7 @@ justify-content: center;
 }
 
 .logo {
-  
+
   top: -38px;
   left: 380px;
 }
@@ -424,7 +434,7 @@ font-size:50px;
 .fa-shopping-cart {
 right: 14px;
 top: 20px;
-  
+
 font-size: 32px;
 }
 .cart-inside {
@@ -462,7 +472,7 @@ font-size: 22px;
   font-size: 22px;
 }
 .retour-accueil a {
-  
+
   font-size: 26px;
 }
 .false-menu {
@@ -476,13 +486,13 @@ font-size: 22px;
   .navmenu-presta li {
     padding-right: 19px;
     padding-left: 19px;
-    
+
 
   }
   .navmenu-active li {
     padding-right: 19px;
     padding-left: 19px;
-    
+
 
   }
 
@@ -563,7 +573,7 @@ font-size: 22px;
     width: 100%;
       height: 57vw
   }
-  
+
   .makeup-container{
     grid-template-columns: 1fr 1fr;
   }
@@ -576,9 +586,9 @@ font-size: 22px;
     font-size: 9px;
 }
 .menu-container {
-  
+
   margin-right: 2vw;
-  
+
 }
 
 .header h1 {
@@ -592,7 +602,7 @@ line-height: 40px;
 
 .epil-bann{
 height:100%;}
-  
+
 
   .makeup-bann{
     height:31vw;
@@ -623,13 +633,13 @@ height:100%;}
     list-style-type: none;
     text-decoration: none;
     font-family:Montserrat;
-    
+
     li {
       padding: 10px;
     }
     a {
       color:#685d5d;
-      
+
       // font-weight:bold;
     }
   }
@@ -658,7 +668,7 @@ height:100%;}
       width: 100%;
       height: 55vw
     }
-    
+
     .makeup-container{
       grid-template-columns: 1fr;
     }
@@ -698,12 +708,12 @@ height:100%;}
       }
     }
     .aboutaccueil {
-      
+
       top: 15px;
-      
+
   }
   .aboutaccueil li {
-    
+
     padding-left: 5px;
     padding-right: 5px;
    font-size: 12px;
@@ -712,7 +722,7 @@ height:100%;}
       padding-left: 8px;
       padding-right: 8px;
       font-size: 8px;
-     
+
 
     }
 
@@ -740,9 +750,9 @@ height:100%;}
     padding-left: 12px;
 }
 .navmenu-presta a {
-  
+
   font-size: 12px;
-  
+
 }
   .header h1 {
     font-family: 'Montserrat', sans-serif;
@@ -752,9 +762,9 @@ height:100%;}
   }
 
   .menu-container {
-    
+
     margin-right: 3vw;
-    
+
 
     // .navmenu {
 
@@ -790,7 +800,7 @@ height:100%;}
   @media (max-width: 810px) {
 
     .title-landscape {
-    
+
     position: fixed;
     top: 0;
     left: 0;
@@ -808,14 +818,14 @@ height:100%;}
   }
 
     .simple_form.new_contact{
-     
+
       width:70%;
-      
+
     }
     .adresse {
       margin-top:15px;
       // padding-left:8px;
-    
+
       h3{
         font-size: 18px;
       }
@@ -857,7 +867,7 @@ height:100%;}
   box-shadow: -3px 7px 10px -8px grey;
   h1{
     font-size:20px;
-    
+
   }
 }
 
@@ -895,14 +905,14 @@ height:100%;}
 }
 .navmenu-presta a{
   display:none;
-  
+
 }
 
 .logo-mobile{
   display:flex;
   justify-content: center;
   margin-bottom:15px;
-  
+
 }
 .avatar {
   width: 40px;
@@ -914,19 +924,19 @@ height:100%;}
   right: 55px;
 }
 .logo-mobile-menu{
- 
+
   display: flex;
   justify-content: center;
   margin-top: 35px;
 }
 .aboutaccueil {
-  
+
     display:none;
-  
-  
+
+
 }
 .aboutaccueil-mobile {
-  
+
   display:flex;
 
 
@@ -999,15 +1009,15 @@ height:100%;}
      {
       grid-template-columns: 1fr;
 
-      
-      
+
+
     }
     .bloc1
      {
       grid-template-columns: 1fr;
 
-      
-      
+
+
     }
 
     .navmenu {
@@ -1042,15 +1052,15 @@ height:100%;}
     .menu-button {
       display:block;
     }
-    
+
     .call-footer{
       display:none;
       // justify-content: space-around;
-      
+
     }
 
-  
-    
+
+
 
 
 
@@ -1079,31 +1089,31 @@ height:100%;}
 //       width: 100%;
 //         height: 45vw
 //     }
-    
+
 //     .makeup-container{
 //       grid-template-columns: 1fr;
 //     }
-    
+
 //     /* For a screen < 720px, this CSS will be read */
 //     .bloc
 //      {
 //       grid-template-columns: 1fr;
-      
+
 //     }
 //     .bloc1
 //      {
 //       grid-template-columns: 1fr;
-      
+
 //     }
 //     .navmenu li {
 //       padding-left: 4px;
 //       padding-right: 4px;
 //       font-size: 6px;
-      
+
 
 //     }
 
-    
+
 //     .titre h1 {
 //       line-height: 31px;
 //   }
@@ -1115,7 +1125,7 @@ height:100%;}
 //   }
 
 //   .menu-container {
-    
+
 //     margin-right: 1vw;}
 
 //     // .nav
@@ -1248,14 +1258,14 @@ height:100%;}
       display:none;}
     /* For a screen < 540px, this CSS will be read */
     .simple_form.new_contact{
-     
+
       width:70%;
-      
+
     }
     .adresse {
       margin-top:15px;
       // padding-left:8px;
-    
+
       h3{
         font-size: 18px;
       }
@@ -1297,7 +1307,7 @@ height:100%;}
   box-shadow: -3px 7px 10px -8px grey;
   h1{
     font-size:20px;
-    
+
   }
 }
 
@@ -1339,7 +1349,7 @@ height:100%;}
 }
 
 .title-mobile {
- 
+
   font-family: Montserrat;
   display:block;
 }
@@ -1347,14 +1357,14 @@ height:100%;}
 
 .navmenu-presta a{
   display:none;
-  
+
 }
 
 .logo-mobile{
   display:flex;
   justify-content: center;
   margin-bottom:15px;
-  
+
 }
 .avatar {
   width: 40px;
@@ -1366,19 +1376,19 @@ height:100%;}
   right: 55px;
 }
 .logo-mobile-menu{
- 
+
   display: flex;
   justify-content: center;
   margin-top: 35px;
 }
 .aboutaccueil {
-  
+
     display:none;
-  
-  
+
+
 }
 .aboutaccueil-mobile {
-  
+
   display:flex;
 
 
@@ -1451,15 +1461,15 @@ height:100%;}
      {
       grid-template-columns: 1fr;
 
-      
-      
+
+
     }
     .bloc1
      {
       grid-template-columns: 1fr;
 
-      
-      
+
+
     }
 
     .navmenu {
@@ -1494,14 +1504,14 @@ height:100%;}
     .menu-button {
       display:block;
     }
-    
+
     .call-footer{
       display:flex;
       justify-content: space-around;
-      
+
     }
 
-    
-    
-    
+
+
+
   }

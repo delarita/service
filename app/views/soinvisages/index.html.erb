@@ -27,21 +27,15 @@
 </div>
 
 <div class="container">
-  <p>Soins du visage spécifiques et anti-âge pour retrouver une peau éclatante.
-
-Aidez votre peau à se préserver et à lutter efficacement contre les signes du temps.
-Notre gamme comprend une large palette de produits cosmétiques naturels 100% Bio à base d’Aloe vera et d’Alginates (algues) répondant aux besoins de toutes les peaux.
-
-Ces soins sont le premier pas vers une peau saine et en bonne santé.
-
-Les produits utilisés pour les soins sont aussi disponible à la vente.
-Mes compléments alimentaires sont une bonne aide pour rééquilibrer votre peau.<br /><br />
-    <span class="forfait">Forfait Matinée ou Après midi « Bien être » :</span>(3h) Soins du visage + modelage du corps + manucures<br />
-</p>
+  <p>
+    Les soins spécifiques pour hommes, pour femmes et pour les juniors sont devenus des incontournables lorsque l'on souhaite prendre soin de sa peau.
+Aidez votre peau à se préserver et à lutter contre les signes du temps avec notre gamme exclusive à l'aloe vera 100% bio.<br />
+De nombreuses études ont démontré l'efficacité de ce trésor botanique qu'est l'aloe véra..
+  </p>
   <div class="makeup-container">
-
     <div class="card-wrapper">
-      <% @soinvisages.each do |soinvisage| %>
+      <h3>Soins du visage</h3>
+      <% @soinvisages_visages.each do |soinvisage| %>
         <div class="cards">
           <div class="presta-name">
               <%= soinvisage.name %><%= " " if soinvisage.description != "" %>
@@ -51,22 +45,48 @@ Mes compléments alimentaires sont une bonne aide pour rééquilibrer votre peau
             <%= form_for([soinvisage, @order_item], remote: true) do |f| %>
               <%= f.hidden_field :orderitemable_type, value: "Soinvisage" %>
               <%= f.hidden_field :orderitemable_id, value: soinvisage.id %>
-
-              
-                <%= f.hidden_field :quantity, value: 1, min: 1, class: 'form-control' %>
-              
-
-              <%# <div class="service-price">
-                <span class="price"> %>
-                 <%= humanized_money_with_symbol(soinvisage.price) %>
-                <%# </span> %>
-                <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
-              <%# </div> %>
+              <%= f.hidden_field :quantity, value: 1, min: 1, class: 'form-control' %>
+              <%= humanized_money_with_symbol(soinvisage.price) %>
+              <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
             <% end %>
-            </div> 
-             <span class="plus"><%= link_to soinvisage_path(soinvisage) do %> </span>
-             <i class="fas fa-angle-right"></i>
+            </div>
+              <span class="plus">
+                <%= link_to soinvisage_path(soinvisage) do %>
+                  <i class="fas fa-angle-right"></i>
+                <% end %>
+              </span>
+            <% if policy(Soinvisage).destroy? %>
+              <p>
+                <%= link_to "del",
+                  soinvisage_path(soinvisage),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+              </p>
             <% end %>
+          </div>
+        <%# </div> %>
+      <% end %>
+      <h3>Soins Esthétiques</h3>
+      <% @soinvisages_esths.each do |soinvisage| %>
+        <div class="cards">
+          <div class="presta-name">
+              <%= soinvisage.name %><%= " " if soinvisage.description != "" %>
+              <%= soinvisage.description %><%= " " if soinvisage.price != "" %>
+          </div>
+          <div class="presta-price">
+            <%= form_for([soinvisage, @order_item], remote: true) do |f| %>
+              <%= f.hidden_field :orderitemable_type, value: "Soinvisage" %>
+              <%= f.hidden_field :orderitemable_id, value: soinvisage.id %>
+              <%= f.hidden_field :quantity, value: 1, min: 1, class: 'form-control' %>
+              <%= humanized_money_with_symbol(soinvisage.price) %>
+              <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
+            <% end %>
+            </div>
+              <span class="plus">
+                <%= link_to soinvisage_path(soinvisage) do %>
+                  <i class="fas fa-angle-right"></i>
+                <% end %>
+              </span>
             <% if policy(Soinvisage).destroy? %>
               <p>
                 <%= link_to "del",
@@ -79,9 +99,9 @@ Mes compléments alimentaires sont une bonne aide pour rééquilibrer votre peau
         <%# </div> %>
       <% end %>
     </div>
-  <%# </div> %>
-  <div class="soinvisage-bann"></div>
-  <%# <span>Photo by <a href="https://unsplash.com/@raphaellovaski?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Raphael Lovaski</a> on <a href="https://unsplash.com/@raphaellovaski?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span> %>
+    <div class="soinvisage-bann">
+      <img class="aloe-logo" src="https://res.cloudinary.com/dsmxleyf5/image/upload/v1618152192/bd80lj1g0br4g3gwa43q.png" alt="logo-aloevera">
+    </div>
   </div>
   <% if policy(Soinvisage).new? %>
     <p>
