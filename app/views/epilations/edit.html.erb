@@ -1,6 +1,18 @@
+<div class="navmenu-presta">
+  <div class="logo"></div>
+  <li><%= link_to "EPILATIONS", epilations_path %></li>
+  <li><%= link_to "MASSAGES", massages_path %></li>
+  <li><%= link_to "SOINS DU VISAGE", soinvisages_path %></li>
+  <li><%= link_to "MAQUILLAGE PERMANENT", maquillages_path %></li>
+</div>
+
 <div class="false-menu"></div>
+
 <div class="under-menu">
-  <h1 class="under-title">Epilation</h1>
+  <h1 class="under-title"><%= link_to "Epilation", epilations_path %></h1>
   <span class="retour-accueil"><%= link_to "ACCUEIL", root_path %></span>
 </div>
+
+<div class="container">
 <%= render 'form', model: @epilation %>
+</div>
