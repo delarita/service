@@ -422,6 +422,10 @@ li{
         border-right: 1px solid #5c5353;
 }
 
+li:last-child {
+    border-right: none;
+}
+
 
 
     a{
@@ -537,10 +541,9 @@ li{
   .img-bloc1{
     display:none;
     background-image: url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1614671939/axgf0evfika5gmquwedl.jpg");
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size:100%;
-    // background-size:cover;
+    background-size: cover;
     min-height: 144vw;
      z-index: 0;
 
@@ -550,20 +553,42 @@ li{
 }
 
 .img-bloc2{
+    
 
     background-image: url("https://res.cloudinary.com/dsmxleyf5/image/upload/v1614701793/mcc51f0gull5ax6vb13b.jpg");
     background-repeat:no-repeat;
     background-attachment: fixed;
-    background-size:100%;
-    // background-size:cover;
-    min-height: 46vw;
-    width:100vw;
+    background-size: cover;
+    min-height: 56vw;
+    width: 100vw;
      z-index: 0;
 
 
 
 }
 
+@supports (-webkit-touch-callout: none) {
+    /* CSS specific to iOS devices */ 
+
+    .img-bloc1{
+        background-attachment: scroll;
+    
+    
+    
+    
+    }
+    
+    .img-bloc2{
+        
+    
+        background-attachment: scroll;
+   
+    
+    
+    }
+    
+
+  }
 
 
 

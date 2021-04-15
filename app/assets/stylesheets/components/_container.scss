@@ -483,17 +483,27 @@ font-size: 22px;
 
 
 @media (max-width: 1370px) {
+
+// .navmenu.active{
+//   justify-content: start;
+// }
+
   .navmenu-presta li {
-    padding-right: 19px;
-    padding-left: 19px;
+    padding-right: 10px;
+    padding-left: 10px;
 
 
   }
-  .navmenu-active li {
-    padding-right: 19px;
-    padding-left: 19px;
+  .navmenu.active li {
+    padding-right: 10px;
+    padding-left: 10px;
 
 
+  }
+
+  .aboutaccueil li {
+    padding-right: 5px;
+    padding-left: 5px;
   }
 
 }

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   mount StripeEvent::Engine, at: '/stripe-webhooks'
 
   root to: 'pages#home'
+  get "legal", to: 'pages#legal'
   get "about", to: 'pages#about'
   get "contact", to: 'pages#contact'
   resources :reviews do
