@@ -54,8 +54,8 @@ Soinvisage.create(description: "", category: "Soins du visage", name: "Soin Juni
 Soinvisage.create(description: "", category: "Soins du visage", name: "Soin régénérant 60 mn", price_cents:5000, user_id:1)
 Soinvisage.create(description: "", category: "Soins du visage", name: "Soin purifiant 60 mn", price_cents: 5000, user_id:1)
 Soinvisage.create(description: "", category: "Soins du visage", name: "Soin spécifique et anti âge repulpant 70 mn", price_cents:6000, user_id:1)
-Soinvisage.create(description: "", category: "Soins du visage", name: "Forfait spécifique et anti âge repulpant ~ 5 soins ~ 5 semaines", price_cents:25000, user_id:1)
 Soinvisage.create(description: "", category: "Soins du visage", name: "Forfait matinée ou après midi bien-être: Soin visage + Modelage (1h) + Manucure 2h30", price_cents:9500, user_id:1)
+Soinvisage.create(description: "", category: "Soins du visage", name: "Forfait spécifique et anti âge repulpant ~ 5 soins ~ 5 semaines ~ Effet garanti", price_cents:25000, user_id:1)
 
 Soinvisage.create(description: "", category: "Soins Esthétiques", name: "Teinture cils ou sourcils", price_cents: 1000, user_id:1)
 Soinvisage.create(description: "", category: "Soins Esthétiques", name: "Manucure ", price_cents:2500, user_id:1)
