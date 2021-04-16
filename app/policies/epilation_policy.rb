@@ -13,7 +13,6 @@ class EpilationPolicy < ApplicationPolicy
   end
 
   def show?
-    puts "hello"
     true
   end
 
