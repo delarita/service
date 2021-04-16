@@ -38,7 +38,7 @@ class SoinvisagesController < ApplicationController
   def update
     purge_photo if !params[:soinvisage][:remove_photo].nil? && params[:soinvisage][:remove_photo].to_sym == :true
     @soinvisage.update(soinvisage_params)
-    redirect_to soinvisages_path
+    redirect_to soinvisage_path(@soinvisage)
   end
 
   def destroy

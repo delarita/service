@@ -1,17 +1,31 @@
-<div class = "container">
-  <div class="cards">
-    <%= @soinvisage.name %>
-    </br>
-    <%= @soinvisage.rich_content %>
-    </br>
-    <% if @soinvisage.photo.attached? %>
-      <%= cl_image_tag @soinvisage.photo.key, height: 300, width: 400, crop: :fill %>
-      </br>
+<div class="navmenu-presta">
+  <div class="logo"></div>
+  <li><%= link_to "EPILATIONS", soinvisages_path %></li>
+  <li><%= link_to "MASSAGES", soinvisages_path %></li>
+  <li><%= link_to "SOINS DU VISAGE", soinvisages_path %></li>
+  <li><%= link_to "MAQUILLAGE PERMANENT", soinvisages_path %></li>
+</div>
+<div class="false-menu"></div>
+<div class="under-menu">
+  <h1 class="under-title"><%= link_to "Soins", soinvisages_path %></h1>
+  <h2><%= @soinvisage.name %></h2>
+  <% if policy(Soinvisage).edit? %>
+      <br/>
+      <br/>
+      <%= link_to edit_soinvisage_path(@soinvisage) do %>
+       <i class="far fa-edit"></i>
+      <% end %>
     <% end %>
+  <span class="retour-accueil"><%= link_to "ACCUEIL", root_path %></span>
+</div>
+<div class = "container">
+  <div class="cardsnoflex">
     <%= @soinvisage.description %>
-    </br>
-    <% if policy(Soinvisage).edit? %>
-      <%= link_to "Editer", edit_soinvisage_path(@soinvisage) %>
+    <br/>
+    <%= @soinvisage.rich_content %>
+    <% if @soinvisage.photo.attached? %>
+      <br/>
+      <%= cl_image_tag @soinvisage.photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
   </div>
 </div>

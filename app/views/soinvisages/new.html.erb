@@ -1,1 +1,2 @@
 <%= render 'form', model: @soinvisage %>
+<%= link_to "Annuler", request.referer.present? ? request.referer : root_path %>

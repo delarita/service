@@ -38,7 +38,6 @@
           <!-- <span id="ex1CurrentSliderValLabel"><span id="ex1SliderVal"></span></span> -->
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
           <%= form_for([@bc_massage, @order_item], remote: true) do |f| %>
            <%= f.hidden_field :orderitemable_type, value: "Massage" %>
            <%= f.hidden_field :orderitemable_id, value: @bc_massage.id %>
@@ -69,6 +68,13 @@ Gain d'énergie </p>
     <div class="card-wrapper-flex-start">
       <% @massages.each do |massage| %>
         <div class="cards">
+          <% if policy(Massage).destroy? %>
+            <p>
+              <%= link_to massage_path(massage), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </p>
+          <% end %>
           <div class="presta-name">
               <%= massage.name %><%#<%= " " if massage.description != "" %>
               <%#<%= massage.description %><%= " " if massage.price != "" %>
@@ -87,14 +93,7 @@ Gain d'énergie </p>
               <i class="fas fa-angle-right"></i>
             <% end %>
           <% end %>
-          <% if policy(Massage).destroy? %>
-            <p>
-              <%= link_to "del",
-                massage_path(massage),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %>
-            </p>
-          <% end %>
+
         </div>
       <% end %>
     </div>

@@ -7,8 +7,15 @@
 </div>
 <div class="false-menu"></div>
 <div class="under-menu">
-  <h1 class="under-title"><%= link_to "Epilation", epilations_path %></h1>
+  <h1 class="under-title"><%= link_to "Epilations", epilations_path %></h1>
   <h2><%= @epilation.name %></h2>
+  <% if policy(Epilation).edit? %>
+      <br/>
+      <br/>
+      <%= link_to edit_epilation_path(@epilation) do %>
+        <i class="far fa-edit"></i>
+      <% end %>
+    <% end %>
   <span class="retour-accueil"><%= link_to "ACCUEIL", root_path %></span>
 </div>
 <div class = "container">
@@ -19,12 +26,6 @@
     <% if @epilation.photo.attached? %>
       <br/>
       <%= cl_image_tag @epilation.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-
-    <% if policy(Epilation).edit? %>
-      <br/>
-      <br/>
-      <%= link_to "Editer", edit_epilation_path(@epilation) %>
     <% end %>
   </div>
 </div>

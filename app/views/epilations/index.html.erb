@@ -61,6 +61,13 @@
       <% @epilations.each do |epilation| %>
         <div class="cards">
           <%# <div class="service"> %>
+          <% if policy(Epilation).destroy? %>
+            <p>
+              <%= link_to epilation_path(epilation), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="far fa-trash-alt"></i>
+                <% end %>
+            </p>
+          <% end %>
           <div class="presta-name">
               <%= epilation.name %><%#<%= " " if epilation.description != "" %>
               <%#<%= epilation.description %><%= " " if epilation.price != "" %>
@@ -75,18 +82,12 @@
             <% end %>
           </div>
             <% if !epilation.description.nil? %>
-              <span class="plus"><%= link_to epilation_path(epilation) do %></span>
+              <span class="plus"><%= link_to epilation_path(epilation) do %>
                 <i class="fas fa-angle-right"></i>
               <% end %>
+              </span>
             <% end %>
-            <% if policy(Epilation).destroy? %>
-              <p>
-                <%= link_to "del",
-                  epilation_path(epilation),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-              </p>
-            <% end %>
+
           </div>
          <% end %>
     </div>
@@ -98,6 +99,3 @@
     </p>
   <% end %>
 </div>
-
-
-

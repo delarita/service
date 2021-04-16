@@ -38,7 +38,7 @@ class MassagesController < ApplicationController
   def update
     purge_photo if !params[:massage][:remove_photo].nil? && params[:massage][:remove_photo].to_sym == :true
     @massage.update(massage_params)
-    redirect_to massages_path
+    redirect_to massage_path(@massage)
   end
 
   def destroy

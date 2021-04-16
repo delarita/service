@@ -37,7 +37,6 @@
           <!-- <span id="ex1CurrentSliderValLabel"><span id="ex1SliderVal"></span></span> -->
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
           <%= form_for([@bc_maquillage, @order_item], remote: true) do |f| %>
           <%= f.hidden_field :orderitemable_type, value: "Maquillage" %>
           <%= f.hidden_field :orderitemable_id, value: @bc_maquillage.id %>
@@ -61,6 +60,13 @@
     <div class="card-wrapper">
       <% @maquillages.each do |maquillage| %>
         <div class="cards">
+          <% if policy(Maquillage).destroy? %>
+            <p>
+              <%= link_to maquillage_path(maquillage), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </p>
+          <% end %>
           <div class="presta-name">
               <%= maquillage.name %><%#<%= " " if maquillage.description != "" %>
               <%#<%= maquillage.description %><%= " " if maquillage.price != "" %>
@@ -78,14 +84,6 @@
             <span class="plus"><%= link_to maquillage_path(maquillage) do %></span>
               <i class="fas fa-angle-right"></i>
             <% end %>
-          <% end %>
-          <% if policy(Maquillage).destroy? %>
-            <p>
-              <%= link_to "del",
-                maquillage_path(maquillage),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %>
-            </p>
           <% end %>
         </div>
       <% end %>
