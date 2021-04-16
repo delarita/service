@@ -2,7 +2,7 @@
   <div class="logo"></div>
   <li><%= link_to "EPILATIONS", epilations_path %></li>
   <li><%= link_to "MASSAGES", massages_path %></li>
-  <li><%= link_to "SOINS DU VISAGE", soinvisages_path %></li>
+  <li><%= link_to "SOINS", soinvisages_path %></li>
   <li><%= link_to "MAQUILLAGE PERMANENT", maquillages_path %></li>
 </div>
 
@@ -50,17 +50,16 @@
 
  <%# <p>Épilation toutes zones pour les femmes.<br />
     Épilation Messieurs : Sourcils, Narines, Oreilles, Torse, Dos. <br /> %>
- <p>Pionnier et expert de l’épilation, PERRONT RIGOT répond à tous les besoins de façon ciblée et adaptée par ses différentes cires. Après chaque épilation, des soins « ralentisseurs de pousse de poils » et « spécial poils incarnés » sont utilisés.<br />
-  <span class="forfait">Forfait 1/2 Jambes</span> : Lèvres + sourcils + 1/2 jambes + maillot intégral ou intégral + aisselles<br />
-  <span class="forfait">Forfait Jambes entières</span> : Lèvres + sourcils + jambes entières + maillot intégral ou intégral + aisselles
-  </p>
 
-    <div class="makeup-container">
+    <p>
+      Pionnier et expert de l’épilation, PERRONT RIGOT répond à tous les besoins de façon ciblée et adaptée par ses différentes cires. Après chaque épilation, des soins « ralentisseurs de pousse de poils » et « spécial poils incarnés » sont utilisés.<br /><br />
+    </p>
 
+  <div class="makeup-container">
     <div class="card-wrapper">
-      <% @epilations.each do |epilation| %>
+      <h3>Epilation Femmes</h3>
+      <% @epilations_femmes.each do |epilation| %>
         <div class="cards">
-          <%# <div class="service"> %>
           <% if policy(Epilation).destroy? %>
             <p>
               <%= link_to epilation_path(epilation), method: :delete, data: { confirm: "Are you sure?" } do %>
@@ -81,15 +80,44 @@
               <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
             <% end %>
           </div>
-            <% if !epilation.description.nil? %>
+          <% if !epilation.description.nil? %>
+            <span class="plus"><%= link_to epilation_path(epilation) do %>
+              <i class="fas fa-angle-right"></i>
+              <% end %>
+            </span>
+          <% end %>
+        </div>  
+      <h3>Epilation Hommes</h3>
+      <% @epilations_hommes.each do |epilation| %>
+        <div class="cards">
+          <% if policy(Epilation).destroy? %>
+            <p>
+              <%= link_to epilation_path(epilation), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="far fa-trash-alt"></i>
+                <% end %>
+            </p>
+          <% end %>
+          <div class="presta-name">
+              <%= epilation.name %><%= " " if epilation.description != "" %>
+              <%= epilation.description %><%= " " if epilation.price != "" %>
+          </div>
+          <div class="presta-price">
+            <%= form_for([epilation, @order_item], remote: true) do |f| %>
+              <%= f.hidden_field :orderitemable_type, value: "Epilation" %>
+              <%= f.hidden_field :orderitemable_id, value: epilation.id %>
+              <%= f.hidden_field :quantity, value: 1, min: 1, class: 'form-control' %>
+              <%= humanized_money_with_symbol(epilation.price) %>
+              <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
+            <% end %>
+          </div>
+          <% if !epilation.description.nil? %>
               <span class="plus"><%= link_to epilation_path(epilation) do %>
                 <i class="fas fa-angle-right"></i>
-              <% end %>
+                 <% end %>
               </span>
-            <% end %>
-
-          </div>
-         <% end %>
+           <% end %>
+        </div>
+      <% end %>
     </div>
     <div class="epil-bann"></div>
   </div>

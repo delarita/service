@@ -9,6 +9,8 @@ class SoinvisagesController < ApplicationController
     @soinvisages = policy_scope(Soinvisage).sort_by { |m| [m.created_at] }.reverse!
     @soinvisages = @soinvisages.select { |soinvisage| soinvisage.name != "BON CADEAU" }
     @bc_soinvisage = Soinvisage.find_by(name: "BON CADEAU")
+    @soinvisages_visages=@soinvisages.select{ |soin| soin.category == "Soins du visage" }
+    @soinvisages_esths=@soinvisages.select{ |soin| soin.category == "Soins Esthétiques" }
     @order_item = current_order.order_items.new
     @boncadeau = current_order.order_items.new
   end

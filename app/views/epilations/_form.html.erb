@@ -1,5 +1,6 @@
 <%= simple_form_for(@epilation) do |f| %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
   <div class="presta-form-inputs">
     <% if @epilation.name == "" %>
       <%= f.input :name, :label => "Nouvelle Prestation" %>
@@ -14,6 +15,7 @@
   <div class="presta-form-inputs col">
 <!--     < %= f.input :description, :label => "Descrption" %>
  --><%= f.rich_text_area :rich_content %>
+
   </div>
   <br/>
 

@@ -6,9 +6,14 @@ class EpilationsController < ApplicationController
   end
 
   def index
+
     @epilations = policy_scope(Epilation).sort_by { |m| [m.created_at] }.reverse!
     @epilations = @epilations.select { |epilation| epilation.name != "BON CADEAU" }
     @bc_epilation = Epilation.find_by(name: "BON CADEAU")
+
+    @epilations_hommes=@epilations.select{ |epil| epil.category == "homme" }
+    @epilations_femmes=@epilations.select{ |epil| epil.category == "femme" }
+
     @order_item = current_order.order_items.new
     @boncadeau = current_order.order_items.new
   end
