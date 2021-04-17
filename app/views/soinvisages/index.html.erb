@@ -1,13 +1,3 @@
-<%# <%= form_for([@bc_soinvisage, @order_item], remote: true) do |f| %>
-<%#  <%= f.hidden_field :orderitemable_type, value: "Soinvisage" %>
-<%#  <%= f.hidden_field :orderitemable_id, value: @bc_soinvisage.id %>
-<%#  <%= f.hidden_field :quantity, value: 1 %>
-<%#  <% @order_item = @boncadeau %>
-<%#  <% p @order_item %>
-<%#  <%= f.submit "BON CADEAU", class: 'btn btn-primary btn-sm' %>
-<%# <% end %>
-
-
 <div class="navmenu-presta">
   <%# <li><%= link_to "ACCUEIL", root_path%>
   <%# </li> %>
@@ -27,6 +17,38 @@
 </div>
 
 <div class="container">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    BON CADEAU
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Donner un prix à votre bon</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="2" data-slider-max="78" data-slider-step="1" data-slider-value="5"/>
+          <!-- <span id="ex1CurrentSliderValLabel"><span id="ex1SliderVal"></span></span> -->
+        </div>
+        <div class="modal-footer">
+          <%= form_for([@bc_soinvisage, @order_item], remote: true) do |f| %>
+           <%= f.hidden_field :orderitemable_type, value: "Soinvisage" %>
+           <%= f.hidden_field :orderitemable_id, value: @bc_soinvisage.id %>
+           <%= f.hidden_field :quantity, value: 1 %>
+           <% @order_item = @boncadeau %>
+           <% p @order_item %>
+           <%= f.submit "BON CADEAU", class: 'btn btn-primary btn-sm' %>
+          <% end %>
+        <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Offrir</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
   <p>
     Les soins spécifiques pour hommes, pour femmes et pour les juniors sont devenus des incontournables lorsque l'on souhaite prendre soin de sa peau.
 Aidez votre peau à se préserver et à lutter contre les signes du temps avec notre gamme exclusive à l'aloe vera 100% bio.<br />
@@ -37,9 +59,16 @@ De nombreuses études ont démontré l'efficacité de ce trésor botanique qu'es
       <h3>Soins du visage</h3>
       <% @soinvisages_visages.each do |soinvisage| %>
         <div class="cards">
+          <% if policy(Soinvisage).destroy? %>
+            <p>
+              <%= link_to soinvisage_path(soinvisage), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </p>
+          <% end %>
           <div class="presta-name">
-              <%= soinvisage.name %><%= " " if soinvisage.description != "" %>
-              <%= soinvisage.description %><%= " " if soinvisage.price != "" %>
+              <%= soinvisage.name %><%#<%= " " if soinvisage.description != "" %>
+              <%#<%= soinvisage.description %><%= " " if soinvisage.price != "" %>
           </div>
           <div class="presta-price">
             <%= form_for([soinvisage, @order_item], remote: true) do |f| %>
@@ -49,26 +78,25 @@ De nombreuses études ont démontré l'efficacité de ce trésor botanique qu'es
               <%= humanized_money_with_symbol(soinvisage.price) %>
               <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
             <% end %>
-            </div>
-              <span class="plus">
-                <%= link_to soinvisage_path(soinvisage) do %>
-                  <i class="fas fa-angle-right"></i>
-                <% end %>
-              </span>
-            <% if policy(Soinvisage).destroy? %>
-              <p>
-                <%= link_to "del",
-                  soinvisage_path(soinvisage),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-              </p>
-            <% end %>
           </div>
-        <%# </div> %>
+          <% if !soinvisage.description.nil? %>
+            <span class="plus"><%= link_to soinvisage_path(soinvisage) do %>
+              <i class="fas fa-angle-right"></i>
+              <% end %>
+            </span>
+          <% end %> 
+        </div>
       <% end %>
       <h3>Soins Esthétiques</h3>
       <% @soinvisages_esths.each do |soinvisage| %>
         <div class="cards">
+          <% if policy(Soinvisage).destroy? %>
+            <p>
+              <%= link_to soinvisage_path(soinvisage), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </p>
+          <% end %>
           <div class="presta-name">
               <%= soinvisage.name %><%= " " if soinvisage.description != "" %>
               <%= soinvisage.description %><%= " " if soinvisage.price != "" %>
@@ -82,23 +110,17 @@ De nombreuses études ont démontré l'efficacité de ce trésor botanique qu'es
               <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
             <% end %>
             </div>
-              <span class="plus">
-                <%= link_to soinvisage_path(soinvisage) do %>
-                  <i class="fas fa-angle-right"></i>
+            <% if !soinvisage.description.nil? %>
+              <span class="plus"><%= link_to soinvisage_path(soinvisage) do %>
+                <i class="fas fa-angle-right"></i>
                 <% end %>
-              </span>
-            <% if policy(Soinvisage).destroy? %>
-              <p>
-                <%= link_to "del",
-                  soinvisage_path(soinvisage),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-              </p>
-            <% end %>
+               </span>
+            <% end %>  
           </div>
-        <%# </div> %>
+        </div>
       <% end %>
     </div>
+
     <div class="soinvisage-bann">
       <img class="aloe-logo" src="https://res.cloudinary.com/dsmxleyf5/image/upload/v1618152192/bd80lj1g0br4g3gwa43q.png" alt="logo-aloevera">
     </div>
@@ -109,6 +131,3 @@ De nombreuses études ont démontré l'efficacité de ce trésor botanique qu'es
     </p>
   <% end %>
 </div>
-
-<%# <div class="menu-button"><i class="fas fa-bars fa-3x"></i></div>
-<div class="call-button"><a href="tel:+33500000000"><i class="fas fa-phone"></a></i></div> %>

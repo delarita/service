@@ -6,11 +6,12 @@ class SoinvisagesController < ApplicationController
   end
 
   def index
-    @soinvisages = policy_scope(Soinvisage)
+    @soinvisages = policy_scope(Soinvisage).sort_by { |m| [m.created_at] }.reverse!
+    @soinvisages = @soinvisages.select { |soinvisage| soinvisage.name != "BON CADEAU" }
+    @bc_soinvisage = Soinvisage.find_by(name: "BON CADEAU")
     @soinvisages_visages=@soinvisages.select{ |soin| soin.category == "Soins du visage" }
     @soinvisages_esths=@soinvisages.select{ |soin| soin.category == "Soins Esthétiques" }
     @order_item = current_order.order_items.new
-    @bc_soinvisage = Soinvisage.first
     @boncadeau = current_order.order_items.new
   end
 
@@ -37,19 +38,27 @@ class SoinvisagesController < ApplicationController
   end
 
   def update
+    purge_photo if !params[:soinvisage][:remove_photo].nil? && params[:soinvisage][:remove_photo].to_sym == :true
     @soinvisage.update(soinvisage_params)
-    redirect_to soinvisages_path
+    redirect_to soinvisage_path(@soinvisage)
   end
 
   def destroy
+    authorize @soinvisage
     @soinvisage.destroy
     redirect_to soinvisages_path
+  end
+
+  def delete_attachment
+    attachment = ActiveStorage::Attachment.find(params[:id])
+    attachment.purge
+    redirect_back(fallback_location: soinvisage_path(@soinvisage))
   end
 
   private
 
   def soinvisage_params
-    params.require(:soinvisage).permit(:name, :description, :photo, :rich_content, :price_cents)
+    params.require(:soinvisage).permit(:name, :remove_photo, :description, :user_id, :photo, :rich_content, :price_cents)
   end
 
   def set_soinvisage
@@ -57,5 +66,8 @@ class SoinvisagesController < ApplicationController
     authorize @soinvisage
   end
 
+  def purge_photo
+    @soinvisage.photo.purge
+  end
 end
 

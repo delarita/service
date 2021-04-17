@@ -1,17 +1,31 @@
-<div class = "container">
-  <div class="cards">
-    <%= @maquillage.name %>
-    </br>
-    <%= @maquillage.rich_content %>
-    </br>
-    <% if @maquillage.photo.attached? %>
-      <%= cl_image_tag @maquillage.photo.key, height: 300, width: 400, crop: :fill %>
-      </br>
+<div class="navmenu-presta">
+  <div class="logo"></div>
+  <li><%= link_to "EPILATIONS", maquillages_path %></li>
+  <li><%= link_to "MASSAGES", massages_path %></li>
+  <li><%= link_to "SOINS DU VISAGE", soinvisages_path %></li>
+  <li><%= link_to "MAQUILLAGE PERMANENT", maquillages_path %></li>
+</div>
+<div class="false-menu"></div>
+<div class="under-menu">
+  <h1 class="under-title"><%= link_to "Maquillages", maquillages_path %></h1>
+  <h2><%= @maquillage.name %></h2>
+  <% if policy(Maquillage).edit? %>
+      <br/>
+      <br/>
+      <%= link_to edit_maquillage_path(@maquillage) do %>
+        <i class="far fa-edit"></i>
+      <% end %>
     <% end %>
+  <span class="retour-accueil"><%= link_to "ACCUEIL", root_path %></span>
+</div>
+<div class = "container">
+  <div class="cardsnoflex">
     <%= @maquillage.description %>
-    </br>
-    <% if policy(Maquillage).edit? %>
-      <%= link_to "Editer", edit_maquillage_path(@maquillage) %>
+    <br/>
+    <%= @maquillage.rich_content %>
+    <% if @maquillage.photo.attached? %>
+      <br/>
+      <%= cl_image_tag @maquillage.photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
   </div>
 </div>

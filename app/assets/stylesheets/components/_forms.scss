@@ -1,8 +1,16 @@
 .form-inputs{
     display: flex;
-    flex-direction: column;
     align-items: center;
-    
+    flex-direction: column;
+}
+
+.presta-form-inputs{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &.col {
+      flex-direction: column;
+    }
 }
 
 .login {

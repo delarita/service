@@ -22,6 +22,8 @@ require("@rails/actiontext")
 
 
 
+import "./actiontext.scss"
+
 // External imports
 import "bootstrap";
 
@@ -33,6 +35,7 @@ global.$ = jQuery;
 import { selectNav } from '../components/stickymenu';
 import { openNav } from '../components/openmenu';
 import { initMapbox } from '../plugins/init_mapbox';
+import { slider } from '../components/theslider';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -40,6 +43,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   selectNav();
   openNav();
+  slider();
 
 });
 

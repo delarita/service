@@ -6,9 +6,10 @@ class MaquillagesController < ApplicationController
   end
 
   def index
-    @maquillages = policy_scope(Maquillage)
+    @maquillages = policy_scope(Maquillage).sort_by { |m| [m.created_at] }.reverse!
+    @maquillages = @maquillages.select { |maquillage| maquillage.name != "BON CADEAU" }
+    @bc_maquillage = Maquillage.find_by(name: "BON CADEAU")
     @order_item = current_order.order_items.new
-    @bc_maquillage = Maquillage.first
     @boncadeau = current_order.order_items.new
   end
 
@@ -35,6 +36,7 @@ class MaquillagesController < ApplicationController
   end
 
   def update
+    purge_photo if !params[:maquillage][:remove_photo].nil? && params[:maquillage][:remove_photo].to_sym == :true
     @maquillage.update(maquillage_params)
     redirect_to maquillage_path(@maquillage)
   end
@@ -45,10 +47,16 @@ class MaquillagesController < ApplicationController
     redirect_to maquillages_path
   end
 
+  def delete_attachment
+    attachment = ActiveStorage::Attachment.find(params[:id])
+    attachment.purge
+    redirect_back(fallback_location: maquillage_path(@maquillage))
+  end
+
   private
 
   def maquillage_params
-    params.require(:maquillage).permit(:name, :description, :user_id, :photo, :rich_content, :price_cents)
+    params.require(:maquillage).permit(:name, :remove_photo, :description, :user_id, :photo, :rich_content, :price_cents)
   end
 
   def set_maquillage
@@ -56,5 +64,8 @@ class MaquillagesController < ApplicationController
     authorize @maquillage
   end
 
+  def purge_photo
+    @soinvisage.photo.purge
+  end
 end
 

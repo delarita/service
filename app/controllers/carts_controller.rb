@@ -21,8 +21,9 @@ class CartsController < ApplicationController
           success_url: order_url(order),
           cancel_url: carts_url
         )
-        p "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+        p "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
         p stripe_session
+        p "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
         order.update(checkout_session_id: stripe_session.id)
       end
     end

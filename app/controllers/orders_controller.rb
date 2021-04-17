@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:show]
+  before_action :set_order, only: [:show, :destroy]
   before_action :send_confirm_mail, only: [:show]
   after_action :reset_session, only: [:show]
 
@@ -12,6 +12,11 @@ class OrdersController < ApplicationController
     puts "entree dans le controller OrdersController"
   end
 
+  def destroy
+    @order.destroy
+    redirect_to orders_path
+  end
+
   private
   def set_order
     @order = Order.find(params[:id])
@@ -21,7 +26,7 @@ class OrdersController < ApplicationController
 
   def send_confirm_mail
     p @order
-    if !@order.email_sent
+    if (!@order.email_sent) && (@order.state == 'paid')
       UserMailer.with(user: current_or_guest_user).voucher(@order).deliver_now
       @order.email_sent = true
       @order.save!

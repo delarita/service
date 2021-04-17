@@ -1,11 +1,4 @@
-<%# <%= form_for([@bc_maquillage, @order_item], remote: true) do |f| %>
-  <%# <%= f.hidden_field :orderitemable_type, value: "Maquillage" %>
-  <%# <%= f.hidden_field :orderitemable_id, value: @bc_maquillage.id %>
-  <%# <%= f.hidden_field :quantity, value: 1 %>
-  <%# <% @order_item = @boncadeau %>
-  <%# <% p @order_item %>
-  <%# <%= f.submit "BON CADEAU", class: 'btn btn-primary btn-sm' %>
-<%# <% end %>
+
 <div class="navmenu-presta">
   <%# <li><%= link_to "ACCUEIL", root_path%>
   <%# </li> %>
@@ -23,6 +16,42 @@
   <span class="retour-accueil"><%= link_to "ACCUEIL", root_path %></span>
 </div>
 <div class="container">
+
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    BON CADEAU
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Donner un prix à votre bon</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="2" data-slider-max="78" data-slider-step="1" data-slider-value="5"/>
+          <!-- <span id="ex1CurrentSliderValLabel"><span id="ex1SliderVal"></span></span> -->
+        </div>
+        <div class="modal-footer">
+          <%= form_for([@bc_maquillage, @order_item], remote: true) do |f| %>
+          <%= f.hidden_field :orderitemable_type, value: "Maquillage" %>
+          <%= f.hidden_field :orderitemable_id, value: @bc_maquillage.id %>
+          <%= f.hidden_field :quantity, value: 1 %>
+          <% @order_item = @boncadeau %>
+          <% p @order_item %>
+          <%= f.submit "BON CADEAU", class: 'btn btn-primary btn-sm' %>
+          <% end %>
+          <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Offrir</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
   <p>Soyez sublime à tout moment de la journée grâce au maquillage permanent.
      Pour votre confort et votre sécurité, nous vous proposons un travail de qualité dans un cadre adapté avec du matériel et des pigments aux normes.
      Relook Esthétique s’engage à respecter les règles d’hygiène du ministère de la santé.
@@ -31,49 +60,36 @@
     <div class="card-wrapper">
       <% @maquillages.each do |maquillage| %>
         <div class="cards">
-          <%# <div class="service"> %>
+          <% if policy(Maquillage).destroy? %>
+            <p>
+              <%= link_to maquillage_path(maquillage), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </p>
+          <% end %>
           <div class="presta-name">
-              <%= maquillage.name %><%= " " if maquillage.description != "" %>
-              <%= maquillage.description %><%= " " if maquillage.price != "" %>
+              <%= maquillage.name %><%#<%= " " if maquillage.description != "" %>
+              <%#<%= maquillage.description %><%= " " if maquillage.price != "" %>
           </div>
-
           <div class="presta-price">
             <%= form_for([maquillage, @order_item], remote: true) do |f| %>
               <%= f.hidden_field :orderitemable_type, value: "Maquillage" %>
               <%= f.hidden_field :orderitemable_id, value: maquillage.id %>
-              
-
-              <%# <div class="form-group"> %>
-                <%= f.hidden_field :quantity, value: 1, min: 1, class: 'form-control' %>
-              <%# </div> %>
-
-              <%# <div class="service-price"> %>
-               
-                <%= humanized_money_with_symbol(maquillage.price) %>
-                
-                <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
-              <%# </div> %>
+              <%= f.hidden_field :quantity, value: 1, min: 1, class: 'form-control' %>
+              <%= humanized_money_with_symbol(maquillage.price) %>
+              <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
             <% end %>
-         </div> 
-         <span class="plus"><%= link_to maquillage_path(maquillage) do %> </span>
-             <i class="fas fa-angle-right"></i>
+         </div>
+          <% if !maquillage.description.nil? %>
+            <span class="plus"><%= link_to maquillage_path(maquillage) do %></span>
+              <i class="fas fa-angle-right"></i>
             <% end %>
-         
-          <% if policy(Maquillage).destroy? %>
-            <p>
-              <%= link_to "del",
-                maquillage_path(maquillage),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %>
-            </p>
           <% end %>
         </div>
       <% end %>
-
     </div>
     <div class="makeup-bann"></div>
   </div>
-
   <% if policy(Maquillage).new? %>
     <p>
       <%= link_to "Nouvelle Prestation", new_maquillage_path %>

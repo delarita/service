@@ -1,17 +1,31 @@
-<div class = "container">
-  <div class="cards">
-    <%= @massage.name %>
-    </br>
-    <%= @massage.rich_content %>
-    </br>
-    <% if @massage.photo.attached? %>
-      <%= cl_image_tag @massage.photo.key, height: 300, width: 400, crop: :fill %>
-      </br>
+<div class="navmenu-presta">
+  <div class="logo"></div>
+  <li><%= link_to "EPILATIONS", massages_path %></li>
+  <li><%= link_to "MASSAGES", massages_path %></li>
+  <li><%= link_to "SOINS DU VISAGE", soinvisages_path %></li>
+  <li><%= link_to "MAQUILLAGE PERMANENT", massages_path %></li>
+</div>
+<div class="false-menu"></div>
+<div class="under-menu">
+  <h1 class="under-title"><%= link_to "Massages", massages_path %></h1>
+  <h2><%= @massage.name %></h2>
+  <% if policy(Massage).edit? %>
+      <br/>
+      <br/>
+      <%= link_to edit_massage_path(@massage) do %>
+        <i class="far fa-edit"></i>
+      <% end %>
     <% end %>
+  <span class="retour-accueil"><%= link_to "ACCUEIL", root_path %></span>
+</div>
+<div class = "container">
+  <div class="cardsnoflex">
     <%= @massage.description %>
-    </br>
-    <% if policy(Massage).edit? %>
-      <%= link_to "Editer", edit_massage_path(@massage) %>
+    <br/>
+    <%= @massage.rich_content %>
+    <% if @massage.photo.attached? %>
+      <br/>
+      <%= cl_image_tag @massage.photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
   </div>
 </div>

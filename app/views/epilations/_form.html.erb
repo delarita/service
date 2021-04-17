@@ -1,13 +1,39 @@
 <%= simple_form_for(@epilation) do |f| %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs">
+  <div class="presta-form-inputs">
+    <% if @epilation.name == "" %>
+      <%= f.input :name, :label => "Nouvelle Prestation" %>
+    <% else%>
+      <%= f.input :name, :label => "Nom" %>
+    <% end %>
+    <%= f.input :description, as: :text %>
+    <%= f.input :price_cents, :label => "Prix" %>
+  </div>
+  <br/>
 
-    <%= f.rich_text_area :rich_content %>
+  <div class="presta-form-inputs col">
+<!--     < %= f.input :description, :label => "Descrption" %>
+ --><%= f.rich_text_area :rich_content %>
 
   </div>
+  <br/>
+
+  <div class="presta-form-inputs">
+    <% if @epilation.photo.attached? %>
+      <br/>
+      <%= cl_image_tag @epilation.photo.key, height: 300, width: 400, crop: :fill %>
+      <br/>
+      <%= f.input :remove_photo, as: :boolean, label: "Supprimer la photo", checked_value: :true, unchecked_value: :false %>
+    <% else %>
+      <%= f.input :photo, as: :file, label: "Ajoutez une photo" %>
+    <% end %>
+  </div>
+  <br/>
 
   <div class="form-actions">
     <%= f.button :submit, :value => "Enregistrer", class: "btn btn-dark" %>
   </div>
+
 <% end %>
+

@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   resources :epilations do
     resources :order_items, only: [:create, :update, :destroy]
   end
-  
+
   resource :contacts, only: [:new, :create] do
     get "/thanks" => "contacts#thanks"
   end
@@ -57,7 +57,7 @@ Rails.application.routes.draw do
   # resources :epilations, :massages, :maquillages, :soinvisages do
   #resources :order_items, only: [:create, :update, :destroy]
   # end
-  resources :orders, only: [:index, :show]
+  resources :orders, only: [:index, :show, :destroy]
 
   resources :carts, only: [:index]
   resources :carts, only: [:new], as: :order do

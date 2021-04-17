@@ -1,0 +1,97 @@
+//
+// Provides a drop-in pointer for the default Trix stylesheet that will format the toolbar and
+// the trix-editor content (whether displayed or under editing). Feel free to incorporate this
+// inclusion directly in any other asset bundle and remove this file.
+//
+//= require trix/dist/trix
+@import "trix/dist/trix";
+
+// We need to override trix.css’s image gallery styles to accommodate the
+// <action-text-attachment> element we wrap around attachments. Otherwise,
+// images in galleries will be squished by the max-width: 33%; rule.
+.trix-content {
+  .attachment-gallery {
+    > action-text-attachment,
+    > .attachment {
+      flex: 1 0 33%;
+      padding: 0 0.5em;
+      max-width: 33%;
+    }
+
+    &.attachment-gallery--2,
+    &.attachment-gallery--4 {
+      > action-text-attachment,
+      > .attachment {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+    }
+  }
+
+  action-text-attachment {
+    .attachment {
+      padding: 0 !important;
+      max-width: 100% !important;
+    }
+  }
+}
+
+
+@mixin transparent {
+  color: transparent;
+}
+
+@mixin override-trix-icon($icon, $content) {
+  button.trix-button--icon-#{$icon} {
+    &::before {
+      content: $content;
+    }
+  }
+}
+
+// trix-toolbar {
+
+//   .trix-button-group {
+//     button {
+//       &::before {
+//         background-image: none !important;
+//         font-family: "Font Awesome 5 Pro";
+//         font-weight: 900;
+//         color: black;
+//       }
+//     }
+
+//     &.trix-button-group--file-tools {
+//       display: none;
+//     }
+
+
+//     @include override-trix-icon("bold", "Bo");
+//     @include override-trix-icon("italic", "It");
+//     @include override-trix-icon("link", "Ln");
+//     @include override-trix-icon("strike", "St");
+//     @include override-trix-icon("heading-1", "h1");
+//     @include override-trix-icon("quote", "Qu");
+//     @include override-trix-icon("code", "Co");
+//     @include override-trix-icon("bullet-list", "Bl");
+//     @include override-trix-icon("number-list", "Nl");
+//     @include override-trix-icon("decrease-nesting-level", "DnL");
+//     @include override-trix-icon("increase-nesting-level", "InL");
+//     @include override-trix-icon("undo", "P-z");
+//     @include override-trix-icon("redo", "P-y");
+//   }
+
+//   .trix-button--icon {
+//     text-indent: inherit;
+//     @include transparent;
+
+//     &.trix-active {
+//       @include transparent;
+//     }
+//   }
+
+//   .trix-button:disabled {
+//     @include transparent;
+//   }
+
+// }

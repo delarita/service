@@ -23,11 +23,15 @@
   <li>Effectuée le: <%= order.updated_at.to_formatted_s(:short)%></li>
   <li>Montant: <%= order.subtotal_price_cents/100%>€</li>
   <li> Statut: <% if order.state == "pending" %>
-  En attente de paiement 
+  En attente de paiement
   <% else %>
-  Commande payée 
+  Commande payée
   <% end %>
-  
+  </li>
+  <li>
+    <% if policy(order).destroy? %>
+      <%= link_to "Supprimer la commande", order_path(order),method: :delete, data: { confirm: "Are you sure?" } %>
+    <% end %>
   </li>
 </ul>
 <% end %>

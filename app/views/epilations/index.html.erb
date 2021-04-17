@@ -1,18 +1,4 @@
-<%# <%= form_for([@bc_epilation, @order_item], remote: true) do |f| %>
-<%#  <%= f.hidden_field :orderitemable_type, value: "Epilation" %>
-<%#  <%= f.hidden_field :orderitemable_id, value: @bc_epilation.id %>
-<%#  <%= f.hidden_field :quantity, value: 1 %>
-<%#  <% @order_item = @boncadeau %>
-<%#  <% p @order_item %>
-<%#  <%= f.submit "BON CADEAU", class: 'btn btn-primary btn-sm' %>
-<%# <% end %>
-
-
 <div class="navmenu-presta">
-  <%# <li><%= link_to "ACCUEIL", root_path%>
-  <%# </li> %>
-  <%# <li><a href="#about">A PROPOS</a></li> %>
-
   <div class="logo"></div>
   <li><%= link_to "EPILATIONS", epilations_path %></li>
   <li><%= link_to "MASSAGES", massages_path %></li>
@@ -23,14 +9,48 @@
 <div class="false-menu"></div>
 
 <div class="under-menu">
-  <h1 class="under-title">Epilation</h1>
+  <h1 class="under-title">Epilations</h1>
   <span class="retour-accueil"><%= link_to "ACCUEIL", root_path %></span>
 </div>
 
 <div class="container">
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    BON CADEAU
+  </button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Donner un prix à votre bon</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="2" data-slider-max="78" data-slider-step="1" data-slider-value="5"/>
+          <!-- <span id="ex1CurrentSliderValLabel"><span id="ex1SliderVal"></span></span> -->
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button> -->
+          <%= form_for([@bc_epilation, @order_item], remote: true) do |f| %>
+           <%= f.hidden_field :orderitemable_type, value: "Epilation" %>
+           <%= f.hidden_field :orderitemable_id, value: @bc_epilation.id %>
+           <%= f.hidden_field :quantity, value: 1 %>
+           <% @order_item = @boncadeau %>
+           <% p @order_item %>
+           <%= f.submit "Offrir", class: 'btn btn-primary btn-sm' %>
+          <% end %>
+        <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Offrir</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
 
  <%# <p>Épilation toutes zones pour les femmes.<br />
     Épilation Messieurs : Sourcils, Narines, Oreilles, Torse, Dos. <br /> %>
+
     <p>
       Pionnier et expert de l’épilation, PERRONT RIGOT répond à tous les besoins de façon ciblée et adaptée par ses différentes cires. Après chaque épilation, des soins « ralentisseurs de pousse de poils » et « spécial poils incarnés » sont utilisés.<br /><br />
     </p>
@@ -40,9 +60,16 @@
       <h3>Epilation Femmes</h3>
       <% @epilations_femmes.each do |epilation| %>
         <div class="cards">
+          <% if policy(Epilation).destroy? %>
+            <p>
+              <%= link_to epilation_path(epilation), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="far fa-trash-alt"></i>
+                <% end %>
+            </p>
+          <% end %>
           <div class="presta-name">
-              <%= epilation.name %><%= " " if epilation.description != "" %>
-              <%= epilation.description %><%= " " if epilation.price != "" %>
+              <%= epilation.name %><%#<%= " " if epilation.description != "" %>
+              <%#<%= epilation.description %><%= " " if epilation.price != "" %>
           </div>
           <div class="presta-price">
             <%= form_for([epilation, @order_item], remote: true) do |f| %>
@@ -53,22 +80,23 @@
               <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
             <% end %>
           </div>
-          <span class="plus"><%= link_to epilation_path(epilation) do %></span>
-            <i class="fas fa-angle-right"></i>
+          <% if !epilation.description.nil? %>
+            <span class="plus"><%= link_to epilation_path(epilation) do %>
+              <i class="fas fa-angle-right"></i>
+              <% end %>
+            </span>
           <% end %>
-          <% if policy(Epilation).destroy? %>
-            <p>
-              <%= link_to "del",
-                epilation_path(epilation),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %>
-            </p>
-          <% end %>
-        </div>
-      <% end %>
+        </div>  
       <h3>Epilation Hommes</h3>
       <% @epilations_hommes.each do |epilation| %>
         <div class="cards">
+          <% if policy(Epilation).destroy? %>
+            <p>
+              <%= link_to epilation_path(epilation), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="far fa-trash-alt"></i>
+                <% end %>
+            </p>
+          <% end %>
           <div class="presta-name">
               <%= epilation.name %><%= " " if epilation.description != "" %>
               <%= epilation.description %><%= " " if epilation.price != "" %>
@@ -82,17 +110,12 @@
               <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
             <% end %>
           </div>
-          <span class="plus"><%= link_to epilation_path(epilation) do %></span>
-            <i class="fas fa-angle-right"></i>
-          <% end %>
-          <% if policy(Epilation).destroy? %>
-            <p>
-              <%= link_to "del",
-                epilation_path(epilation),
-                method: :delete,
-                data: { confirm: "Are you sure?" } %>
-            </p>
-          <% end %>
+          <% if !epilation.description.nil? %>
+              <span class="plus"><%= link_to epilation_path(epilation) do %>
+                <i class="fas fa-angle-right"></i>
+                 <% end %>
+              </span>
+           <% end %>
         </div>
       <% end %>
     </div>
@@ -104,6 +127,3 @@
     </p>
   <% end %>
 </div>
-
-
-
