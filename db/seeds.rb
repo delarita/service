@@ -14,6 +14,7 @@ puts 'Map créée'
 
 #create epilations
 Epilation.destroy_all
+Epilation.create(description: "", name: "BON CADEAU", price_cents:1000, user_id:1)
 
 Epilation.create(description: "", category: "homme", name: "Oreilles, narines", price_cents:700, user_id:1)
 Epilation.create(description: "", category: "homme", name: "Torse, dos", price_cents:2000, user_id:1)
@@ -36,6 +37,7 @@ puts 'Epilations créées'
 
 Massage.destroy_all
 #create massages
+Massage.create(description: "", name: "BON CADEAU", price_cents:1000, user_id:1)
 Massage.create(description: "", name: "Massage drainant: 1h", price_cents:5000, user_id:1)
 Massage.create(description: "", name: "Massage relaxant (californien): 1h", price_cents:5000, user_id:1)
 Massage.create(description: "", name: "Rééquilibrage énergétique: 1h", price_cents:5000, user_id:1)
@@ -48,7 +50,7 @@ puts 'Massages créés'
 
 Soinvisage.destroy_all
 #create soins du visage
-
+Soinvisage.create(description: "", name: "BON CADEAU", price_cents:1000, user_id:1)
 Soinvisage.create(description: "", category: "Soins du visage", name: "Soin Homme 60 mn", price_cents: 5000, user_id:1)
 Soinvisage.create(description: "", category: "Soins du visage", name: "Soin Junior 30 mn", price_cents:2500, user_id:1)
 Soinvisage.create(description: "", category: "Soins du visage", name: "Soin régénérant 60 mn", price_cents:5000, user_id:1)
@@ -68,6 +70,8 @@ puts 'Soins du Visage créés'
 
 Maquillage.destroy_all
 #create maquillage permanent
+Maquillage.create(description: "", name: "BON CADEAU", price_cents:1000, user_id:1)
+
 Maquillage.create(description: "", name: "Contour des lèvres", price_cents:31000, user_id:1)
 Maquillage.create(description: "", name: "Contour des lèvres + remplissage", price_cents:39000, user_id:1)
 Maquillage.create(description: "", name: "Sourcil effet naturel (poil à poil)", price_cents:29000, user_id:1)
@@ -76,3 +80,5 @@ Maquillage.create(description: "", name: "Eye liner inférieur", price_cents:170
 Maquillage.create(description: "", name: "Eye liner supérieur + inférieur", price_cents:34000, user_id:1)
 
 puts 'Maquillages permanents créés'
+
+
