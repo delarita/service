@@ -19,9 +19,9 @@
 
 
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  <button type="button" class="btn btn-ghost" data-toggle="modal" data-target="#exampleModalCenter">
     BON CADEAU
-  </button>
+  </button><br /><br />
   <!-- Modal -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -36,17 +36,20 @@
           <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="2" data-slider-max="78" data-slider-step="1" data-slider-value="5"/>
           <!-- <span id="ex1CurrentSliderValLabel"><span id="ex1SliderVal"></span></span> -->
         </div>
+        <%# <% @maquillages.each do |maquillage| %> 
         <div class="modal-footer">
           <%= form_for([@bc_maquillage, @order_item], remote: true) do |f| %>
           <%= f.hidden_field :orderitemable_type, value: "Maquillage" %>
-          <%= f.hidden_field :orderitemable_id, value: @bc_maquillage.id %>
+          <%# <%= f.hidden_field :orderitemable_id, value: @bc_maquillage.id %> 
           <%= f.hidden_field :quantity, value: 1 %>
           <% @order_item = @boncadeau %>
           <% p @order_item %>
-          <%= f.submit "BON CADEAU", class: 'btn btn-primary btn-sm' %>
+          <%= f.submit "BON CADEAU", class: 'btn btn-ghost' %>
           <% end %>
+           
           <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Offrir</button> -->
         </div>
+        <%# <% end %>
       </div>
     </div>
   </div>
@@ -80,11 +83,7 @@
               <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
             <% end %>
          </div>
-          <% if !maquillage.description.nil? %>
-            <span class="plus"><%= link_to maquillage_path(maquillage) do %></span>
-              <i class="fas fa-angle-right"></i>
-            <% end %>
-          <% end %>
+          
         </div>
       <% end %>
     </div>

@@ -18,6 +18,34 @@
   font-family: Montserrat;
 }
 
+.reviews {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 26px;
+    font-family: 'Montserrat';
+    font-size:16px;
+    margin-top: 50px;
+}
+.fa-star{
+  color: #d981d8;
+}
+
+.reviews-buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding:25px;
+  a:hover {
+    text-decoration: none;
+    color:  #d981d8;
+  }
+}
+.padding-btn-review{
+  margin:30px;
+ 
+}
+
+
 
 #order_item_quantity{
     border-radius: 20px;
@@ -485,6 +513,7 @@ font-size: 22px;
 .false-menu {
   height: 77px;
 }
+
  }
 
 
@@ -514,6 +543,8 @@ font-size: 22px;
   }
 
 }
+
+
   @media (max-width: 1124px) {
 
     .w-50 {
@@ -872,15 +903,15 @@ height:100%;}
   }
 
 .card-wrapper{
-  min-width:90vw;
+  min-width:100%;
   margin-right:0;
-  font-size:9px;
+  font-size:14px;
 }
 
 .card-wrapper-flex-start{
-  min-width:90vw;
+  min-width:100%;
   margin-right:0;
-  font-size:9px;
+  font-size:14px;
 }
 
 .under-menu{
@@ -1270,6 +1301,17 @@ height:100%;}
 
   @media (max-width: 540px) {
 
+    .reviews {
+      display: flex;
+      flex-direction: column;
+      grid-gap: none;
+      font-family: 'Montserrat';
+      font-size:16px;
+  }
+  .review-names{
+    display:none;
+  }
+
 .title-landscape {
   display:none
 }
@@ -1314,13 +1356,13 @@ height:100%;}
 .card-wrapper{
   min-width:90vw;
   margin-right:0;
-  font-size:9px;
+  font-size:12px;
 }
 
 .card-wrapper-flex-start{
   min-width:90vw;
   margin-right:0;
-  font-size:9px;
+  font-size:12px;
 }
 
 .under-menu{
