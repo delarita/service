@@ -8,6 +8,7 @@ const selectNav = () => {
   let title = document.querySelector(".titre");
   let logoDiv = document.querySelector(".logo");
   let phone = document.querySelector(".phone-number")
+  let callToAction = document.querySelector(".contact-banner")
   // on mémorise la position de nav
   if (objNav) {
   let memoPositionNav = objNav.offsetTop;
@@ -27,6 +28,7 @@ const selectNav = () => {
       title.style.display ="none";
       logoDiv.style.display ="none";
       phone.style.display="none";
+      callToAction.style.display="none";
     }
     if(posCurseur<101){
       objNav.style.position = "";
@@ -35,6 +37,7 @@ const selectNav = () => {
       title.style.display ="";
       logoDiv.style.display ="";
       phone.style.display="";
+      callToAction.style.display="";
     }
   }
   // evenement
