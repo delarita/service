@@ -26,6 +26,7 @@
             <div class="phone-number">
               <h2>04 90 91 04 73</h2>
             </div>
+            
             <div class="navmenu">
                 
                 <%# <li><%= link_to "ACCUEIL", root_path%>
@@ -40,8 +41,8 @@
             
             <div class="logo">
                     <img class = "d-block w-50" src ="https://res.cloudinary.com/dsmxleyf5/image/upload/v1613315589/pitymo5xrp0es3yjn6ey.png" alt="logo">
-
             </div>
+<div class = "contact-banner"> <%=link_to "Prenez rendez-vous", new_contacts_path, class: "btn btn-ghost"%>  </div>
 
             
     </div>
@@ -108,7 +109,31 @@
     <%# <img class = "d-block w-100" src ="https://images.unsplash.com/photo-1529982412356-901cc3a363cf?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="soinvisage"> %>
 
 </div>
+<h2 class = "text-center">Témoignages</h2>
 
+<div class="reviews">
+<%@reviews.each do |review| %>
+<div class ="review-cards text-center">
+<% 5.times do %>
+<i class="fas fa-star"></i> 
+<% end %> <br /><br />
+<%= review.text %>
+
+</div>
+<% end %> 
+
+<% @reviews_names.each do |name| %>
+<div class ="review-names text-center">
+<%= name.text %>
+</div>
+
+ <% end %> 
+
+</div>
+<div class="reviews-buttons">
+<a class="btn-ghost padding-btn-review" href="https://search.google.com/local/writereview?placeid=ChIJpzLLeWDctRIRlu2b9NQ2_pw" target="_blank">Rédiger un avis</a>
+<a class="btn-ghost padding-btn-review" href="https://search.google.com/local/reviews?placeid=ChIJpzLLeWDctRIRlu2b9NQ2_pw" target="_blank">Voir tous les avis</a>
+</div>
 </div>
 <%# <div class="call-button"><a href="tel:+33500000000"><i class="fas fa-phone"></a></i></div> %>
 

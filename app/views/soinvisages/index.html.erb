@@ -79,12 +79,7 @@ De nombreuses études ont démontré l'efficacité de ce trésor botanique qu'es
               <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
             <% end %>
           </div>
-          <% if !soinvisage.description.nil? %>
-            <span class="plus"><%= link_to soinvisage_path(soinvisage) do %>
-              <i class="fas fa-angle-right"></i>
-              <% end %>
-            </span>
-          <% end %>
+          
         </div>
       <% end %>
       <h3>Soins Esthétiques</h3>
@@ -110,12 +105,7 @@ De nombreuses études ont démontré l'efficacité de ce trésor botanique qu'es
               <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
             <% end %>
             </div>
-            <% if !soinvisage.description.nil? %>
-              <span class="plus"><%= link_to soinvisage_path(soinvisage) do %>
-                <i class="fas fa-angle-right"></i>
-                <% end %>
-               </span>
-            <% end %>
+           
           </div>
       <% end %>
     </div>
