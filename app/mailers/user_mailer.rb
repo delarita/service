@@ -14,7 +14,7 @@ class UserMailer < ApplicationMailer
   def contact_mail(contact)
     @contact = contact
     #mail(to: "relookesthetique@gmail.com", subject: "Demande de renseignements")
-    mail(to: "j.delarita@gmail.com", subject: "Demande de renseignements")
+    mail(to: "relooktarascon@gmail.com", subject: "Demande de renseignements")
 
   end
 end
