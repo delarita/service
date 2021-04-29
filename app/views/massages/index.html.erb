@@ -13,22 +13,48 @@
 <div class="false-menu"></div>
 
 <div class="under-menu">
+<div class="presta-container">
+
   <h1 class="under-title">Massages</h1>
+    <div class = "contact-banner-presta"> <%=link_to "Je prends rendez-vous", new_contacts_path, class: "btn btn-ghost presta-button"%>  </div>
+
+</div>
   <span class="retour-accueil"><%= link_to "ACCUEIL", root_path %></span>
 </div>
 
 <div class="container">
 
+  
+<p>Le massage de relaxation utilise plusieurs techniques de massages traditionnelles du monde pour en faire un massage détente et bien-être. Il se compose de mouvements fluides, continus et enveloppants, de longs effleurages et pétrissages et de mouvements glissés pouvant aller en profondeur dans les tissus et s’effectue avec des l’huiles essentielles.
+ </p>
+<h3 class = "text-center">~</h3>
+<p>
+A l’occasion d’un anniversaire, de Noël, ou tout simplement pour faire plaisir, offrez un moment de bien-être à ceux que vous aimez… <br />
+  <h3 class = "text-center sign">~</h3>
+
+<p>Deux choix s'offrent à vous <br />
+Vous pouvez sélectionner un ou plusieurs de nos soins ci-dessous et les ajouter à votre panier en cliquant sur le bouton "Offrir".<br />
+Vous préférez le bon cadeau montant libre ? Vous choisissez le montant de votre cadeau, à partir de 20€ en cliquant sur le bouton "Bon cadeau".<br />
+Dans les deux cas le bénéficiaire pourra profiter de ses bons dans l’Institut Relook Esthétique.</p>
+
+  <div class="makeup-container">
+   <div class="card-wrapper">
+  <h3 class = "text-center sign">~</h3>
+
+    <div class="cards">
+
+    <h3 class="presta-name free-price">Bon Cadeau</h3>
+   <div class="presta-price">
   <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    BON CADEAU
+  <button type="button" class="bubbly-button" data-toggle="modal" data-target="#exampleModalCenter">
+    Montant libre
   </button>
   <!-- Modal -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Donner un prix à votre bon</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Choisissez votre montant</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -44,28 +70,18 @@
            <%= f.hidden_field :quantity, value: 1 %>
            <% @order_item = @boncadeau %>
            <% p @order_item %>
-           <%= f.submit "BON CADEAU", class: 'btn btn-primary btn-sm' %>
+           <%= f.submit "Offrir", class: 'btn btn-ghost btn-sm' %>
           <% end %>
           <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Offrir</button> -->
         </div>
       </div>
     </div>
   </div>
+</div>
+  
+   </div>
+    <h3 class = "text-center">~</h3>
 
-  <p>« C’est par notre peau, grâce au toucher, que nous ressentons, aimons, détestons »
-
-J.Lionel Taylor, 1921.<br />
-Le massage de relaxation utilise plusieurs techniques de massages traditionnelles du monde pour en faire un massage détente et bien-être. Il se compose de mouvements fluides, continus et enveloppants, de longs effleurages et pétrissages et de mouvements glissés pouvant aller en profondeur dans les tissus. Il s’effectue avec des l’huiles essentielles.
-Les bienfaits sont nombreux et variés. Le massage est un support au bien-être physique, nerveux, émotionnel et mental, il contribue en ce sens à :
-
-Une meilleure irrigation des tissus grâce aux manoeuvres de drainage de la circulation veineuse et de la circulation lymphatique.
-Un retour à l'équilibre nerveux dû à l'effet d'apaisement provoqué par la stimulation de nombreuses terminaisons nerveuses.
-Les effets
-Evacuation du stress
-Libération des tensions et des raideurs musculaires
-Gain d'énergie </p>
-  <div class="makeup-container">
-    <div class="card-wrapper">
       <% @massages.each do |massage| %>
         <div class="cards">
           <% if policy(Massage).destroy? %>
