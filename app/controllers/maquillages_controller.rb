@@ -65,7 +65,7 @@ class MaquillagesController < ApplicationController
   end
 
   def purge_photo
-    @soinvisage.photo.purge
+    @maquillage.photo.purge
   end
 end
 
