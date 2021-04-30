@@ -40,8 +40,9 @@ Vous pouvez sélectionner un ou plusieurs de nos soins ci-dessous et les ajouter
 Vous préférez le bon cadeau montant libre ? Vous choisissez le montant de votre cadeau, à partir de 20€ en cliquant sur le bouton "Bon cadeau".<br />
 Dans les deux cas le bénéficiaire pourra profiter de ses bons dans l’Institut Relook Esthétique.</p>
 
-  
+
   <div class="makeup-container">
+
     <div class="card-wrapper">
       <h3 class = "text-center sign">~</h3>
 
@@ -49,6 +50,7 @@ Dans les deux cas le bénéficiaire pourra profiter de ses bons dans l’Institu
 
     <h3 class="presta-name free-price">Bon Cadeau</h3>
    <div class="presta-price">
+
 
       <!-- Button trigger modal -->
   <button type="button" class="bubbly-button" data-toggle="modal" data-target="#exampleModalCenter">
@@ -68,17 +70,17 @@ Dans les deux cas le bénéficiaire pourra profiter de ses bons dans l’Institu
           <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="2" data-slider-max="78" data-slider-step="1" data-slider-value="5"/>
           <!-- <span id="ex1CurrentSliderValLabel"><span id="ex1SliderVal"></span></span> -->
         </div>
-        <%# <% @maquillages.each do |maquillage| %> 
+        <%# <% @maquillages.each do |maquillage| %>
         <div class="modal-footer">
           <%= form_for([@bc_maquillage, @order_item], remote: true) do |f| %>
           <%= f.hidden_field :orderitemable_type, value: "Maquillage" %>
-          <%# <%= f.hidden_field :orderitemable_id, value: @bc_maquillage.id %> 
+          <%= f.hidden_field :orderitemable_id, value: @bc_maquillage.id %>
           <%= f.hidden_field :quantity, value: 1 %>
           <% @order_item = @boncadeau %>
           <% p @order_item %>
           <%= f.submit "Offrir", class: 'btn btn-ghost btn-sm' %>
           <% end %>
-           
+
           <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Offrir</button> -->
         </div>
         <%# <% end %>
@@ -86,7 +88,7 @@ Dans les deux cas le bénéficiaire pourra profiter de ses bons dans l’Institu
     </div>
   </div>
  </div>
-  
+
    </div>
     <h3 class = "text-center">~</h3>
       <% @maquillages.each do |maquillage| %>
@@ -111,7 +113,7 @@ Dans les deux cas le bénéficiaire pourra profiter de ses bons dans l’Institu
               <%= f.submit "Offrir", class: 'btn btn-ghost2 btn-sm' %>
             <% end %>
          </div>
-          
+
         </div>
       <% end %>
     </div>
