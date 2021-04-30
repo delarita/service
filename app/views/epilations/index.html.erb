@@ -1,5 +1,7 @@
+
 <div class="navmenu-presta">
   <div class="logo"></div>
+
   <li><%= link_to "EPILATIONS", epilations_path %></li>
   <li><%= link_to "MASSAGES", massages_path %></li>
   <li><%= link_to "SOINS", soinvisages_path %></li>
@@ -9,21 +11,53 @@
 <div class="false-menu"></div>
 
 <div class="under-menu">
+<div class="presta-container">
   <h1 class="under-title">Epilations</h1>
+  <div class = "contact-banner-presta"> <%=link_to "Je prends rendez-vous", new_contacts_path, class: "btn btn-ghost presta-button"%>  </div>
+</div>  
   <span class="retour-accueil"><%= link_to "ACCUEIL", root_path %></span>
 </div>
 
 <div class="container">
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    BON CADEAU
+
+
+ <%# <p>Épilation toutes zones pour les femmes.<br />
+    Épilation Messieurs : Sourcils, Narines, Oreilles, Torse, Dos. <br /> %>
+
+    <p>
+      Pionnier et expert de l’épilation, PERRONT RIGOT répond à tous les besoins de façon ciblée et adaptée par ses différentes cires. Après chaque épilation, des soins « ralentisseurs de pousse de poils » et « spécial poils incarnés » sont utilisés.
+    </p>
+  <h3 class = "text-center sign">~</h3>
+      <p>
+A l’occasion d’un anniversaire, de Noël, ou tout simplement pour faire plaisir, offrez un moment de bien-être à ceux que vous aimez… <br />
+  <h3 class = "text-center sign">~</h3>
+
+<p>Deux choix s'offrent à vous <br />
+Vous pouvez sélectionner un ou plusieurs de nos soins ci-dessous et les ajouter à votre panier en cliquant sur le bouton "Offrir".<br />
+Vous préférez le bon cadeau montant libre ? Vous choisissez le montant de votre cadeau, à partir de 20€ en cliquant sur le bouton "Bon cadeau".<br />
+Dans les deux cas le bénéficiaire pourra profiter de ses bons dans l’Institut Relook Esthétique.</p>
+
+  <div class="makeup-container">
+  
+    <div class="card-wrapper">
+  <h3 class = "text-center sign">~</h3>
+
+    <div class="cards">
+
+    <h3 class="presta-name free-price">Bon Cadeau</h3>
+   <div class="presta-price">
+   
+   
+     <!-- Button trigger modal -->
+  <button type="button" class="bubbly-button" data-toggle="modal" data-target="#exampleModalCenter">
+    Montant Libre
   </button>
   <!-- Modal -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Donner un prix à votre bon</h5>
+          <h5 class="modal-title" id="exampleModalLongTitle">Choisissez votre montant</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -40,23 +74,18 @@
            <%= f.hidden_field :quantity, value: 1 %>
            <% @order_item = @boncadeau %>
            <% p @order_item %>
-           <%= f.submit "Offrir", class: 'btn btn-primary btn-sm' %>
+           <%= f.submit "Offrir", class: 'btn btn-ghost btn-sm' %>
           <% end %>
         <!-- <button type="button" class="btn btn-primary" data-dismiss="modal">Offrir</button> -->
         </div>
       </div>
     </div>
   </div>
-
- <%# <p>Épilation toutes zones pour les femmes.<br />
-    Épilation Messieurs : Sourcils, Narines, Oreilles, Torse, Dos. <br /> %>
-
-    <p>
-      Pionnier et expert de l’épilation, PERRONT RIGOT répond à tous les besoins de façon ciblée et adaptée par ses différentes cires. Après chaque épilation, des soins « ralentisseurs de pousse de poils » et « spécial poils incarnés » sont utilisés.<br /><br />
-    </p>
-
-  <div class="makeup-container">
-    <div class="card-wrapper">
+  </div>
+  
+   </div>
+    <h3 class = "text-center">~</h3>
+   
       <h3>Epilation Femmes</h3>
       <% @epilations_femmes.each do |epilation| %>
         <div class="cards">

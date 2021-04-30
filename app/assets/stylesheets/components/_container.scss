@@ -560,7 +560,7 @@ font-size: 22px;
      }
 
      p{
-       font-size: 12px;
+       font-size: 16px;
      }
    }
    .bloc1
@@ -653,13 +653,13 @@ height:100%;}
 
 
   .makeup-bann{
-    height:31vw;
+    // height:31vw;
   }
   .soinvisage-bann{
-    height:31vw;
+    // height:31vw;
   }
   .massage-bann{
-    height:29vw;
+    // height:29vw;
   }
   .logo {
     position: absolute;
@@ -844,7 +844,14 @@ height:100%;}
 }
 }
   @media (max-width: 810px) {
+.contact-title {
+  font-size:16px;
+  margin-top: 50px;
+}
 
+.contact-banner-presta {
+  display:none;
+}
 
     .title-landscape {
 
@@ -927,7 +934,7 @@ height:100%;}
 }
 
 .btn-ghost2{
-  font-size:9px;
+  font-size:12px;
   padding: 6px 14px;
 }
 .makeup-bann{
@@ -1080,6 +1087,7 @@ height:100%;}
       display: flex;
       justify-content: center;
       align-items: center;
+      font-size: 28px;
     }
 
     .contact-button{
@@ -1087,6 +1095,7 @@ height:100%;}
       display: flex;
       justify-content: center;
       align-items: center;
+      font-size: 28px;
     }
 
     .map-button{
@@ -1094,6 +1103,7 @@ height:100%;}
       display: flex;
       justify-content: center;
       align-items: center;
+      font-size: 28px;
     }
 
     .call-button:hover{
@@ -1107,9 +1117,18 @@ height:100%;}
     .call-footer{
       display:flex;
       justify-content: space-around;
+      height:15vw;
 
     }
 
+    .resa {
+      position: absolute;
+      top: 5px;
+      color: #d981d8;
+      font-family: Montserrat;
+      font-size: 18px;
+      font-weight: bold;
+  }
 
 
 
@@ -1300,13 +1319,18 @@ height:100%;}
 
 
   @media (max-width: 540px) {
+.contact-title {
+  font-size:14px;
+}
+
+
 
     .reviews {
       display: flex;
       flex-direction: column;
       grid-gap: none;
       font-family: 'Montserrat';
-      font-size:16px;
+      font-size:12px;
   }
   .review-names{
     display:none;
@@ -1374,11 +1398,11 @@ height:100%;}
 }
 
 .btn-ghost{
-  font-size:14px;
+  font-size:12px;
 }
 
 .btn-ghost2{
-  font-size:9px;
+  font-size:12px;
   padding: 6px 14px;
 }
 .makeup-bann{
@@ -1543,6 +1567,7 @@ height:100%;}
       display: flex;
       justify-content: center;
       align-items: center;
+      font-size: 16px;
     }
 
     .contact-button{
@@ -1550,6 +1575,7 @@ height:100%;}
       display: flex;
       justify-content: center;
       align-items: center;
+      font-size: 16px;
     }
 
     .map-button{
@@ -1557,11 +1583,21 @@ height:100%;}
       display: flex;
       justify-content: center;
       align-items: center;
+      font-size: 16px;
     }
 
     .call-button:hover{
       box-shadow: 1px 1px 10px white;
     }
+
+    .resa {
+      position: absolute;
+      top: 0px;
+      color: #d981d8;
+      font-family: Montserrat;
+      font-size: 12px;
+      font-weight: bold;
+  }
 
     .menu-button {
       display:block;
@@ -1573,7 +1609,13 @@ height:100%;}
 
     }
 
+.reviews-buttons {
+  flex-direction: column;
+}
 
+.review-title{
+  font-size:16px;
+}
 
 
   }
