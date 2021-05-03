@@ -844,6 +844,9 @@ height:100%;}
 }
 }
   @media (max-width: 810px) {
+
+
+
 .contact-title {
   font-size:16px;
   margin-top: 50px;
@@ -1117,17 +1120,12 @@ height:100%;}
     .call-footer{
       display:flex;
       justify-content: space-around;
-      height:15vw;
+      height:8vw;
 
     }
 
     .resa {
-      position: absolute;
-      top: 5px;
-      color: #d981d8;
-      font-family: Montserrat;
-      font-size: 18px;
-      font-weight: bold;
+     display:none;
   }
 
 
@@ -1322,6 +1320,7 @@ height:100%;}
 .contact-title {
   font-size:14px;
 }
+
 
 
 
@@ -1591,6 +1590,7 @@ height:100%;}
     }
 
     .resa {
+      display:block;
       position: absolute;
       top: 0px;
       color: #d981d8;
@@ -1606,6 +1606,7 @@ height:100%;}
     .call-footer{
       display:flex;
       justify-content: space-around;
+      height: 20vw;
 
     }
 
