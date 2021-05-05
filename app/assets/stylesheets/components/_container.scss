@@ -652,15 +652,15 @@ line-height: 40px;
 height:100%;}
 
 
-  .makeup-bann{
-    // height:31vw;
-  }
-  .soinvisage-bann{
-    // height:31vw;
-  }
-  .massage-bann{
-    // height:29vw;
-  }
+  // .makeup-bann{
+  //   // height:31vw;
+  // }
+  // .soinvisage-bann{
+  //   // height:31vw;
+  // }
+  // .massage-bann{
+  //   // height:29vw;
+  // }
   .logo {
     position: absolute;
     top: -8px;
@@ -724,6 +724,9 @@ height:100%;}
       height:100vw;
     }
 .massage-bann{
+  height:60vw
+}
+.manucure-bann{
   height:60vw
 }
 .soinvisage-bann{
@@ -945,6 +948,9 @@ height:100%;}
 }
 .massage-bann{
   height: 60vw;
+}
+.manucure-bann{
+  height:60vw
 }
 .soinvisage-bann{
   height: 60vw;
@@ -1413,12 +1419,12 @@ height:100%;}
 .soinvisage-bann{
   height: 60vw;
 }
-.epil-bann{
+
   .epil-bann {
     width: 100%;
     height: 100vw;
 }
-}
+
 .makeup-container{
   margin-top:0;
 }
