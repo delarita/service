@@ -47,7 +47,7 @@
                 <%= form_for([order_item.orderitemable, order_item], remote: true) do |f| %>
 
                   <%= f.hidden_field :product_id, value: order_item.id %>
-                  <h5>prix : <%= order_item.unit_price/100 %></h5>
+                  <h5>prix : <%= order_item.unit_price/100 %>€</h5>
                   <div class="form-group">
                     <%= f.number_field :quantity, value: order_item.quantity.to_i, min: 1, class: 'form-control' %>
                   </div>
@@ -55,8 +55,8 @@
                     <%= f.submit "Modifier quantité", class: 'btn btn-ghost' %>
                     <%= link_to "Supprimer", [order_item.orderitemable, order_item], method: :delete, remote: true, class: 'btn btn-ghost'  %>
                   </div>
-                  <div class="subtotal">Sous Total : <%= order_item.total_price/100 %></div>
-                <% end %>
+                  <div class="subtotal">Sous Total : <%= order_item.total_price/100  %>€</div>
+                <% end  %>
               </div>
             </div>
           </div>

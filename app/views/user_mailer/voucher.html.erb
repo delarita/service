@@ -17,6 +17,14 @@
 <h1 style="font-size: 16px">VOICI VOTRE BON CADEAU RELOOK ESTHETIQUE</h1>
 <img src ="https://res.cloudinary.com/dsmxleyf5/image/upload/v1620016992/ede2o2qdibidqqwugjpc.jpg" alt="boncadeau" width="700">
 <p>Commande n° <%= @order.id %> du <%= @order.updated_at %></p>
+<% @order.order_items.each do |order_item|%>
+  <% if order_item.orderitemable.name == "BON CADEAU" %>
+  <p><%= order_item.orderitemable.name %>: <%= (order_item.unit_price/100)*order_item.quantity %>€</p>
+  <% else %>
+   <p><%= order_item.orderitemable.name %>: <%= (order_item.unit_price/100)%>€</p>
+  <% end %>
+  <% end %>
+<p><%= @order.subtotal_price/100 %>€</p>
 <p>Voici votre Bon Cadeau Relook Esthetique</p>
 <p>Pour utiliser votre bon cadeau, rien de plus simple :</p>
 <p>Prenez rendez-vous avec Patricia par téléphone, imprimez ce mail et présentez le au salon avec les références de votre commande, le jour de votre rendez-vous.</p>

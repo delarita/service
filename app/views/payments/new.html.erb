@@ -4,6 +4,21 @@
     <!-- <div class="col-md-3">< % = image_tag @order.teddy.photo_url, width: '100%' %></div>
      --><div class="col">
       <h1>Rappel de votre Commande</h1>
+     
+
+
+  <% @order.order_items.each do |order_item|%>
+  <% if order_item.orderitemable.name == "BON CADEAU" %>
+  <p><%= order_item.orderitemable.name %>: <%= (order_item.unit_price/100)*order_item.quantity %>€</p>
+  <% else %>
+   <p><%= order_item.orderitemable.name %>: <%= (order_item.unit_price/100)%>€</p>
+  <% end %>
+  <% end %>
+  <p>Total de votre Commande: <%= @order.subtotal_price/100 %>€</p>
+
+
+
+
       <!-- <p>Purchase of <strong>< % = @order .teddy.name %></strong> for <strong>< % = humanized_money_with_symbol @ order.amount %></strong></p>
       --> <button id="pay" class="btn btn-ghost">Payez</button>
             <script src="https://js.stripe.com/v3/"></script>
