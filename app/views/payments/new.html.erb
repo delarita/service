@@ -1,9 +1,25 @@
 <!-- app/views/payments/new.html.erb -->
+<div class="navmenu-presta">
+            
+                
+                <li><%= link_to "EPILATIONS", epilations_path %></li>
+                <li><%= link_to "MASSAGES", massages_path %></li>
+                <li><%= link_to "SOINS", soinvisages_path %></li>
+                <li><%= link_to "MAQUILLAGE PERMANENT", maquillages_path %></li>
+
+</div>
+
+<div class="false-menu"></div>
+<div class="under-menu">
+     <h1 class="under-title">Rappel de votre<br />
+      Commande</h1>
+     <span class="retour-accueil"><%= link_to "ACCUEIL", root_path %></span>
+</div>
 <div class="container">
   <div class="row py-4">
     <!-- <div class="col-md-3">< % = image_tag @order.teddy.photo_url, width: '100%' %></div>
      --><div class="col">
-      <h1>Rappel de votre Commande</h1>
+      <%# <h1>Rappel de votre Commande</h1> %>
      
 
 
@@ -14,7 +30,7 @@
    <p><%= order_item.orderitemable.name %>: <%= (order_item.unit_price/100)%>€</p>
   <% end %>
   <% end %>
-  <p>Total de votre Commande: <%= @order.subtotal_price/100 %>€</p>
+  <p class="font-weight-bold">Total de votre Commande: <%= @order.subtotal_price/100 %>€</p>
 
 
 
