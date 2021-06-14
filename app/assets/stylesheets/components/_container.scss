@@ -1335,6 +1335,22 @@ height:100%;}
 
 
   @media (max-width: 540px) {
+
+   p,h1, h2, h3 {
+      font-weight:bolder;
+    }
+.cards{
+  font-weight: bolder;
+}
+
+.reviews{
+  font-weight: bolder;
+}
+
+.btn{
+  font-weight:bolder;
+}
+
 .contact-title {
   font-size:14px;
 }
